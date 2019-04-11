@@ -21,7 +21,7 @@ public class HelloController {
     @ResponseBody
     public String hello1(Model model) {
         model.addAttribute("people",peopleRepository.findAll());
-        return "hello123456656456";
+        return "hello TeachMe";
     }
 
    /* @RequestMapping("/loggeduser")

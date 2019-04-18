@@ -25,9 +25,10 @@ public class NoticeFull {
     private char look_or_offer;
     private String subject;
 
-    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Integer user_id_user, Float price,
-                      Integer subject_id_subject, char active, Date timestamp, Float time_from, Float time_to, Integer meeting_id_meeting,
-                      char look_or_offer, String subject) {
+    public NoticeFull() {
+    }
+
+    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Integer user_id_user, float price, Integer subject_id_subject, char active, Date timestamp, float time_from, float time_to, Integer meeting_id_meeting, char look_or_offer, String subject) {
         this.meeting_place = meeting_place;
         this.note = note;
         this.meeting_date = meeting_date;
@@ -41,9 +42,6 @@ public class NoticeFull {
         this.meeting_id_meeting = meeting_id_meeting;
         this.look_or_offer = look_or_offer;
         this.subject = subject;
-    }
-
-    public NoticeFull() {
     }
 
     public Long getId() {
@@ -86,11 +84,11 @@ public class NoticeFull {
         this.user_id_user = user_id_user;
     }
 
-    public Float getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
@@ -118,19 +116,19 @@ public class NoticeFull {
         this.timestamp = timestamp;
     }
 
-    public Float getTime_from() {
+    public float getTime_from() {
         return time_from;
     }
 
-    public void setTime_from(Float time_from) {
+    public void setTime_from(float time_from) {
         this.time_from = time_from;
     }
 
-    public Float getTime_to() {
+    public float getTime_to() {
         return time_to;
     }
 
-    public void setTime_to(Float time_to) {
+    public void setTime_to(float time_to) {
         this.time_to = time_to;
     }
 
@@ -146,8 +144,8 @@ public class NoticeFull {
         return look_or_offer;
     }
 
-    public void setLook_or_offer(char loor_or_offer) {
-        this.look_or_offer = loor_or_offer;
+    public void setLook_or_offer(char look_or_offer) {
+        this.look_or_offer = look_or_offer;
     }
 
     public String getSubject() {

@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Notice {
+public class NoticeFull {
 
     @Id
     @GeneratedValue
@@ -25,9 +25,9 @@ public class Notice {
     private char look_or_offer;
     private String subject;
 
-    public Notice(String meeting_place, StringBuffer note, Date meeting_date, Integer user_id_user, Float price,
-                  Integer subject_id_subject, char active, Date timestamp, Float time_from, Float time_to, Integer meeting_id_meeting,
-                  char look_or_offer, String subject) {
+    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Integer user_id_user, Float price,
+                      Integer subject_id_subject, char active, Date timestamp, Float time_from, Float time_to, Integer meeting_id_meeting,
+                      char look_or_offer, String subject) {
         this.meeting_place = meeting_place;
         this.note = note;
         this.meeting_date = meeting_date;
@@ -43,7 +43,7 @@ public class Notice {
         this.subject = subject;
     }
 
-    public Notice() {
+    public NoticeFull() {
     }
 
     public Long getId() {

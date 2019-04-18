@@ -15,12 +15,12 @@ public class NoticeFull {
     private StringBuffer note = new StringBuffer(500);
     private Date meeting_date = new Date();
     private Integer user_id_user;
-    private Float price;
+    private float price;
     private Integer subject_id_subject;
     private char active;
-    private Date timestamp=new Date();
-    private Float time_from;
-    private Float time_to;
+    private Date timestamp = new Date();
+    private float time_from;
+    private float time_to;
     private Integer meeting_id_meeting;
     private char look_or_offer;
     private String subject;

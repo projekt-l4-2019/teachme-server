@@ -36,32 +36,16 @@ public class HerokudemoApplication {
 		}
 	}
 
-	@Configuration
-	public class MyConfiguration {
-
-		@Bean
-		public WebMvcConfigurer corsConfigurer() {
-			return new WebMvcConfigurerAdapter() {
-				@Override
-				public void addCorsMappings(CorsRegistry registry) {
-					registry.addMapping("https://projekt-l4-2019.github.io/#")
-							.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
-				}
-
-			};
-		}
-		@Bean
-		CorsConfigurationSource corsConfigurationSource() {
-			CorsConfiguration configuration = new CorsConfiguration();
-			configuration.setAllowedOrigins(Arrays.asList("https://projekt-l4-2019.github.io/#"));
-			configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "DELETE", "PUT", "PATCH"));
-			configuration.setAllowedHeaders(Arrays.asList("X-Requested-With", "Origin", "Content-Type", "Accept", "Authorization"));
-			configuration.setAllowCredentials(true);
-			UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-			source.registerCorsConfiguration("https://projekt-l4-2019.github.io/#", configuration);
-			return source;
-		}
-
-
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurerAdapter() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("https://projekt-l4-2019.github.io");
+			}
+		};
 	}
+
+
+
 }

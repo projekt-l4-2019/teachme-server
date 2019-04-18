@@ -14,21 +14,21 @@ public class NoticeFull {
     private String meeting_place;
     private StringBuffer note = new StringBuffer(500);
     private Date meeting_date = new Date();
-    private Integer user_id_user;
+    private Long user_id_user;
     private float price;
-    private Integer subject_id_subject;
+    private Long subject_id_subject;
     private char active;
     private Date timestamp = new Date();
     private float time_from;
     private float time_to;
-    private Integer meeting_id_meeting;
+    private Long meeting_id_meeting;
     private char look_or_offer;
     private String subject;
 
     public NoticeFull() {
     }
 
-    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Integer user_id_user, float price, Integer subject_id_subject, char active, Date timestamp, float time_from, float time_to, Integer meeting_id_meeting, char look_or_offer, String subject) {
+    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Long user_id_user, float price, Long subject_id_subject, char active, Date timestamp, float time_from, float time_to, Long meeting_id_meeting, char look_or_offer, String subject) {
         this.meeting_place = meeting_place;
         this.note = note;
         this.meeting_date = meeting_date;
@@ -76,11 +76,11 @@ public class NoticeFull {
         this.meeting_date = meeting_date;
     }
 
-    public Integer getUser_id_user() {
+    public Long getUser_id_user() {
         return user_id_user;
     }
 
-    public void setUser_id_user(Integer user_id_user) {
+    public void setUser_id_user(Long user_id_user) {
         this.user_id_user = user_id_user;
     }
 
@@ -92,11 +92,11 @@ public class NoticeFull {
         this.price = price;
     }
 
-    public Integer getSubject_id_subject() {
+    public Long getSubject_id_subject() {
         return subject_id_subject;
     }
 
-    public void setSubject_id_subject(Integer subject_id_subject) {
+    public void setSubject_id_subject(Long subject_id_subject) {
         this.subject_id_subject = subject_id_subject;
     }
 
@@ -132,11 +132,11 @@ public class NoticeFull {
         this.time_to = time_to;
     }
 
-    public Integer getMeeting_id_meeting() {
+    public Long getMeeting_id_meeting() {
         return meeting_id_meeting;
     }
 
-    public void setMeeting_id_meeting(Integer meeting_id_meeting) {
+    public void setMeeting_id_meeting(Long meeting_id_meeting) {
         this.meeting_id_meeting = meeting_id_meeting;
     }
 

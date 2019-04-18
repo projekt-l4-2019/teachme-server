@@ -21,7 +21,7 @@ public class MyConfiguration {
     }
 
 
-    protected void configure(HttpSecurity http) throws Exception
+  /*  protected void configure(HttpSecurity http) throws Exception
     {
         http
                 .csrf().disable()
@@ -35,7 +35,7 @@ public class MyConfiguration {
                 .httpBasic();
 
         http.csrf().ignoringAntMatchers("/nocsrf","/ignore/startswith/**");
-    }
+    }*/
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {

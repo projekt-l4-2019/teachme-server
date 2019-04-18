@@ -15,20 +15,20 @@ public class NoticeFull {
     private StringBuffer note = new StringBuffer(500);
     private Date meeting_date = new Date();
     private Long user_id_user;
-    private float price;
+    private Long price;
     private Long subject_id_subject;
-    private char active;
+    private Long active;
     private Date timestamp = new Date();
-    private float time_from;
-    private float time_to;
+    private Long time_from;
+    private Long time_to;
     private Long meeting_id_meeting;
-    private char look_or_offer;
+    private Long look_or_offer;
     private String subject;
 
     public NoticeFull() {
     }
 
-    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Long user_id_user, float price, Long subject_id_subject, char active, Date timestamp, float time_from, float time_to, Long meeting_id_meeting, char look_or_offer, String subject) {
+    public NoticeFull(String meeting_place, StringBuffer note, Date meeting_date, Long user_id_user, Long price, Long subject_id_subject, Long active, Date timestamp, Long time_from, Long time_to, Long meeting_id_meeting, Long look_or_offer, String subject) {
         this.meeting_place = meeting_place;
         this.note = note;
         this.meeting_date = meeting_date;
@@ -84,11 +84,11 @@ public class NoticeFull {
         this.user_id_user = user_id_user;
     }
 
-    public float getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
@@ -100,11 +100,11 @@ public class NoticeFull {
         this.subject_id_subject = subject_id_subject;
     }
 
-    public char getActive() {
+    public Long getActive() {
         return active;
     }
 
-    public void setActive(char active) {
+    public void setActive(Long active) {
         this.active = active;
     }
 
@@ -116,19 +116,19 @@ public class NoticeFull {
         this.timestamp = timestamp;
     }
 
-    public float getTime_from() {
+    public Long getTime_from() {
         return time_from;
     }
 
-    public void setTime_from(float time_from) {
+    public void setTime_from(Long time_from) {
         this.time_from = time_from;
     }
 
-    public float getTime_to() {
+    public Long getTime_to() {
         return time_to;
     }
 
-    public void setTime_to(float time_to) {
+    public void setTime_to(Long time_to) {
         this.time_to = time_to;
     }
 
@@ -140,11 +140,11 @@ public class NoticeFull {
         this.meeting_id_meeting = meeting_id_meeting;
     }
 
-    public char getLook_or_offer() {
+    public Long getLook_or_offer() {
         return look_or_offer;
     }
 
-    public void setLook_or_offer(char look_or_offer) {
+    public void setLook_or_offer(Long look_or_offer) {
         this.look_or_offer = look_or_offer;
     }
 

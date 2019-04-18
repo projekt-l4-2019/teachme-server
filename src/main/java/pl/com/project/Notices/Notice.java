@@ -1,3 +1,4 @@
+
 package pl.com.project.Notices;
 
 import javax.persistence.Entity;

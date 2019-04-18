@@ -14,11 +14,11 @@ import java.util.Arrays;
 @Configuration
 public class MyConfiguration {
 
-    private final long MAX_AGE_SECS = 3600;
+   // private final long MAX_AGE_SECS = 3600;
 
-    public void configure(WebSecurity web) throws Exception {
+   /* public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(HttpMethod.DELETE, "/**");
-    }
+    }*/
 
 
   /*  protected void configure(HttpSecurity http) throws Exception

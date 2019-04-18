@@ -23,7 +23,7 @@ public class HelloController {
     @ResponseBody
     public String hello1Model (Model model_1, Model model_2) {
         model_1.addAttribute("people",peopleRepository.findAll());
-        model_2.addAttribute("note", noticeFullRepository.findAll());
+        model_2.addAttribute("notice", noticeFullRepository.findAll());
         return "hello TeachMe";
     }
 
@@ -36,7 +36,7 @@ public class HelloController {
     @GetMapping("hi")
     public String hello(Model model_1, Model model_2) {
         model_1.addAttribute("people",peopleRepository.findAll());
-        model_2.addAttribute("note", noticeFullRepository.findAll());
+        model_2.addAttribute("notice", noticeFullRepository.findAll());
         return "hello";
     }
 

@@ -36,16 +36,4 @@ public class HerokudemoApplication {
 		}
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurerAdapter() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/greeting-javaconfig").allowedOrigins("https://projekt-l4-2019.github.io");
-			}
-		};
-	}
-
-
-
 }

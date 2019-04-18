@@ -1,4 +1,4 @@
-package pl.com.project;
+package pl.com.project.Configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,13 +9,19 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class MyConfiguration {
 
+    private final long MAX_AGE_SECS = 3600;
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+                 .allowedOrigins("*")
+                        .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD")
+                        .allowedHeaders("*")
+                        .allowCredentials(true)
+                        .maxAge(MAX_AGE_SECS);
             }
         };
     }

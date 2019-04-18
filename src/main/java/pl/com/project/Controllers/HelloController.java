@@ -4,23 +4,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.com.project.PeopleRepository;
-import pl.com.project.Person;
+import pl.com.project.Notices.NoticeRepository;
+import pl.com.project.Users.PeopleRepository;
 
 @Controller
 public class HelloController {
 
     PeopleRepository peopleRepository;
+    NoticeRepository noticeRepository;
 
     @Autowired
-    public HelloController(PeopleRepository peopleRepository) {
+    public HelloController(PeopleRepository peopleRepository, NoticeRepository noticeRepository) {
         this.peopleRepository = peopleRepository;
+        this.noticeRepository = noticeRepository;
     }
 
     @RequestMapping("/")
     @ResponseBody
-    public String hello1(Model model) {
-        model.addAttribute("people",peopleRepository.findAll());
+    public String hello1Model (Model model_1, Model model_2) {
+        model_1.addAttribute("people",peopleRepository.findAll());
+        model_2.addAttribute("note",noticeRepository.findAll());
         return "hello TeachMe";
     }
 
@@ -31,9 +34,9 @@ public class HelloController {
     }*/
 
     @GetMapping("hi")
-    public String hello(Model model) {
-        model.addAttribute("people",peopleRepository.findAll());
-       // model.addAttribute("id",peopleRepository.findAll());
+    public String hello(Model model_1, Model model_2) {
+        model_1.addAttribute("people",peopleRepository.findAll());
+        model_2.addAttribute("note",noticeRepository.findAll());
         return "hello";
     }
 

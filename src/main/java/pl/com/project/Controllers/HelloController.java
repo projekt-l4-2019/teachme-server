@@ -22,7 +22,7 @@ public class HelloController {
     @RequestMapping("/")
     @ResponseBody
     public String hello1Model (Model model_1, Model model_2) {
-        model_1.addAttribute("people",peopleRepository.findAll());
+        model_1.addAttribute("people", peopleRepository.findAll());
         model_2.addAttribute("notice", noticeFullRepository.findAll());
         return "hello TeachMe";
     }

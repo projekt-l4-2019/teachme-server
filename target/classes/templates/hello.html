@@ -13,8 +13,13 @@
 <p th:each="person : ${people}" th:text="${person.name}"/>
 <p th:each="person : ${people}" th:text="${person.surname}"/>
 <p th:each="person : ${people}" th:text="${person.id}"/>
-<p th:each="noticeFull : ${notice}" th:text="${noticeFull.id}"/>
-<p th:each="noticeFull : ${notice}" th:text="${noticeFull.subject}"/>
+
+<p th:each="notice : ${note}" th:text="${notice.id}"/>
+<p th:each="notice : ${note}" th:text="${notice.note}"/>
+<p th:each="notice : ${note}" th:text="${notice.subject}"/>
+<p th:each="notice : ${note}" th:text="${notice.meeting_place}"/>
+<p th:each="notice : ${note}" th:text="${notice.meeting_date}"/>
+<p th:each="notice : ${note}" th:text="${notice.note}"/>
 
 </body>
 </html>

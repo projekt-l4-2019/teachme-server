@@ -7,12 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="herokudemo" />
-        <module name="TeachMe" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="herokudemo" target="1.8" />
-      <module name="TeachMe" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -4,10 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
+<<<<<<< HEAD
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+=======
+>>>>>>> parent of 76b8f1c... sync with pk
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -15,10 +18,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.web.cors.CorsConfiguration;
+<<<<<<< HEAD
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+=======
+
+>>>>>>> parent of 76b8f1c... sync with pk
 
 
 @SpringBootApplication
@@ -73,6 +80,7 @@ public class HerokudemoApplication {
 			return new BCryptPasswordEncoder();
 		}
 	}
+<<<<<<< HEAD
 
 //	@Configuration
 //	@ImportResource({ "classpath:webSecurityConfig.xml" })
@@ -106,4 +114,6 @@ public class HerokudemoApplication {
 //	}
 
 
+=======
+>>>>>>> parent of 76b8f1c... sync with pk
 }

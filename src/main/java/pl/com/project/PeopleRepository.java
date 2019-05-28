@@ -1,7 +1,6 @@
-package pl.com.project.Users;
+package pl.com.project;
 
 import org.springframework.data.repository.CrudRepository;
-import pl.com.project.Users.Person;
 
 public interface PeopleRepository extends CrudRepository<Person, Long> {
 }

@@ -27,13 +27,13 @@ public class HelloController {
         return "hello TeachMe";
     }
 
-    @GetMapping("/addnotice")
+    @GetMapping("addnotice")
     public String addnotice()
     {
         return "addnotice";
     }
 
-    @GetMapping("/about")
+    @GetMapping("about")
     public String about()
     {
         return "about";

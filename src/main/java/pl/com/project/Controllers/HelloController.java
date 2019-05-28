@@ -27,15 +27,10 @@ public class HelloController {
         return "hello TeachMe";
     }
 
-    @GetMapping("/addnotice")
-    public String addnotice() {
-        return "addnotice";
-    }
-   /* @RequestMapping("/loggeduser")
-    @ResponseBody
-    public String loggedUserAction() {
-        return "Hello User 1234";
-    }*/
+//    @GetMapping("/addnotice")
+//    public String addnotice() {
+//        return "addnotice";
+//    }
 
     @GetMapping("hi")
     public String hello(Model model_1, Model model_2) {

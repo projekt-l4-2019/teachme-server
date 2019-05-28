@@ -39,7 +39,7 @@ public class HelloController {
         model_2.addAttribute("notice", noticeFullRepository.findAll());
         return "hello";
     }
-    @GetMapping("/login")
+    @GetMapping("login")
     public String login()
     {
         return "login";

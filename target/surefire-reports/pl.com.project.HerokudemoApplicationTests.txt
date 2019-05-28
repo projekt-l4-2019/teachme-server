@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: pl.com.project.HerokudemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.259 sec <<< FAILURE! - in pl.com.project.HerokudemoApplicationTests
-contextLoads(pl.com.project.HerokudemoApplicationTests)  Time elapsed: 0.004 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.273 sec <<< FAILURE! - in pl.com.project.HerokudemoApplicationTests
+contextLoads(pl.com.project.HerokudemoApplicationTests)  Time elapsed: 0.002 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)

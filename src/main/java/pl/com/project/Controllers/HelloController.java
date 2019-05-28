@@ -18,6 +18,7 @@ public class HelloController {
         this.peopleRepository = peopleRepository;
         this.noticeFullRepository = noticeFullRepository;
     }
+
     @RequestMapping("/")
     @ResponseBody
     public String hello1Model (Model model_1, Model model_2) {
@@ -35,7 +36,7 @@ public class HelloController {
     @GetMapping("/about")
     public String about()
     {
-        return "app for school project, we don't use any of data outside";
+        return "about";
     }
 
     @GetMapping("hi")

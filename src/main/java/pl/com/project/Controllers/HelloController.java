@@ -4,23 +4,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.com.project.PeopleRepository;
-import pl.com.project.Person;
+import pl.com.project.Notices.NoticeFullRepository;
+import pl.com.project.Users.PeopleRepository;
 
 @Controller
 public class HelloController {
 
     PeopleRepository peopleRepository;
+    NoticeFullRepository noticeFullRepository;
 
     @Autowired
-    public HelloController(PeopleRepository peopleRepository) {
+    public HelloController(PeopleRepository peopleRepository, NoticeFullRepository noticeFullRepository) {
         this.peopleRepository = peopleRepository;
+        this.noticeFullRepository = noticeFullRepository;
     }
 
     @RequestMapping("/")
     @ResponseBody
-    public String hello1(Model model) {
-        model.addAttribute("people",peopleRepository.findAll());
+    public String hello1Model (Model model_1, Model model_2) {
+        model_1.addAttribute("people",peopleRepository.findAll());
+        model_2.addAttribute("notice", noticeFullRepository.findAll());
         return "hello TeachMe";
     }
 
@@ -30,18 +33,13 @@ public class HelloController {
         return "Hello User 1234";
     }*/
 
-    @CrossOrigin(origins = "https://rhubarb-cobbler-84890.herokuapp.com")
     @GetMapping("hi")
-    public String hello(Model model) {
-        model.addAttribute("people",peopleRepository.findAll());
-        model.addAttribute("id",peopleRepository.findAll());
+    public String hello(Model model_1, Model model_2) {
+        model_1.addAttribute("people",peopleRepository.findAll());
+        model_2.addAttribute("notice", noticeFullRepository.findAll());
         return "hello";
     }
-    @GetMapping("login")
-    public String login()
-    {
-        return "login";
-    }
+
 
 
 }

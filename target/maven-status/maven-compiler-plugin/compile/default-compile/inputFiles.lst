@@ -1,8 +1,8 @@
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Notices\NoticeFull.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Configurations\MyConfiguration.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Controllers\HelloController.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Notices\NoticeFullRepository.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Configurations\RepositoryConfig.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\HerokudemoApplication.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Users\Person.java
-H:\TeachMe\teachme-server\src\main\java\pl\com\project\Users\PeopleRepository.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Controllers\HelloController.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Users\PeopleRepository.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Configurations\MyConfiguration.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Configurations\RepositoryConfig.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Notices\Notice.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Notices\NoticeRepository.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\HerokudemoApplication.java
+E:\Documents\GitHub\teachme-server\src\main\java\pl\com\project\Users\Person.java

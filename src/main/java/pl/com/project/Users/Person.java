@@ -11,13 +11,15 @@ public class Person {
     @GeneratedValue
     private Long id;
 
+
+
     private String surname;
     private String name;
 
     public Person(String name, String surname) {
 
         this.name = name;
-        this.surname = surname;
+        this.surname=surname;
     }
 
     private Person(){}

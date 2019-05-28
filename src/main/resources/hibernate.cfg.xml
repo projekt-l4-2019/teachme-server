@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://ec2-174-129-240-67.compute-1.amazonaws.com:5432/d2b6rsc8m7io0b
+    </property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+      <mapping class="pl.example.models.AdminEntity"/>
+      <mapping class="pl.example.models.CityEntity"/>
+      <mapping class="pl.example.models.MeetingEntity"/>
+      <mapping class="pl.example.models.MeetingCacheEntity"/>
+      <mapping class="pl.example.models.NoticeEntity"/>
+      <mapping class="pl.example.models.OpinionEntity"/>
+      <mapping class="pl.example.models.SubjectEntity"/>
+      <mapping class="pl.example.models.UserEntity"/>
+      <mapping class="pl.example.models.VoivodeshipEntity"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

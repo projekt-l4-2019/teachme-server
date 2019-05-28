@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.com.project.Notices.NoticeFullRepository;
 import pl.com.project.Users.PeopleRepository;
 
-@RestController
+@Controller
 public class HelloController {
 
     PeopleRepository peopleRepository;
@@ -27,10 +27,11 @@ public class HelloController {
         return "hello TeachMe";
     }
 
-//    @GetMapping("/addnotice")
-//    public String addnotice() {
-//        return "addnotice";
-//    }
+   /* @RequestMapping("/loggeduser")
+    @ResponseBody
+    public String loggedUserAction() {
+        return "Hello User 1234";
+    }*/
 
     @GetMapping("hi")
     public String hello(Model model_1, Model model_2) {

@@ -74,13 +74,13 @@ public class HerokudemoApplication {
 		}
 	}
 
-	@Configuration
-	@ImportResource({ "classpath:webSecurityConfig.xml" })
-	public class SecSecurityConfig {
-		public SecSecurityConfig() {
-			super();
-		}
-	}
+//	@Configuration
+//	@ImportResource({ "classpath:webSecurityConfig.xml" })
+//	public class SecSecurityConfig {
+//		public SecSecurityConfig() {
+//			super();
+//		}
+//	}
 	@Configuration
 	public class MyConfiguration {
 
@@ -97,13 +97,13 @@ public class HerokudemoApplication {
 		}
 	}
 
-	abstract public class SpringApplicationInitializer
-			extends AbstractAnnotationConfigDispatcherServletInitializer {
-
-		protected Class<?>[] getRootConfigClasses() {
-			return new Class[] {WebSecurityConfig.class};
-		}
-	}
+//	abstract public class SpringApplicationInitializer
+//			extends AbstractAnnotationConfigDispatcherServletInitializer {
+//
+//		protected Class<?>[] getRootConfigClasses() {
+//			return new Class[] {WebSecurityConfig.class};
+//		}
+//	}
 
 
 }

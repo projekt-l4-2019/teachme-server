@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.com.project.Notices.NoticeFullRepository;
 import pl.com.project.Users.PeopleRepository;
 
-@RestController
+@Controller
 public class HelloController {
 
     PeopleRepository peopleRepository;

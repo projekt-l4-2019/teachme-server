@@ -33,7 +33,11 @@ public class HelloController {
         return "addnotice";
     }
 
-
+    @GetMapping("/about")
+    public String about()
+    {
+        return "app for school project, we don't use any of data outside";
+    }
 
     @GetMapping("hi")
     public String hello(Model model_1, Model model_2) {

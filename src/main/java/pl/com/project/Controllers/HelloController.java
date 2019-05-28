@@ -33,6 +33,14 @@ public class HelloController {
         return "Hello User 1234";
     }*/
 
+       @GetMapping("addnotice")
+       public String addnotice()
+       {
+           return "addnotice";
+       }
+
+
+
     @GetMapping("hi")
     public String hello(Model model_1, Model model_2) {
         model_1.addAttribute("people",peopleRepository.findAll());

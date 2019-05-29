@@ -22,15 +22,15 @@ public class HerokudemoApplication {
 		SpringApplication.run(HerokudemoApplication.class, args);
 	}
 
-	@EnableWebSecurity
-	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-		@Override
-		protected void configure(HttpSecurity http) throws Exception {
-			http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
-			http.csrf().disable();
-		}
-	}
+//	@EnableWebSecurity
+////	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+////
+////		@Override
+////		protected void configure(HttpSecurity http) throws Exception {
+////			http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
+////			http.csrf().disable();
+////		}
+////	}
 
 	@Configuration
 	public class MyConfiguration {

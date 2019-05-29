@@ -24,7 +24,7 @@ public class Person {
         this.avatar=avatar;
     }
 
-    private Person(){}
+    public Person(){}
 
     public String getSurname() {
         return surname;

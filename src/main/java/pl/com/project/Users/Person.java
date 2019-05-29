@@ -11,15 +11,17 @@ public class Person {
     @GeneratedValue
     private Long id;
 
-
-
     private String surname;
     private String name;
+    private String email;
+    private String avatar;
 
-    public Person(String name, String surname) {
+    public Person(String name, String surname, String email, String avatar) {
 
         this.name = name;
-        this.surname=surname;
+        this.surname= surname;
+        this.email=email;
+        this.avatar=avatar;
     }
 
     private Person(){}
@@ -35,6 +37,7 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -47,4 +50,19 @@ public class Person {
         return name;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 }

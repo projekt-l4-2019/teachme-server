@@ -3,7 +3,7 @@ package pl.example.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "admin", schema = "public", catalog = "d2b6rsc8m7io0b")
+@Table(name = "adminn", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class AdminEntity {
     private int idAdmin;
     private String login;
@@ -11,7 +11,7 @@ public class AdminEntity {
     private String email;
 
     @Id
-    @Column(name = "id_admin")
+    @Column(name = "id_admin", nullable = false)
     public int getIdAdmin() {
         return idAdmin;
     }
@@ -21,7 +21,7 @@ public class AdminEntity {
     }
 
     @Basic
-    @Column(name = "login")
+    @Column(name = "login", nullable = false, length = 127)
     public String getLogin() {
         return login;
     }
@@ -31,7 +31,7 @@ public class AdminEntity {
     }
 
     @Basic
-    @Column(name = "pasword")
+    @Column(name = "pasword", nullable = false, length = 4000)
     public String getPasword() {
         return pasword;
     }
@@ -41,7 +41,7 @@ public class AdminEntity {
     }
 
     @Basic
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, length = 127)
     public String getEmail() {
         return email;
     }

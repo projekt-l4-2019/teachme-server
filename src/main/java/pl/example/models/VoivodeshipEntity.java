@@ -1,15 +1,17 @@
 package pl.example.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "voivodeship", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class VoivodeshipEntity {
     private int idVoivodeship;
     private String nameVoivodeship;
+    private Collection<CityEntity> citiesByIdVoivodeship;
 
     @Id
-    @Column(name = "id_voivodeship")
+    @Column(name = "id_voivodeship", nullable = false)
     public int getIdVoivodeship() {
         return idVoivodeship;
     }
@@ -19,7 +21,7 @@ public class VoivodeshipEntity {
     }
 
     @Basic
-    @Column(name = "name_voivodeship")
+    @Column(name = "name_voivodeship", nullable = false, length = 127)
     public String getNameVoivodeship() {
         return nameVoivodeship;
     }
@@ -47,5 +49,14 @@ public class VoivodeshipEntity {
         int result = idVoivodeship;
         result = 31 * result + (nameVoivodeship != null ? nameVoivodeship.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "voivodeshipByVoivodeshipIdVoivodeship")
+    public Collection<CityEntity> getCitiesByIdVoivodeship() {
+        return citiesByIdVoivodeship;
+    }
+
+    public void setCitiesByIdVoivodeship(Collection<CityEntity> citiesByIdVoivodeship) {
+        this.citiesByIdVoivodeship = citiesByIdVoivodeship;
     }
 }

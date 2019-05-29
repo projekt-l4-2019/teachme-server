@@ -57,6 +57,15 @@
         <item name="PostgresSQL" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="d2b6rsc8m7io0b: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="userr: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgresSQL" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d2b6rsc8m7io0b: database" type="162271b6:PgImplModel$Database" />
         <item name="access methods" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
@@ -75,67 +84,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/NoticeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#1021#1022#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/HelloController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/AdminEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-449">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="62">
+              <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -143,18 +95,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
+            <state relative-caret-position="473">
               <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#779#780#0" expanded="true" />
-                <element signature="e#828#829#0" expanded="true" />
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#918#919#0" expanded="true" />
-                <element signature="e#961#962#0" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1050#1051#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/NoticeRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="68">
+              <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,19 +117,88 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa3c09d1-7079-4366-984e-65bef094038d/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state>
+              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/test.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/NoticeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+                <element signature="e#762#763#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/UserEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="282" lean-forward="true" selection-start-line="282" selection-end-line="282" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="32" column="395" selection-start-line="32" selection-start-column="395" selection-end-line="32" selection-end-column="395" />
+              <folding>
+                <element signature="e#2550#2551#0" expanded="true" />
+                <element signature="e#2579#2580#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/start/DemoApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/Configuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,9 +211,24 @@
         <option value="FxmlFile" />
         <option value="hibernate-configuration-5.2" />
         <option value="hibernate-main-5.2" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>topic</find>
+      <find>long</find>
+      <find>meeting_date</find>
+      <find>acti</find>
+      <find>look_or_offer</find>
+      <find>int</find>
+      <find>Integer</find>
+      <find>about</find>
+      <find>timestamp</find>
+      <find>time</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -211,129 +239,110 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/example/TopicController/Topic.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/TopicController/TopicController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/Topic/TopicController.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fa3c09d1-7079-4366-984e-65bef094038d/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/Topic/TopicRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/Topic/TopicService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/TopicController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/TopicRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/Topic/Topic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/start/DemoApplication.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/example/demo/DemoApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/tyftyg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/ChessDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/NoticeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/MeetingCacheEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/CityEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/OpinionEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/SubjectEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/VoivodeshipEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/AdminRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/CityRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/MeetingCacheRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/MeetingRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/OpinionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/SubjectRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/VoivodeshipRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/AdminEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/Configuration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/MeetingEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/DTO/UserDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/test.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/repository/NoticeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/NoticeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fa3c09d1-7079-4366-984e-65bef094038d/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/models/UserEntity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeachMe-0.0.1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeachMe-0.0.1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeachMe-0.0.1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeachMe-0.0.1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeachMe-0.0.1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeachMe-0.0.1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="TeachMe-0.0.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,9 +355,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="E:/Documents/GitHub/TeachMe-0.0.1" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/tutorial/tutorial" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -363,8 +372,9 @@
       <recent name="pl.example.demo" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="models" />
+      <recent name="pl.example.models" />
       <recent name="" />
+      <recent name="models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,11 +393,12 @@
         </RuleState>
       </list>
     </option>
+    <option name="contentProportion" value="0.12243502" />
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication (1)">
     <configuration name="DemoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.example.start.DemoApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.example.DemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -435,44 +446,63 @@
       <workItem from="1559047567887" duration="418000" />
       <workItem from="1559048018165" duration="2611000" />
       <workItem from="1559050674886" duration="315000" />
-      <workItem from="1559063601765" duration="8177000" />
+      <workItem from="1559063601765" duration="16102000" />
+      <workItem from="1559117481418" duration="1240000" />
+      <workItem from="1559119198886" duration="718000" />
+      <workItem from="1559122395747" duration="1776000" />
+      <workItem from="1559124313571" duration="1388000" />
+      <workItem from="1559126098097" duration="150000" />
+      <workItem from="1559128484813" duration="2038000" />
+      <workItem from="1559130724399" duration="120000" />
+      <workItem from="1559131958983" duration="3809000" />
+      <workItem from="1559152222763" duration="14790000" />
+      <workItem from="1559171105274" duration="2203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30477000" />
+    <option name="totallyTimeSpent" value="66634000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.73282444" visible="true" weight="0.20268457" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8976035" visible="true" weight="0.25838926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info id="Persistence" order="8" sideWeight="0.26717559" side_tool="true" visible="true" weight="0.20268457" />
+      <window_info id="Web" order="7" sideWeight="0.26767677" side_tool="true" weight="0.20268457" />
+      <window_info id="Persistence" order="8" sideWeight="0.10239651" side_tool="true" weight="0.25838926" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.431918" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32796487" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32796487" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.043923866" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.13030747" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.329429" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32650074" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32503662" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32796487" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.329429" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info active="true" anchor="bottom" id="Database Console" order="15" visible="true" weight="0.32796487" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32796487" />
       <window_info anchor="bottom" id="Thumbnails" order="16" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" visible="true" weight="0.42459735" />
-      <window_info anchor="bottom" id="Application Servers" order="18" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" visible="true" weight="0.23718888" />
+      <window_info anchor="bottom" id="Application Servers" order="18" weight="0.10980967" />
       <window_info anchor="bottom" id="SQL Generator" order="19" weight="0.21815519" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -480,7 +510,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.09865772" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.23557048" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.3295302" />
@@ -491,35 +521,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HELP.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" />
-    <entry file="uml://MODULES/mdl-demo">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MODULES</ID>
-          <OriginalElement>mdl-demo</OriginalElement>
-          <nodes>
-            <node x="" y="">mdl-demo</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="52.0" y="10.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9a43abf3-8226-41b1-bc19-4fc48b75e925/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -602,109 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://DATABASE/fa3c09d1-7079-4366-984e-65bef094038d">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>fa3c09d1-7079-4366-984e-65bef094038d</OriginalElement>
-          <nodes>
-            <node x="85.75" y="641.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache</node>
-            <node x="436.75" y="0.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.voivodeship</node>
-            <node x="120.31284722222222" y="818.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting</node>
-            <node x="425.25" y="122.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.city</node>
-            <node x="499.75" y="630.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.opinion</node>
-            <node x="309.75" y="652.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject</node>
-            <node x="768.75" y="0.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.admin</node>
-            <node x="387.1267361111111" y="1050.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice</node>
-            <node x="458.25" y="266.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting">
-              <point x="-61.0" y="-146.0" />
-              <point x="417.6267361111111" y="1025.0" />
-              <point x="236.81284722222222" y="1025.0" />
-              <point x="0.0" y="91.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject">
-              <point x="87.375" y="-91.0" />
-              <point x="324.1878472222222" y="793.0" />
-              <point x="394.75" y="793.0" />
-              <point x="0.0" y="47.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.opinion" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
-              <point x="-38.0" y="-69.0" />
-              <point x="0.0" y="157.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.city" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.voivodeship">
-              <point x="0.0" y="-47.0" />
-              <point x="0.0" y="36.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
-              <point x="29.125" y="-91.0" />
-              <point x="265.9378472222222" y="793.0" />
-              <point x="279.25" y="793.0" />
-              <point x="279.25" y="610.0" />
-              <point x="505.95" y="610.0" />
-              <point x="-31.80000000000001" y="157.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting">
-              <point x="45.75" y="58.0" />
-              <point x="223.0" y="793.0" />
-              <point x="207.68784722222222" y="793.0" />
-              <point x="-29.125" y="-91.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.city">
-              <point x="-39.75" y="-157.0" />
-              <point x="498.0" y="241.0" />
-              <point x="481.5" y="241.0" />
-              <point x="-56.25" y="47.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject">
-              <point x="0.0" y="-146.0" />
-              <point x="478.6267361111111" y="1025.0" />
-              <point x="451.41666666666663" y="1025.0" />
-              <point x="56.66666666666663" y="47.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache">
-              <point x="-87.375" y="-91.0" />
-              <point x="149.43784722222222" y="793.0" />
-              <point x="131.5" y="793.0" />
-              <point x="-45.75" y="58.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
-              <point x="0.0" y="-58.0" />
-              <point x="177.25" y="600.0" />
-              <point x="474.15" y="600.0" />
-              <point x="-63.60000000000002" y="157.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject">
-              <point x="-56.66666666666666" y="47.0" />
-              <point x="338.08333333333337" y="766.0" />
-              <point x="289.75" y="766.0" />
-              <point x="289.75" y="699.0" />
-              <point x="-85.0" y="-0.0" />
-            </edge>
-            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
-              <point x="61.0" y="-146.0" />
-              <point x="539.6267361111111" y="1025.0" />
-              <point x="662.25" y="1025.0" />
-              <point x="662.25" y="600.0" />
-              <point x="601.35" y="600.0" />
-              <point x="63.60000000000002" y="157.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.3524229074889868" x="461.5" y="671.0" />
-          <SelectedNodes>
-            <node>fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -714,37 +612,286 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/MeetingCacheEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvnw.cmd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mvnw">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa3c09d1-7079-4366-984e-65bef094038d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/Topic/Topic.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/example/demo/DemoApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="221">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/Topic/Topic.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.7.RELEASE/spring-webmvc-5.1.7.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/tyftyg.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/ChessDatabase.java" />
+    <entry file="das://fa3c09d1-7079-4366-984e-65bef094038d/database/d2b6rsc8m7io0b/schema/public/table/notice">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="78ad1944-60ab-489d-b094-6fdaa863e986">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/fa3c09d1-7079-4366-984e-65bef094038d">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>fa3c09d1-7079-4366-984e-65bef094038d</OriginalElement>
+          <nodes>
+            <node x="85.75" y="641.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache</node>
+            <node x="434.85" y="0.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.voivodeship</node>
+            <node x="120.29340277777777" y="818.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting</node>
+            <node x="499.75" y="630.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.opinion</node>
+            <node x="360.7267361111111" y="1050.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice</node>
+            <node x="309.75" y="652.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject</node>
+            <node x="768.75" y="0.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.admin</node>
+            <node x="423.35" y="122.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.city</node>
+            <node x="416.85" y="266.0">fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject">
+              <point x="0.0" y="-157.0" />
+              <point x="476.7267361111111" y="1025.0" />
+              <point x="451.41666666666663" y="1025.0" />
+              <point x="56.66666666666663" y="47.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache">
+              <point x="-87.375" y="-91.0" />
+              <point x="149.41840277777777" y="793.0" />
+              <point x="131.5" y="793.0" />
+              <point x="-45.75" y="58.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting">
+              <point x="-77.33333333333331" y="-157.0" />
+              <point x="399.39340277777774" y="1025.0" />
+              <point x="236.79340277777777" y="1025.0" />
+              <point x="0.0" y="91.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
+              <point x="0.0" y="-58.0" />
+              <point x="177.25" y="600.0" />
+              <point x="440.65000000000003" y="600.0" />
+              <point x="-95.2" y="157.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject">
+              <point x="-56.66666666666666" y="47.0" />
+              <point x="338.08333333333337" y="766.0" />
+              <point x="289.75" y="766.0" />
+              <point x="289.75" y="699.0" />
+              <point x="-85.0" y="-0.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.subject">
+              <point x="87.375" y="-91.0" />
+              <point x="324.16840277777777" y="793.0" />
+              <point x="394.75" y="793.0" />
+              <point x="0.0" y="47.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.notice" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
+              <point x="77.33333333333337" y="-157.0" />
+              <point x="554.0600694444445" y="1025.0" />
+              <point x="662.25" y="1025.0" />
+              <point x="662.25" y="610.0" />
+              <point x="631.05" y="610.0" />
+              <point x="95.19999999999993" y="157.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.opinion" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
+              <point x="38.0" y="-69.0" />
+              <point x="613.75" y="610.0" />
+              <point x="583.45" y="610.0" />
+              <point x="47.599999999999966" y="157.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.city" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.voivodeship">
+              <point x="0.0" y="-47.0" />
+              <point x="0.0" y="36.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user">
+              <point x="29.125" y="-91.0" />
+              <point x="265.91840277777777" y="793.0" />
+              <point x="279.25" y="793.0" />
+              <point x="279.25" y="610.0" />
+              <point x="488.25" y="610.0" />
+              <point x="-47.60000000000002" y="157.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting_cache" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.meeting">
+              <point x="45.75" y="58.0" />
+              <point x="223.0" y="793.0" />
+              <point x="207.66840277777777" y="793.0" />
+              <point x="-29.125" y="-91.0" />
+            </edge>
+            <edge source="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user" target="fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.city">
+              <point x="0.0" y="-157.0" />
+              <point x="0.0" y="47.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.4013377926421405" x="418.0" y="588.0" />
+          <SelectedNodes>
+            <node>fa3c09d1-7079-4366-984e-65bef094038d.TABLE:d2b6rsc8m7io0b.public.user</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/MeetingCacheEntity.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/CityEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/OpinionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/SubjectEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/VoivodeshipEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/CityRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/MeetingCacheRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/OpinionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/SubjectRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/VoivodeshipRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/MeetingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/CityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/MeetingCacheService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/OpinionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/SubjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/VoivodeshipService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/AdminRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -753,97 +900,162 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/AdminEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/MeetingRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/HelloController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="187">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="238">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/NoticeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/DTO/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/MeetingEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="74" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/repository/NoticeRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="68">
+          <caret line="4" column="78" selection-start-line="4" selection-start-column="78" selection-end-line="4" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/start/DemoApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/NoticeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="612">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="32" column="395" selection-start-line="32" selection-start-column="395" selection-end-line="32" selection-end-column="395" />
+          <folding>
+            <element signature="e#2550#2551#0" expanded="true" />
+            <element signature="e#2579#2580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa3c09d1-7079-4366-984e-65bef094038d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="282" lean-forward="true" selection-start-line="282" selection-end-line="282" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

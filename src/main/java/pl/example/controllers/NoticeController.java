@@ -33,7 +33,7 @@ public class NoticeController {
         noticeService.updateNotice(id, notice);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value="/topics/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value="/notices/{id}")
     public void deleteNotice(@PathVariable Integer id) {
          noticeService.deleteNotice(id);
     }

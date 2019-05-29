@@ -37,7 +37,9 @@ public class HelloController {
     public String addnotice(Model model)
     {
         Object details = ((UsernamePasswordAuthenticationToken) ((OAuth2Authentication) ((SecurityContextImpl) SecurityContextHolder.getContext()).getAuthentication()).getUserAuthentication()).getDetails();
-        String name = ((LinkedHashMap) details).values().toArray()[1].toString();
+        String fullname = ((LinkedHashMap) details).values().toArray()[1].toString();
+        String name = ((LinkedHashMap) details).values().toArray()[2].toString();
+        String surname = ((LinkedHashMap) details).values().toArray()[3].toString();
         String picture = ((LinkedHashMap) details).values().toArray()[5].toString();
         String email = ((LinkedHashMap) details).values().toArray()[6].toString();
 

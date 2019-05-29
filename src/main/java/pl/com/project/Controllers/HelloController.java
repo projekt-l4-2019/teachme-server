@@ -43,7 +43,9 @@ public class HelloController {
         String picture = ((LinkedHashMap) details).values().toArray()[5].toString();
         String email = ((LinkedHashMap) details).values().toArray()[6].toString();
 
+        model.addAttribute("fullname", fullname);
         model.addAttribute("name", name);
+        model.addAttribute("surname", surname);
         model.addAttribute("picture", picture);
         model.addAttribute("email", email);
         return "addnotice";

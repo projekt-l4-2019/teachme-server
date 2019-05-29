@@ -38,8 +38,8 @@ public class HelloController {
     {
         Object details = ((UsernamePasswordAuthenticationToken) ((OAuth2Authentication) ((SecurityContextImpl) SecurityContextHolder.getContext()).getAuthentication()).getUserAuthentication()).getDetails();
         String name = ((LinkedHashMap) details).values().toArray()[1].toString();
-        String picture = ((LinkedHashMap) details).values().toArray()[4].toString();
-        String email = ((LinkedHashMap) details).values().toArray()[5].toString();
+        String picture = ((LinkedHashMap) details).values().toArray()[5].toString();
+        String email = ((LinkedHashMap) details).values().toArray()[6].toString();
 
         model.addAttribute("name", name);
         model.addAttribute("picture", picture);

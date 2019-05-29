@@ -39,13 +39,13 @@ public class HelloController {
         Object details = ((UsernamePasswordAuthenticationToken) ((OAuth2Authentication) ((SecurityContextImpl) SecurityContextHolder.getContext()).getAuthentication()).getUserAuthentication()).getDetails();
         String fullname = ((LinkedHashMap) details).values().toArray()[1].toString();
         String name = ((LinkedHashMap) details).values().toArray()[2].toString();
-        String surname = ((LinkedHashMap) details).values().toArray()[3].toString();
+        String surname1 = ((LinkedHashMap) details).values().toArray()[3].toString();
         String picture = ((LinkedHashMap) details).values().toArray()[5].toString();
         String email = ((LinkedHashMap) details).values().toArray()[6].toString();
 
         model.addAttribute("fullname", fullname);
         model.addAttribute("name", name);
-        model.addAttribute("surname", surname);
+        model.addAttribute("surname1", surname1);
         model.addAttribute("picture", picture);
         model.addAttribute("email", email);
         return "addnotice";

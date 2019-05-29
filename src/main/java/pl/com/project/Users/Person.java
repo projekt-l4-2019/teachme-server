@@ -15,6 +15,7 @@ public class Person {
     private String name;
     private String email;
     private String avatar;
+//    private String principalId;
 
     public Person(String name, String surname, String email, String avatar) {
 
@@ -22,6 +23,7 @@ public class Person {
         this.surname= surname;
         this.email=email;
         this.avatar=avatar;
+//        this.principalId=principalId;
     }
 
     public Person(){}
@@ -65,4 +67,12 @@ public class Person {
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
+
+//    public String getPrincipalId() {
+//        return principalId;
+//    }
+//
+//    public void setPrincipalId(String principalId) {
+//        this.principalId = principalId;
+//    }
 }

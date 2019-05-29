@@ -7,5 +7,5 @@ import pl.com.project.Users.Person;
 
 @Repository
 public interface PeopleRepository extends CrudRepository<Person, Long> {
-    Person findByPrincipalId(String principalId);
+    Person findByEmail(String principalId);
 }

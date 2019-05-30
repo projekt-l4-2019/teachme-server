@@ -15,26 +15,31 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/users")
+    @CrossOrigin(origins = "*")
     public List<UserEntity> getAllUser() {
         return userService.getAllUser();
     }
 
     @RequestMapping("/users/{id}")
+    @CrossOrigin(origins = "*")
     public UserEntity getNotice(@PathVariable Integer id) {
         return userService.getUser(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/users")
+    @CrossOrigin(origins = "*")
     public void addNotice(@RequestBody UserEntity user) {
         userService.addUser(user);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/users/{id}")
+    @CrossOrigin(origins = "*")
     public void updateNotice(@RequestBody UserEntity user, @PathVariable Integer id) {
         userService.updateUser(id, user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value="/users/{id}")
+    @CrossOrigin(origins = "*")
     public void deleteNotice(@PathVariable Integer id) {
         userService.deleteUser(id);
     }

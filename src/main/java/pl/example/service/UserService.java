@@ -1,7 +1,6 @@
 package pl.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import pl.example.models.UserEntity;
 import pl.example.repository.UserRepository;
@@ -9,7 +8,7 @@ import pl.example.repository.UserRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class UserService {
 
     @Autowired

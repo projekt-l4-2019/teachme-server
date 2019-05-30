@@ -1,15 +1,12 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
-@MappedSuperclass
-@EnableJpaAuditing
 @Table(name = "notice", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class NoticeEntity {
     private Integer idNotice;

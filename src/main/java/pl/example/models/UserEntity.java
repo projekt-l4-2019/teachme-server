@@ -211,7 +211,7 @@ public class UserEntity {
         return true;
     }
 
-   /* @Override
+    @Override
     public int hashCode() {
         int result = idUser;
         result = 31 * result + (login != null ? login.hashCode() : 0);
@@ -227,7 +227,7 @@ public class UserEntity {
         result = 31 * result + (about != null ? about.hashCode() : 0);
        // result = 31 * result + (idCity != null ? idCity.hashCode() : 0);
         return result;
-    }*/
+    }
 
     @JsonIgnore
     @OneToMany(mappedBy = "userByUserIdUser")

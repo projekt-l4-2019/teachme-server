@@ -16,7 +16,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.Arrays;
 
 @Configuration
-@ComponentScan("pl.example")
 public class WebSecurityConfig implements WebMvcConfigurer {
 
     private final long MAX_AGE_SECS = 3600;

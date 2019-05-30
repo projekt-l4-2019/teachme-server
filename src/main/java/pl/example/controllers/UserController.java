@@ -9,7 +9,6 @@ import pl.example.service.UserService;
 import java.util.List;
 
 @RestController
-@ComponentScan("pl.example")
 public class UserController {
 
     @Autowired

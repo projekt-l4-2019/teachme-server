@@ -9,7 +9,6 @@ import pl.example.service.NoticeService;
 import java.util.List;
 
 @RestController
-@ComponentScan("pl.example")
 public class NoticeController {
 
     @Autowired

@@ -3,6 +3,7 @@ package pl.example.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -12,6 +13,8 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
+@MappedSuperclass
+@EnableJpaAuditing
 @Table(name = "userr", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class UserEntity {
     private Integer idUser;

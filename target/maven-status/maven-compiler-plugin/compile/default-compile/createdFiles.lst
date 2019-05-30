@@ -1,0 +1,7 @@
+pl\com\project\Configurations\MyConfiguration.class
+pl\com\project\Users\PeopleRepository.class
+pl\com\project\Users\Person.class
+pl\com\project\HerokudemoApplication$WebSecurityConfig.class
+pl\com\project\Controllers\HelloController.class
+pl\com\project\HerokudemoApplication.class
+pl\com\project\Configurations\RepositoryConfig.class

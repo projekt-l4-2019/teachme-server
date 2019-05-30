@@ -20,6 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/addnotice").authenticated();
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.csrf().disable();
+        http.logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
     }
 
     @Bean

@@ -1,6 +1,7 @@
 package pl.example.service;
 
         import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.stereotype.Component;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
         import pl.example.repository.NoticeRepository;
@@ -9,7 +10,7 @@ package pl.example.service;
         import java.util.List;
 
 
-@Service
+@Component
 public class NoticeService {
 
 

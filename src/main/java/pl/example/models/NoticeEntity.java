@@ -1,9 +1,5 @@
 package pl.example.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.hibernate.id.IntegralDataTypeHolder;
-import org.springframework.beans.factory.annotation.Value;
-
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -17,14 +13,14 @@ public class NoticeEntity {
     private String meetingPlace;
     private Date meetingDate;
     private Double price;
-    private int level;
-    private int subjectIdSubject;
+    //private int level;
+    //private int subjectIdSubject;
     private Character active;
     private Timestamp timestamp;
     private Integer userIdUser;
     private Timestamp timeFrom;
     private Timestamp timeTo;
-    private int meetingIdMeeting;
+    //private int meetingIdMeeting;
     private SubjectEntity subjectBySubjectIdSubject;
     private UserEntity userByUserIdUser;
     private MeetingEntity meetingByMeetingIdMeeting;
@@ -39,14 +35,14 @@ public class NoticeEntity {
         this.meetingPlace = meetingPlace;
         this.meetingDate = meetingDate;
         this.price = price;
-        this.level = level;
-        this.subjectIdSubject = subjectIdSubject;
+        //this.level = level;
+        //this.subjectIdSubject = subjectIdSubject;
         this.active = active;
         this.timestamp = timestamp;
         this.userIdUser = userIdUser;
         this.timeFrom = timeFrom;
         this.timeTo = timeTo;
-        this.meetingIdMeeting = meetingIdMeeting;
+        //this.meetingIdMeeting = meetingIdMeeting;
         this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
         this.userByUserIdUser = userByUserIdUser;
         this.meetingByMeetingIdMeeting = meetingByMeetingIdMeeting;
@@ -115,7 +111,7 @@ public class NoticeEntity {
 
 
 
-   @Basic
+   /*@Basic
    @GeneratedValue
     @Column(name = "subject_id_subject", nullable = false,insertable = false, updatable = false)
     public int getSubjectIdSubject() {
@@ -124,7 +120,7 @@ public class NoticeEntity {
 
     public void setSubjectIdSubject(int subjectIdSubject) {
         this.subjectIdSubject = subjectIdSubject;
-    }
+    }*/
 
     @Basic
     @Column(name = "active", nullable = false, length = -1)
@@ -146,7 +142,7 @@ public class NoticeEntity {
         this.timestamp = timestamp;
     }
 
-    @Basic
+    /*@Basic
     @Column(name = "level", nullable = false, length = 127)
     public int getLevel() {
         return level;
@@ -154,7 +150,7 @@ public class NoticeEntity {
 
     public void setLevel(int level) {
         this.level = level;
-    }
+    }*/
 
     @Basic
     @Column(name = "user_id_user", nullable = true,insertable = false, updatable = false)
@@ -186,7 +182,7 @@ public class NoticeEntity {
         this.timeTo = timeTo;
     }
 
-    @Basic
+    /*@Basic
     @Column(name = "meeting_id_meeting", nullable = false, insertable = false, updatable = false)
     public int getMeetingIdMeeting() {
         return meetingIdMeeting;
@@ -194,7 +190,7 @@ public class NoticeEntity {
 
     public void setMeetingIdMeeting(int meetingIdMeeting) {
         this.meetingIdMeeting = meetingIdMeeting;
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -204,8 +200,8 @@ public class NoticeEntity {
         NoticeEntity that = (NoticeEntity) o;
 
         if (idNotice != that.idNotice) return false;
-        if (subjectIdSubject != that.subjectIdSubject) return false;
-        if (meetingIdMeeting != that.meetingIdMeeting) return false;
+        //if (subjectIdSubject != that.subjectIdSubject) return false;
+        //if (meetingIdMeeting != that.meetingIdMeeting) return false;
         if (lookOrOffer != null ? !lookOrOffer.equals(that.lookOrOffer) : that.lookOrOffer != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (meetingPlace != null ? !meetingPlace.equals(that.meetingPlace) : that.meetingPlace != null) return false;
@@ -228,13 +224,13 @@ public class NoticeEntity {
         result = 31 * result + (meetingPlace != null ? meetingPlace.hashCode() : 0);
         result = 31 * result + (meetingDate != null ? meetingDate.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + subjectIdSubject;
+        //result = 31 * result + subjectIdSubject;
         result = 31 * result + (active != null ? active.hashCode() : 0);
         result = 31 * result + (timestamp != null ? timestamp.hashCode() : 0);
         result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
         result = 31 * result + (timeFrom != null ? timeFrom.hashCode() : 0);
         result = 31 * result + (timeTo != null ? timeTo.hashCode() : 0);
-        result = 31 * result + meetingIdMeeting;
+        //result = 31 * result + meetingIdMeeting;
         return result;
     }
 

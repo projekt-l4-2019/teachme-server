@@ -1,15 +1,11 @@
 package pl.example.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -254,7 +250,7 @@ public class UserEntity {
     }
 
     @JsonIgnore
-    @OneToMany(mappedBy = "userByUserIdUser")
+    @OneToMany(mappedBy = "userByUserTo")
     public Collection<OpinionEntity> getOpinionsByIdUser() {
         return opinionsByIdUser;
     }
@@ -264,7 +260,7 @@ public class UserEntity {
     }
 
     @JsonIgnore
-    @OneToMany(mappedBy = "userByUserIdUser1")
+    @OneToMany(mappedBy = "userByUserFrom")
     public Collection<OpinionEntity> getOpinionsByIdUser_0() {
         return opinionsByIdUser_0;
     }

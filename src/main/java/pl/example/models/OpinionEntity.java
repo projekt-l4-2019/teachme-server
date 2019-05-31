@@ -8,10 +8,10 @@ public class OpinionEntity {
     private int idOpinion;
     private int rating;
     private String comment;
-    private Integer userIdUser;
-    private Integer userIdUser1;
-    private UserEntity userByUserIdUser;
-    private UserEntity userByUserIdUser1;
+    private Integer userTo;
+    private Integer userFrom;
+    private UserEntity userByUserTo;
+    private UserEntity userByUserFrom;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,25 +45,23 @@ public class OpinionEntity {
     }
 
     @Basic
-    @GeneratedValue
-    @Column(name = "user_id_user", nullable = true,insertable = false, updatable = false)
-    public Integer getUserIdUser() {
-        return userIdUser;
+    @Column(name = "user_to", nullable = true, insertable = false, updatable = false)
+    public Integer getUserTo() {
+        return userTo;
     }
 
-    public void setUserIdUser(Integer userIdUser) {
-        this.userIdUser = userIdUser;
+    public void setUserTo(Integer userTo) {
+        this.userTo = userTo;
     }
 
     @Basic
-    @GeneratedValue
-    @Column(name = "user_id_user1", nullable = true,insertable = false, updatable = false)
-    public Integer getUserIdUser1() {
-        return userIdUser1;
+    @Column(name = "user_from", nullable = true, insertable = false, updatable = false)
+    public Integer getUserFrom() {
+        return userFrom;
     }
 
-    public void setUserIdUser1(Integer userIdUser1) {
-        this.userIdUser1 = userIdUser1;
+    public void setUserFrom(Integer userFrom) {
+        this.userFrom = userFrom;
     }
 
     @Override
@@ -76,8 +74,8 @@ public class OpinionEntity {
         if (idOpinion != that.idOpinion) return false;
         if (rating != that.rating) return false;
         if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
-        if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
-        if (userIdUser1 != null ? !userIdUser1.equals(that.userIdUser1) : that.userIdUser1 != null) return false;
+        if (userTo != null ? !userTo.equals(that.userTo) : that.userTo != null) return false;
+        if (userFrom != null ? !userFrom.equals(that.userFrom) : that.userFrom != null) return false;
 
         return true;
     }
@@ -87,28 +85,28 @@ public class OpinionEntity {
         int result = idOpinion;
         result = 31 * result + rating;
         result = 31 * result + (comment != null ? comment.hashCode() : 0);
-        result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
-        result = 31 * result + (userIdUser1 != null ? userIdUser1.hashCode() : 0);
+        result = 31 * result + (userTo != null ? userTo.hashCode() : 0);
+        result = 31 * result + (userFrom != null ? userFrom.hashCode() : 0);
         return result;
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id_user", referencedColumnName = "id_user")
-    public UserEntity getUserByUserIdUser() {
-        return userByUserIdUser;
+    @JoinColumn(name = "user_to", referencedColumnName = "id_user")
+    public UserEntity getUserByUserTo() {
+        return userByUserTo;
     }
 
-    public void setUserByUserIdUser(UserEntity userByUserIdUser) {
-        this.userByUserIdUser = userByUserIdUser;
+    public void setUserByUserTo(UserEntity userByUserTo) {
+        this.userByUserTo = userByUserTo;
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id_user1", referencedColumnName = "id_user")
-    public UserEntity getUserByUserIdUser1() {
-        return userByUserIdUser1;
+    @JoinColumn(name = "user_from", referencedColumnName = "id_user")
+    public UserEntity getUserByUserFrom() {
+        return userByUserFrom;
     }
 
-    public void setUserByUserIdUser1(UserEntity userByUserIdUser1) {
-        this.userByUserIdUser1 = userByUserIdUser1;
+    public void setUserByUserFrom(UserEntity userByUserFrom) {
+        this.userByUserFrom = userByUserFrom;
     }
 }

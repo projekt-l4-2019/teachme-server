@@ -1,7 +1,6 @@
 package pl.example.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 import pl.example.models.UserEntity;
 import pl.example.service.UserService;

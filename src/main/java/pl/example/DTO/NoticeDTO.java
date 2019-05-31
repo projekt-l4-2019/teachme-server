@@ -1,5 +1,7 @@
 package pl.example.DTO;
 
+import org.springframework.stereotype.Component;
+
 import java.sql.Date;
 import java.sql.Timestamp;
 

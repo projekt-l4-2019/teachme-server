@@ -6,30 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
         <module name="demo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="demo" target="1.8" />
-=======
-        <module name="herokudemo" />
-        <module name="TeachMe" />
-      </profile>
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="herokudemo" target="1.8" />
-      <module name="TeachMe" target="1.8" />
->>>>>>> 6f6951760f55007e3b01a99e378db6338b74960a
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-<<<<<<< HEAD
       <module name="demo" options="-parameters" />
-=======
-      <module name="herokudemo" options="-parameters" />
->>>>>>> 6f6951760f55007e3b01a99e378db6338b74960a
     </option>
   </component>
 </project>

@@ -1,14 +1,11 @@
 package pl.example.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -58,6 +55,7 @@ public class UserEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user", nullable = false)
     public Integer getIdUser() {
         return idUser;
@@ -158,6 +156,8 @@ public class UserEntity {
     }
 
     @Basic
+    @GeneratedValue
+    @Value("1")
     @Column(name = "city_id_city", nullable = true, insertable = false, updatable = false)
     public int getCityIdCity() {
         return cityIdCity;
@@ -250,7 +250,7 @@ public class UserEntity {
     }
 
     @JsonIgnore
-    @OneToMany(mappedBy = "userByUserIdUser")
+    @OneToMany(mappedBy = "userByUserTo")
     public Collection<OpinionEntity> getOpinionsByIdUser() {
         return opinionsByIdUser;
     }
@@ -260,7 +260,7 @@ public class UserEntity {
     }
 
     @JsonIgnore
-    @OneToMany(mappedBy = "userByUserIdUser1")
+    @OneToMany(mappedBy = "userByUserFrom")
     public Collection<OpinionEntity> getOpinionsByIdUser_0() {
         return opinionsByIdUser_0;
     }
@@ -269,7 +269,6 @@ public class UserEntity {
         this.opinionsByIdUser_0 = opinionsByIdUser_0;
     }
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "city_id_city", referencedColumnName = "id_city")
     public CityEntity getCityByCityIdCity() {

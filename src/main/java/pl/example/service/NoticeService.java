@@ -24,7 +24,9 @@ public class NoticeService {
     }
 
     public NoticeEntity getNotice(Integer id) {
-        return noticeRepository.findById(id).get();
+        NoticeEntity ne = noticeRepository.findById(id).get();
+        ne.setUserByUserIdUser(null);
+        return ne;
     }
 
     public void addNotice(NoticeEntity notice) {

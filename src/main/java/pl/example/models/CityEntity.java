@@ -1,5 +1,7 @@
 package pl.example.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -13,6 +15,7 @@ public class CityEntity {
     private Collection<UserEntity> usersByIdCity;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_city", nullable = false)
     public int getIdCity() {
         return idCity;
@@ -74,6 +77,7 @@ public class CityEntity {
         this.voivodeshipByVoivodeshipIdVoivodeship = voivodeshipByVoivodeshipIdVoivodeship;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cityByCityIdCity")
     public Collection<UserEntity> getUsersByIdCity() {
         return usersByIdCity;

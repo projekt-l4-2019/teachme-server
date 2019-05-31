@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pl.example.models.CityEntity;
 
 @Repository
-public interface CityRepository extends CrudRepository<CityEntity, Long> {
+public interface CityRepository extends CrudRepository<CityEntity, Integer> {
 }

@@ -11,6 +11,7 @@ public class AdminEntity {
     private String email;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_admin", nullable = false)
     public int getIdAdmin() {
         return idAdmin;

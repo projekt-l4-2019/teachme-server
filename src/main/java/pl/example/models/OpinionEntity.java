@@ -14,6 +14,7 @@ public class OpinionEntity {
     private UserEntity userByUserIdUser1;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_opinion", nullable = false)
     public int getIdOpinion() {
         return idOpinion;
@@ -44,6 +45,7 @@ public class OpinionEntity {
     }
 
     @Basic
+    @GeneratedValue
     @Column(name = "user_id_user", nullable = true,insertable = false, updatable = false)
     public Integer getUserIdUser() {
         return userIdUser;
@@ -54,6 +56,7 @@ public class OpinionEntity {
     }
 
     @Basic
+    @GeneratedValue
     @Column(name = "user_id_user1", nullable = true,insertable = false, updatable = false)
     public Integer getUserIdUser1() {
         return userIdUser1;

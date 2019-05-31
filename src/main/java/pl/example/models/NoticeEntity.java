@@ -1,6 +1,8 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.id.IntegralDataTypeHolder;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -51,6 +53,7 @@ public class NoticeEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_notice", nullable = false)
     public Integer getIdNotice() {
         return idNotice;
@@ -110,7 +113,10 @@ public class NoticeEntity {
         this.price = price;
     }
 
-    @Basic
+
+
+   @Basic
+   @GeneratedValue
     @Column(name = "subject_id_subject", nullable = false,insertable = false, updatable = false)
     public int getSubjectIdSubject() {
         return subjectIdSubject;
@@ -232,7 +238,7 @@ public class NoticeEntity {
         return result;
     }
 
-    @JsonBackReference
+   // @JsonBackReference(value = "subjectBySubjectIdSubject")
     @ManyToOne
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject", nullable = false)
     public SubjectEntity getSubjectBySubjectIdSubject() {
@@ -243,7 +249,6 @@ public class NoticeEntity {
         this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
     }
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id_user", referencedColumnName = "id_user")
     public UserEntity getUserByUserIdUser() {
@@ -254,7 +259,7 @@ public class NoticeEntity {
         this.userByUserIdUser = userByUserIdUser;
     }
 
-    @JsonBackReference
+    //@JsonBackReference(value = "meetingByMeetingIdMeeting")
     @ManyToOne
     @JoinColumn(name = "meeting_id_meeting", referencedColumnName = "id_meeting", nullable = false)
     public MeetingEntity getMeetingByMeetingIdMeeting() {

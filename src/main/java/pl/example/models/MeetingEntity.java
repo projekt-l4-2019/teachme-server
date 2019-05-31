@@ -1,5 +1,8 @@
 package pl.example.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
@@ -21,6 +24,7 @@ public class MeetingEntity {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_meeting", nullable = false)
     public int getIdMeeting() {
         return idMeeting;
@@ -110,6 +114,7 @@ public class MeetingEntity {
         return result;
     }
 
+
     @ManyToOne
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject", nullable = false)
     public SubjectEntity getSubjectBySubjectIdSubject() {
@@ -119,6 +124,7 @@ public class MeetingEntity {
     public void setSubjectBySubjectIdSubject(SubjectEntity subjectBySubjectIdSubject) {
         this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
     }
+
 
     @ManyToOne
     @JoinColumn(name = "user_id_user", referencedColumnName = "id_user")
@@ -131,6 +137,7 @@ public class MeetingEntity {
     }
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "meetingByMeetingIdMeeting")
     public Collection<NoticeEntity> getNoticesByIdMeeting() {
         return noticesByIdMeeting;

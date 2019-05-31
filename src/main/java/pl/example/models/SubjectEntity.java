@@ -1,5 +1,8 @@
 package pl.example.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -8,13 +11,14 @@ import java.util.Collection;
 public class SubjectEntity {
     private int idSubject;
     private String name;
-    private Integer subjectIdSubject;
+    private int subjectIdSubject;
     private Collection<MeetingEntity> meetingsByIdSubject;
     private Collection<NoticeEntity> noticesByIdSubject;
     private SubjectEntity subjectBySubjectIdSubject;
     private Collection<SubjectEntity> subjectsByIdSubject;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_subject", nullable = false)
     public int getIdSubject() {
         return idSubject;
@@ -36,11 +40,11 @@ public class SubjectEntity {
 
     @Basic
     @Column(name = "subject_id_subject", nullable = true,insertable = false, updatable = false)
-    public Integer getSubjectIdSubject() {
+    public int getSubjectIdSubject() {
         return subjectIdSubject;
     }
 
-    public void setSubjectIdSubject(Integer subjectIdSubject) {
+    public void setSubjectIdSubject(int subjectIdSubject) {
         this.subjectIdSubject = subjectIdSubject;
     }
 
@@ -53,9 +57,6 @@ public class SubjectEntity {
 
         if (idSubject != that.idSubject) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (subjectIdSubject != null ? !subjectIdSubject.equals(that.subjectIdSubject) : that.subjectIdSubject != null)
-            return false;
-
         return true;
     }
 
@@ -63,10 +64,10 @@ public class SubjectEntity {
     public int hashCode() {
         int result = idSubject;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (subjectIdSubject != null ? subjectIdSubject.hashCode() : 0);
         return result;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "subjectBySubjectIdSubject")
     public Collection<MeetingEntity> getMeetingsByIdSubject() {
         return meetingsByIdSubject;
@@ -76,6 +77,7 @@ public class SubjectEntity {
         this.meetingsByIdSubject = meetingsByIdSubject;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "subjectBySubjectIdSubject")
     public Collection<NoticeEntity> getNoticesByIdSubject() {
         return noticesByIdSubject;
@@ -85,6 +87,7 @@ public class SubjectEntity {
         this.noticesByIdSubject = noticesByIdSubject;
     }
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject")
     public SubjectEntity getSubjectBySubjectIdSubject() {
@@ -95,6 +98,7 @@ public class SubjectEntity {
         this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "subjectBySubjectIdSubject")
     public Collection<SubjectEntity> getSubjectsByIdSubject() {
         return subjectsByIdSubject;

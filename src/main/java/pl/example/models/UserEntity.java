@@ -16,7 +16,7 @@ public class UserEntity {
     private String name;
     private String surname;
     private Date birthDate;
-    private byte[] avatar;
+    private String avatar;
     private String phone;
     private String email;
     private Timestamp timesstamp;
@@ -33,7 +33,7 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(Integer idUser, String login, String name, String surname, Date birthDate, byte[] avatar, String phone, String email, Timestamp timesstamp, String password, int cityIdCity, String about, int idCity, Collection<MeetingEntity> meetingsByIdUser, Collection<NoticeEntity> noticesByIdUser, Collection<OpinionEntity> opinionsByIdUser, Collection<OpinionEntity> opinionsByIdUser_0, CityEntity cityByCityIdCity) {
+    public UserEntity(Integer idUser, String login, String name, String surname, Date birthDate, String avatar, String phone, String email, Timestamp timesstamp, String password, int cityIdCity, String about, int idCity, Collection<MeetingEntity> meetingsByIdUser, Collection<NoticeEntity> noticesByIdUser, Collection<OpinionEntity> opinionsByIdUser, Collection<OpinionEntity> opinionsByIdUser_0, CityEntity cityByCityIdCity) {
         this.idUser = idUser;
         this.login = login;
         this.name = name;
@@ -107,11 +107,11 @@ public class UserEntity {
 
     @Basic
     @Column(name = "avatar", nullable = true)
-    public byte[] getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(byte[] avatar) {
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 

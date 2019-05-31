@@ -1,5 +1,7 @@
 package pl.example.configuration;
 
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,12 +13,15 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import pl.example.models.UserEntity;
+import pl.example.repository.UserRepository;
 
 
 import java.util.Arrays;
 
-@Configuration
-public class WebSecurityConfig implements WebMvcConfigurer {
+@EnableWebSecurity
+@EnableOAuth2Sso
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final long MAX_AGE_SECS = 3600;
 
@@ -32,4 +37,28 @@ public class WebSecurityConfig implements WebMvcConfigurer {
         return source;
     }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/login").authenticated();
+        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
+        http.csrf().disable();
+        http.logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
+    }
+
+    @Bean
+    public PrincipalExtractor principalExtractor(UserRepository userRepository){
+        return map -> {
+            String finder = (String) map.get("email");
+            UserEntity user = userRepository.findByEmail(finder);
+            if(user == null){
+                user = new UserEntity();
+                user.setName((String)map.get("given_name"));
+                user.setSurname((String)map.get("family_name"));
+                user.setEmail((String)map.get("email"));
+                user.setAvatar((String)map.get("picture"));
+            }
+            userRepository.save(user);
+            return user;
+        };
+    }
 }

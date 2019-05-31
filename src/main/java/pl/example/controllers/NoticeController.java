@@ -29,6 +29,7 @@ public class NoticeController {
     @RequestMapping(method = RequestMethod.POST, value="/notices")
     @CrossOrigin(origins = "*")
     public void addNotice(@RequestBody NoticeEntity notice) {
+
         noticeService.addNotice(notice);
     }
 

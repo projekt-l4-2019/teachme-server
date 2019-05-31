@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import pl.example.models.MeetingEntity;
 
 @Repository
-public interface MeetingRepository extends CrudRepository<MeetingEntity, Long> {
+public interface MeetingRepository extends CrudRepository<MeetingEntity, Integer> {
 }

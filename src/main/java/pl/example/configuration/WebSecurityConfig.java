@@ -48,10 +48,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PrincipalExtractor principalExtractor(@Autowired UserRepository userRepository){
+    public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
             String finder = (String)map.get("email");
-            UserService userService = new UserService();
+           // UserService userService = new UserService();
             UserEntity user = userRepository.findByEmail(finder);
             if(user == null){
                 user = new UserEntity();
@@ -59,7 +59,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
-                userService.addUser(user);
+               // userService.addUser(user);
+                userRepository.save(user);
             }
             return user;
         };

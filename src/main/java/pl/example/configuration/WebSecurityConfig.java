@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/login").authenticated().antMatchers("/*").permitAll().and().logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
+        http.authorizeRequests().antMatchers("/login", "/hello").authenticated().antMatchers("/*").permitAll().and().logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.csrf().disable();
     }

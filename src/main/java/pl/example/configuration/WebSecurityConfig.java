@@ -22,8 +22,8 @@ import pl.example.service.UserService;
 
 import javax.jws.soap.SOAPBinding;
 import javax.persistence.GeneratedValue;
+import java.sql.Date;
 import java.util.Arrays;
-import java.util.Date;
 
 @EnableWebSecurity
 @EnableOAuth2Sso
@@ -63,7 +63,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
             String email2 = (String)map.get("email");
-            Date date = new Date();
             userService.setUserRepository(userRepository);
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
@@ -73,7 +72,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
-                user.setBirthDate((java.sql.Date) date);
                 userService.addUser(user);
             }
             return user;

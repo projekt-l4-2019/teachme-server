@@ -99,7 +99,7 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "birth_date", nullable = false)
+    @Column(name = "birth_date", nullable = true)
     public Date getBirthDate() {
         return birthDate;
     }

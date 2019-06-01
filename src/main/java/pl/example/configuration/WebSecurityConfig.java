@@ -15,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import pl.example.models.UserEntity;
 import pl.example.repository.UserRepository;
+import pl.example.service.UserService;
 
 
 import java.util.Arrays;
@@ -57,7 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
             }
-            userRepository.save(user);
+            UserService userService = new UserService();
+            userService.addUser(user);
             return user;
         };
     }

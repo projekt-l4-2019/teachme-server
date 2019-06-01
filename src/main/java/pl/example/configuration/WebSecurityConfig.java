@@ -65,6 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
+                user.setIdUser(user.getIdUser());
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));

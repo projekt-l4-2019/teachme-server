@@ -12,8 +12,6 @@ import java.util.Collection;
 @Entity
 @Table(name = "userr", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUser;
     private String login;
     private String name;
@@ -64,6 +62,7 @@ public class UserEntity {
     public Integer getIdUser() {
         return idUser;
     }
+
 
     public void setIdUser(Integer idUser) {
         this.idUser = idUser;

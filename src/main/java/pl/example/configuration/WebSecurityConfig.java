@@ -42,27 +42,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/login").authenticated();
+        http.authorizeRequests().antMatchers("/login").authenticated().antMatchers("/*").permitAll().and().logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.csrf().disable();
-        http.logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
     }
 
     @Bean
     public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
-            String finder = (String) map.get("email");
+            String finder = (String)map.get("email");
+            UserService userService = new UserService();
             UserEntity user = userRepository.findByEmail(finder);
             if(user == null){
                 user = new  UserEntity();
-                user.setIdUser(3);
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
+                userService.addUser(user);
             }
-            UserService userService = new UserService();
-            userService.addUser(user);
             return user;
         };
     }

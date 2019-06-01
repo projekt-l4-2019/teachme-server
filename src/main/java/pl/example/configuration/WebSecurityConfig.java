@@ -1,5 +1,6 @@
 package pl.example.configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import pl.example.repository.UserRepository;
 import pl.example.service.UserService;
 
 
+import javax.persistence.GeneratedValue;
 import java.util.Arrays;
 
 @EnableWebSecurity
@@ -52,7 +54,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             String finder = (String) map.get("email");
             UserEntity user = userRepository.findByEmail(finder);
             if(user == null){
-                user = new UserEntity();
+                user = new  UserEntity();
+                user.setIdUser(3);
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));

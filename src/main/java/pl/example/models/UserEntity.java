@@ -1,6 +1,7 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
@@ -31,6 +32,7 @@ public class UserEntity {
     private Collection<OpinionEntity> opinionsByIdUser;
     private Collection<OpinionEntity> opinionsByIdUser_0;
     private CityEntity cityByCityIdCity;
+
 
     public UserEntity() {
     }

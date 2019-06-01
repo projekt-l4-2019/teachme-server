@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -22,6 +23,7 @@ import pl.example.service.UserService;
 import javax.jws.soap.SOAPBinding;
 import javax.persistence.GeneratedValue;
 import java.util.Arrays;
+import java.util.Date;
 
 @EnableWebSecurity
 @EnableOAuth2Sso
@@ -61,15 +63,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
             String email2 = (String)map.get("email");
+            Date date = new Date();
             userService.setUserRepository(userRepository);
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
-                user.setIdUser(user.getIdUser());
+                user.setIdUser(3);
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
+                user.setBirthDate((java.sql.Date) date);
                 userService.addUser(user);
             }
             return user;

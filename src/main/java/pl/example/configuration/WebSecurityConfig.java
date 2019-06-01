@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PrincipalExtractor principalExtractor(UserRepository userRepository){
+    public PrincipalExtractor principalExtractor(@Autowired UserRepository userRepository){
         return map -> {
             String finder = (String)map.get("email");
             UserService userService = new UserService();

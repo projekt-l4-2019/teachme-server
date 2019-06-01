@@ -19,6 +19,7 @@ import pl.example.repository.UserRepository;
 import pl.example.service.UserService;
 
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.GeneratedValue;
 import java.util.Arrays;
 
@@ -50,17 +51,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
-            String finder = (String)map.get("email");
-           // UserService userService = new UserService();
-            UserEntity user = userRepository.findByEmail(finder);
+            String email2 = (String)map.get("email");
+            UserService userService = new UserService();
+            UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
-               // userService.addUser(user);
-                userRepository.save(user);
+                userService.addUser(user);
             }
             return user;
         };

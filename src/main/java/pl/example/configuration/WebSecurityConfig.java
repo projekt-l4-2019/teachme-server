@@ -29,6 +29,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final long MAX_AGE_SECS = 3600;
 
+    @Autowired UserService userService;
+
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
@@ -43,7 +45,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/login", "/hello").authenticated().antMatchers("/*").permitAll().and().logout().logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
+        http.authorizeRequests()
+                .antMatchers("/login", "/hello")
+                .authenticated()
+                .antMatchers("/*")
+                .permitAll()
+                .and()
+                .logout()
+                .logoutSuccessUrl("https://accounts.google.com/o/oauth2/v2/auth/exit");
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.csrf().disable();
     }
@@ -52,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
             String email2 = (String)map.get("email");
-            UserService userService = new UserService();
+            userService.setUserRepository(userRepository);
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();

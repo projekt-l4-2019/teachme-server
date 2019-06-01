@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import pl.example.models.UserEntity;
 
 @Repository
-public interface UserRepository extends CrudRepository<UserEntity, Integer> {
+public interface UserRepository extends PagingAndSortingRepository<UserEntity, Integer> {
     UserEntity findByEmail(String email);
 }

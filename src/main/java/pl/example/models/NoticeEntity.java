@@ -13,7 +13,7 @@ public class NoticeEntity {
     private String meetingPlace;
     private Date meetingDate;
     private Double price;
-    //private int level;
+    private int level;
     //private int subjectIdSubject;
     private Character active;
     private Timestamp timestamp;
@@ -35,7 +35,7 @@ public class NoticeEntity {
         this.meetingPlace = meetingPlace;
         this.meetingDate = meetingDate;
         this.price = price;
-        //this.level = level;
+        this.level = level;
         //this.subjectIdSubject = subjectIdSubject;
         this.active = active;
         this.timestamp = timestamp;
@@ -142,7 +142,7 @@ public class NoticeEntity {
         this.timestamp = timestamp;
     }
 
-    /*@Basic
+    @Basic
     @Column(name = "level", nullable = false, length = 127)
     public int getLevel() {
         return level;
@@ -150,7 +150,7 @@ public class NoticeEntity {
 
     public void setLevel(int level) {
         this.level = level;
-    }*/
+    }
 
     @Basic
     @Column(name = "user_id_user", nullable = true,insertable = false, updatable = false)

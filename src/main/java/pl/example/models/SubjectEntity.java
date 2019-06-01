@@ -1,11 +1,13 @@
 package pl.example.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.util.Collection;
 
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "idSubject")
 @Entity
 @Table(name = "subject", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class SubjectEntity {
@@ -87,7 +89,8 @@ public class SubjectEntity {
         this.noticesByIdSubject = noticesByIdSubject;
     }
 
-    @JsonIgnore
+   // @JsonIgnore
+   // @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject")
     public SubjectEntity getSubjectBySubjectIdSubject() {

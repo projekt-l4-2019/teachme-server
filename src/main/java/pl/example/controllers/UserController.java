@@ -15,7 +15,7 @@ public class UserController {
 
     @RequestMapping("/users")
     @CrossOrigin(origins = "*")
-    public List<UserEntity> getAllUser() {
+    public List<UserEntity> getAllNotice() {
         return userService.getAllUser();
     }
 

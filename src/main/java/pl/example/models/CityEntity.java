@@ -10,7 +10,7 @@ import java.util.Collection;
 public class CityEntity {
     private int idCity;
     private String name;
-    private int voivodeshipIdVoivodeship;
+   // private int voivodeshipIdVoivodeship;
     private VoivodeshipEntity voivodeshipByVoivodeshipIdVoivodeship;
     private Collection<UserEntity> usersByIdCity;
 
@@ -35,7 +35,7 @@ public class CityEntity {
         this.name = name;
     }
 
-    @Basic
+    /*@Basic
     @Column(name = "voivodeship_id_voivodeship", nullable = false,insertable = false, updatable = false)
     public int getVoivodeshipIdVoivodeship() {
         return voivodeshipIdVoivodeship;
@@ -44,7 +44,7 @@ public class CityEntity {
     public void setVoivodeshipIdVoivodeship(int voivodeshipIdVoivodeship) {
         this.voivodeshipIdVoivodeship = voivodeshipIdVoivodeship;
     }
-
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,7 +53,7 @@ public class CityEntity {
         CityEntity that = (CityEntity) o;
 
         if (idCity != that.idCity) return false;
-        if (voivodeshipIdVoivodeship != that.voivodeshipIdVoivodeship) return false;
+     //   if (voivodeshipIdVoivodeship != that.voivodeshipIdVoivodeship) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
         return true;
@@ -63,7 +63,7 @@ public class CityEntity {
     public int hashCode() {
         int result = idCity;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + voivodeshipIdVoivodeship;
+       // result = 31 * result + voivodeshipIdVoivodeship;
         return result;
     }
 

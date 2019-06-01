@@ -14,12 +14,26 @@ public class MeetingEntity {
     private String meetingPlace;
     private Date date;
     private Time time;
-    private int subjectIdSubject;
+    private Integer subjectIdSubject;
     private Integer userIdUser;
-    private int meetingCacheIdUserCache;
     private SubjectEntity subjectBySubjectIdSubject;
     private UserEntity userByUserIdUser;
     private Collection<NoticeEntity> noticesByIdMeeting;
+
+    public MeetingEntity() {
+    }
+
+    public MeetingEntity(Integer idMeeting, String meetingPlace, Date date, Time time, Integer subjectIdSubject, Integer userIdUser, SubjectEntity subjectBySubjectIdSubject, UserEntity userByUserIdUser, Collection<NoticeEntity> noticesByIdMeeting) {
+        this.idMeeting = idMeeting;
+        this.meetingPlace = meetingPlace;
+        this.date = date;
+        this.time = time;
+        this.subjectIdSubject = subjectIdSubject;
+        this.userIdUser = userIdUser;
+        this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
+        this.userByUserIdUser = userByUserIdUser;
+        this.noticesByIdMeeting = noticesByIdMeeting;
+    }
 
 
     @Id
@@ -32,6 +46,7 @@ public class MeetingEntity {
     public void setIdMeeting(int idMeeting) {
         this.idMeeting = idMeeting;
     }
+
 
     @Basic
     @Column(name = "meeting_place", nullable = false)
@@ -65,11 +80,11 @@ public class MeetingEntity {
 
     @Basic
     @Column(name = "subject_id_subject", nullable = false,insertable = false, updatable = false)
-    public int getSubjectIdSubject() {
+    public Integer getSubjectIdSubject() {
         return subjectIdSubject;
     }
 
-    public void setSubjectIdSubject(int subjectIdSubject) {
+    public void setSubjectIdSubject(Integer subjectIdSubject) {
         this.subjectIdSubject = subjectIdSubject;
     }
 
@@ -94,7 +109,6 @@ public class MeetingEntity {
         if (idMeeting != that.idMeeting) return false;
         if (meetingPlace != that.meetingPlace) return false;
         if (subjectIdSubject != that.subjectIdSubject) return false;
-        if (meetingCacheIdUserCache != that.meetingCacheIdUserCache) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
         if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
@@ -109,7 +123,6 @@ public class MeetingEntity {
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + subjectIdSubject;
         result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
-        result = 31 * result + meetingCacheIdUserCache;
         return result;
     }
 

@@ -59,7 +59,7 @@ public class UserEntity {
     }
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_user", unique = true, nullable = false)
     public Integer getIdUser() {
         return idUser;

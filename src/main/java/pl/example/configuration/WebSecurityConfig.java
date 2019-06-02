@@ -66,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return map -> {
             String email2 = (String)map.get("email");
             Date date = Date.valueOf(LocalDate.now());
-            userService.setUserRepository(userRepository);
+//            userService.setUserRepository(userRepository);
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
@@ -76,10 +76,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
                 user.setBirthDate(date); // Data urodzenia ustawiona na not null - poprawione w masterze
-//                user.setCityIdCity(null);
-//                user.setIdCity(null);
-                userService.addUser(user);
-//                userRepository.save(user);
+//                userService.addUser(user);
+                userRepository.save(user);
             }
             return user;
         };

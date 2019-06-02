@@ -97,15 +97,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.19/tomcat-embed-core-9.0.19.jar!/org/apache/catalina/core/StandardWrapperValve.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="209" selection-start-line="209" selection-end-line="209" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.19/tomcat-embed-core-9.0.19.jar!/org/apache/catalina/core/StandardContextValve.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
@@ -114,11 +105,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/UserEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+              <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
               <folding>
                 <element signature="e#2471#2472#0" expanded="true" />
                 <element signature="e#2500#2501#0" expanded="true" />
@@ -165,11 +165,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="164">
-              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1123#1124#0" expanded="true" />
@@ -210,7 +210,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="270" lean-forward="true" selection-start-line="270" selection-end-line="270" />
+              <caret line="270" selection-start-line="270" selection-end-line="270" />
               <folding>
                 <element signature="e#4218#4219#0" expanded="true" />
                 <element signature="e#4246#4247#0" expanded="true" />
@@ -234,7 +234,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="60" />
+              <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1789#1790#0" expanded="true" />
@@ -322,11 +322,11 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/example/models/CityEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/VoivodeshipController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/models/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -541,12 +541,12 @@
       <workItem from="1559477368099" duration="339000" />
       <workItem from="1559477794713" duration="511000" />
       <workItem from="1559478654113" duration="10875000" />
-      <workItem from="1559498170668" duration="4531000" />
+      <workItem from="1559498170668" duration="4773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150969000" />
+    <option name="totallyTimeSpent" value="151211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -928,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/MeetingService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1120,7 +1113,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="270" lean-forward="true" selection-start-line="270" selection-end-line="270" />
+          <caret line="270" selection-start-line="270" selection-end-line="270" />
           <folding>
             <element signature="e#4218#4219#0" expanded="true" />
             <element signature="e#4246#4247#0" expanded="true" />
@@ -1133,7 +1126,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/models/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
           <folding>
             <element signature="e#2471#2472#0" expanded="true" />
             <element signature="e#2500#2501#0" expanded="true" />
@@ -1182,7 +1175,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="60" />
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1789#1790#0" expanded="true" />
@@ -1194,12 +1187,19 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/service/NoticeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1123#1124#0" expanded="true" />
             <element signature="e#1168#1169#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
         </state>
       </provider>
     </entry>

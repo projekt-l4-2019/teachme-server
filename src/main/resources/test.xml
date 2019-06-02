@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url">jdbc:postgresql://ec2-174-129-240-67.compute-1.amazonaws.com:5432/d2b6rsc8m7io0b</property>
+    <property name="connection.url">jdbc:postgresql://ec2-50-17-246-114.compute-1.amazonaws.com/d4v1b1ooofegkc</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
       <mapping class="pl.example.models.MeetingEntity"/>
     <mapping class="pl.example.models.NoticeEntity"/>

@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/hello")
+                .antMatchers("/login", "/addnotice")
                 .authenticated()
                 .antMatchers("/*")
                 .permitAll()
@@ -70,6 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
+                user.setIdUser(3);
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));

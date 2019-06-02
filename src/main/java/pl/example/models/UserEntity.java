@@ -59,7 +59,6 @@ public class UserEntity {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user", nullable = false)
     public Integer getIdUser() {
         return idUser;

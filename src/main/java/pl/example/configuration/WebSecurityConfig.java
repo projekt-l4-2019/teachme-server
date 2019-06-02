@@ -66,20 +66,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return map -> {
             String email2 = (String)map.get("email");
             Date date = Date.valueOf(LocalDate.now());
-//            userService.setUserRepository(userRepository);
-            UserEntity user = userRepository.findByEmail(email2);
-            if(user == null){
-                user = new UserEntity();
-                user.setIdUser(3);
-                user.setName((String)map.get("given_name"));
-                user.setSurname((String)map.get("family_name"));
-                user.setEmail((String)map.get("email"));
-                user.setAvatar((String)map.get("picture"));
-                user.setBirthDate(date); // Data urodzenia ustawiona na not null - poprawione w masterze
-//                userService.addUser(user);
-                userRepository.save(user);
+            UserEntity userr = userRepository.findByEmail(email2);
+            if(userr == null){
+                userr = new UserEntity();
+                userr.setIdUser(3);
+                userr.setName((String)map.get("given_name"));
+                userr.setSurname((String)map.get("family_name"));
+                userr.setEmail((String)map.get("email"));
+                userr.setAvatar((String)map.get("picture"));
+                userr.setBirthDate(date); // Data urodzenia ustawiona na not null - poprawione w masterze
+                userRepository.save(userr);
             }
-            return user;
+            return userr;
         };
     }
 }

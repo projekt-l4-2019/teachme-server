@@ -59,7 +59,7 @@ public class UserEntity {
     }
 
     @Id
-    @Column(name = "id_user", nullable = false)
+    @Column(name = "id_user", unique = true, nullable = false)
     public Integer getIdUser() {
         return idUser;
     }

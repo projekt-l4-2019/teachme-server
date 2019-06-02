@@ -14,7 +14,7 @@ public class NoticeEntity {
     private Date meetingDate;
     private Double price;
     private int level;
-    //private int subjectIdSubject;
+    private int subjectIdSubject;
     private Character active;
     private Timestamp timestamp;
     private Integer userIdUser;
@@ -36,7 +36,7 @@ public class NoticeEntity {
         this.meetingDate = meetingDate;
         this.price = price;
         this.level = level;
-        //this.subjectIdSubject = subjectIdSubject;
+        this.subjectIdSubject = subjectIdSubject;
         this.active = active;
         this.timestamp = timestamp;
         this.userIdUser = userIdUser;
@@ -111,7 +111,7 @@ public class NoticeEntity {
 
 
 
-   /*@Basic
+   @Basic
    @GeneratedValue
     @Column(name = "subject_id_subject", nullable = false,insertable = false, updatable = false)
     public int getSubjectIdSubject() {
@@ -120,7 +120,7 @@ public class NoticeEntity {
 
     public void setSubjectIdSubject(int subjectIdSubject) {
         this.subjectIdSubject = subjectIdSubject;
-    }*/
+    }
 
     @Basic
     @Column(name = "active", nullable = false, length = -1)
@@ -236,6 +236,7 @@ public class NoticeEntity {
 
    // @JsonBackReference(value = "subjectBySubjectIdSubject")
     @ManyToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject", nullable = false)
     public SubjectEntity getSubjectBySubjectIdSubject() {
         return subjectBySubjectIdSubject;
@@ -246,6 +247,7 @@ public class NoticeEntity {
     }
 
     @ManyToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "user_id_user", referencedColumnName = "id_user")
     public UserEntity getUserByUserIdUser() {
         return userByUserIdUser;

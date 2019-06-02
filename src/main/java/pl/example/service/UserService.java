@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.example.controllers.OpinionController;
 import pl.example.models.CityEntity;
+import pl.example.models.NoticeEntity;
 import pl.example.models.OpinionEntity;
 import pl.example.models.UserEntity;
 import pl.example.repository.CityRepository;
@@ -23,33 +24,32 @@ public class UserService {
     @Autowired
     private CityRepository cityRepository;
     @Autowired
-    private VoivodeshipRepository voivodeshipRepository;
-    @Autowired
     private OpinionRepository opinionRepository;
 
 
     public List<UserEntity> getAllUser() {
-        UserEntity us;
-        List<CityEntity> city = new ArrayList<>();
         List<UserEntity> user = new ArrayList<>();
-        cityRepository.findAll().forEach(city::add);
         userRepository.findAll().forEach(user::add);
         for(int i=1;i<=user.size();i++) {
             UserEntity ne = userRepository.findById(i).get();
+            ne.setNoticesByIdUser(null);
             int id_city_temp = ne.getCityIdCity();
             CityEntity ci = cityRepository.findById(id_city_temp).get();
             ci.setVoivodeshipByVoivodeshipIdVoivodeship(null);
         }
-
         return user;
     }
 
     public UserEntity getUser(Integer id) {
-       UserEntity ne = userRepository.findById(id).get();
-        int id_city_temp = ne.getCityIdCity();
+        OpinionEntity opi = opinionRepository.findById(id).get();
+        opi.setUserByUserFrom(null);
+        opi.setUserByUserTo(null);
+       UserEntity user = userRepository.findById(id).get();
+        int id_city_temp = user.getCityIdCity();
+        user.setMeetingsByIdUser(null);
         CityEntity city = cityRepository.findById(id_city_temp).get();
         city.setVoivodeshipByVoivodeshipIdVoivodeship(null);
-        return ne;
+        return user;
     }
 
     public void addUser(UserEntity user) {

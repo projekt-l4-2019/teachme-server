@@ -1,6 +1,8 @@
 package pl.example.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
@@ -8,6 +10,9 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Collection;
 
+/*@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "idUser")*/
 @Entity
 @Table(name = "userr", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class UserEntity {
@@ -259,7 +264,7 @@ public class UserEntity {
         this.opinionsByIdUser = opinionsByIdUser;
     }
 
-    @JsonIgnore
+   // @JsonIgnore
     @OneToMany(mappedBy = "userByUserFrom")
     public Collection<OpinionEntity> getOpinionsByIdUser_0() {
         return opinionsByIdUser_0;
@@ -268,6 +273,7 @@ public class UserEntity {
     public void setOpinionsByIdUser_0(Collection<OpinionEntity> opinionsByIdUser_0) {
         this.opinionsByIdUser_0 = opinionsByIdUser_0;
     }
+
 
     @ManyToOne
     @JoinColumn(name = "city_id_city", referencedColumnName = "id_city")

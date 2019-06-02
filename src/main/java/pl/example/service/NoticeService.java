@@ -3,7 +3,9 @@ package pl.example.service;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
+        import pl.example.models.UserEntity;
         import pl.example.repository.NoticeRepository;
+        import pl.example.repository.UserRepository;
 
         import java.util.ArrayList;
         import java.util.List;
@@ -15,6 +17,8 @@ public class NoticeService {
 
     @Autowired
     private NoticeRepository noticeRepository;
+    @Autowired
+    private UserRepository userRepository;
 
 
     public List<NoticeEntity> getAllNotice() {
@@ -25,6 +29,9 @@ public class NoticeService {
 
     public NoticeEntity getNotice(Integer id) {
         NoticeEntity ne = noticeRepository.findById(id).get();
+        UserEntity user = userRepository.findById(id).get();
+        user.setLogin(null);
+        user.setPassword(null);
         ne.setUserByUserIdUser(null);
         return ne;
     }

@@ -17,13 +17,13 @@ public class VoivodeshipController {
 
     @RequestMapping("/voivodeships")
     @CrossOrigin(origins = "*")
-    public List<VoivodeshipEntity> getAllNotice() {
+    public List<VoivodeshipEntity> getAllVoivodeship() {
         return voivodeshipService.getAllVoivodeship();
     }
 
     @RequestMapping("/voivodeships/{id}")
     @CrossOrigin(origins = "*")
-    public VoivodeshipEntity getNotice(@PathVariable Integer id) {
+    public VoivodeshipEntity getVoivodeship(@PathVariable Integer id) {
         return voivodeshipService.getVoivodeship(id);
     }
 

@@ -10,9 +10,9 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Collection;
 
-/*@JsonIdentityInfo(
+@JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "idUser")*/
+        property = "idUser")
 @Entity
 @Table(name = "userr", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class UserEntity {
@@ -161,8 +161,6 @@ public class UserEntity {
     }
 
     @Basic
-    @GeneratedValue
-    @Value("1")
     @Column(name = "city_id_city", nullable = true, insertable = false, updatable = false)
     public int getCityIdCity() {
         return cityIdCity;
@@ -234,7 +232,7 @@ public class UserEntity {
         return result;
     }
 
-    @JsonIgnore
+  //  @JsonIgnore
     @OneToMany(mappedBy = "userByUserIdUser")
     public Collection<MeetingEntity> getMeetingsByIdUser() {
         return meetingsByIdUser;
@@ -244,7 +242,7 @@ public class UserEntity {
         this.meetingsByIdUser = meetingsByIdUser;
     }
 
-    @JsonIgnore
+   // @JsonIgnore
     @OneToMany(mappedBy = "userByUserIdUser")
     public Collection<NoticeEntity> getNoticesByIdUser() {
         return noticesByIdUser;
@@ -254,7 +252,7 @@ public class UserEntity {
         this.noticesByIdUser = noticesByIdUser;
     }
 
-    @JsonIgnore
+   // @JsonIgnore
     @OneToMany(mappedBy = "userByUserTo")
     public Collection<OpinionEntity> getOpinionsByIdUser() {
         return opinionsByIdUser;

@@ -15,25 +15,25 @@ public class UserController {
 
     @RequestMapping("/users")
     @CrossOrigin(origins = "*")
-    public List<UserEntity> getAllNotice() {
+    public List<UserEntity> getAllUser() {
         return userService.getAllUser();
     }
 
     @RequestMapping("/users/{id}")
     @CrossOrigin(origins = "*")
-    public UserEntity getNotice(@PathVariable Integer id) {
+    public UserEntity getUser(@PathVariable Integer id) {
         return userService.getUser(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/users")
     @CrossOrigin(origins = "*")
-    public void addNotice(@RequestBody UserEntity user) {
+    public void addUser(@RequestBody UserEntity user) {
         userService.addUser(user);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/users/{id}")
     @CrossOrigin(origins = "*")
-    public void updateNotice(@RequestBody UserEntity user, @PathVariable Integer id) {
+    public void updateUser(@RequestBody UserEntity user, @PathVariable Integer id) {
         userService.updateUser(id, user);
     }
 

@@ -256,7 +256,9 @@ public class NoticeEntity {
     }
 
     //@JsonBackReference(value = "meetingByMeetingIdMeeting")
+
     @ManyToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "meeting_id_meeting", referencedColumnName = "id_meeting", nullable = false)
     public MeetingEntity getMeetingByMeetingIdMeeting() {
         return meetingByMeetingIdMeeting;

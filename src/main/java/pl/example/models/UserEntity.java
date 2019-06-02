@@ -24,9 +24,9 @@ public class UserEntity {
     private String email;
     private Timestamp timesstamp;
     private String password;
-    private int cityIdCity;
+    private Integer cityIdCity;
     private String about;
-    private int idCity;
+    private Integer idCity;
     private Collection<MeetingEntity> meetingsByIdUser;
     private Collection<NoticeEntity> noticesByIdUser;
     private Collection<OpinionEntity> opinionsByIdUser;
@@ -164,11 +164,11 @@ public class UserEntity {
     @GeneratedValue
     @Value("1")
     @Column(name = "city_id_city", nullable = true, insertable = false, updatable = false)
-    public int getCityIdCity() {
+    public Integer getCityIdCity() {
         return cityIdCity;
     }
 
-    public void setCityIdCity(int cityIdCity) {
+    public void setCityIdCity(Integer cityIdCity) {
         this.cityIdCity = cityIdCity;
     }
 
@@ -184,11 +184,11 @@ public class UserEntity {
 
     @Basic
     @Column(name = "id_city", nullable = true)
-    public int getIdCity() {
+    public Integer getIdCity() {
         return idCity;
     }
 
-    public void setIdCity(int idCity) {
+    public void setIdCity(Integer idCity) {
         this.idCity = idCity;
     }
 

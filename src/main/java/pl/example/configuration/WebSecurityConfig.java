@@ -32,7 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final long MAX_AGE_SECS = 3600;
 
-    @Autowired UserService userService;
+    @Autowired
+    UserService userService;
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
@@ -69,12 +70,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
+                user.setIdUser(5);
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));
                 user.setAvatar((String)map.get("picture"));
                 user.setBirthDate(date); // Data urodzenia ustawiona na not null - poprawione w masterze
+//                user.setCityIdCity(null);
+//                user.setIdCity(null);
                 userService.addUser(user);
+//                userRepository.save(user);
             }
             return user;
         };

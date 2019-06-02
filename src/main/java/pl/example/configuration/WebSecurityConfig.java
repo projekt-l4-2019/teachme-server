@@ -65,11 +65,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return map -> {
             String email2 = (String)map.get("email");
             Date date = Date.valueOf(LocalDate.now());
+            Integer id = 10;
             userService.setUserRepository(userRepository);
             UserEntity user = userRepository.findByEmail(email2);
             if(user == null){
                 user = new UserEntity();
-                user.setIdUser(3);
+                user.setIdUser(id);
                 user.setName((String)map.get("given_name"));
                 user.setSurname((String)map.get("family_name"));
                 user.setEmail((String)map.get("email"));

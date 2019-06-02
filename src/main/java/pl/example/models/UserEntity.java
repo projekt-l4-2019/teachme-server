@@ -14,7 +14,7 @@ import java.util.Collection;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUser;
+    private int idUser;
     private String login;
     private String name;
     private String surname;
@@ -37,7 +37,7 @@ public class UserEntity {
     public UserEntity() {
     }
 
-    public UserEntity(Integer idUser, String login, String name, String surname, Date birthDate, String avatar, String phone, String email, Timestamp timesstamp, String password, int cityIdCity, String about, int idCity, Collection<MeetingEntity> meetingsByIdUser, Collection<NoticeEntity> noticesByIdUser, Collection<OpinionEntity> opinionsByIdUser, Collection<OpinionEntity> opinionsByIdUser_0, CityEntity cityByCityIdCity) {
+    public UserEntity(int idUser, String login, String name, String surname, Date birthDate, String avatar, String phone, String email, Timestamp timesstamp, String password, int cityIdCity, String about, int idCity, Collection<MeetingEntity> meetingsByIdUser, Collection<NoticeEntity> noticesByIdUser, Collection<OpinionEntity> opinionsByIdUser, Collection<OpinionEntity> opinionsByIdUser_0, CityEntity cityByCityIdCity) {
         this.idUser = idUser;
         this.login = login;
         this.name = name;
@@ -61,12 +61,12 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user", unique = true, nullable = false)
-    public Integer getIdUser() {
+    public int getIdUser() {
         return idUser;
     }
 
 
-    public void setIdUser(Integer idUser) {
+    public void setIdUser(int idUser) {
         this.idUser = idUser;
     }
 

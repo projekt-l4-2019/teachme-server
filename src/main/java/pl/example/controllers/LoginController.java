@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//@RestController
-//public class LoginController {
-//
+@RestController
+public class LoginController {
+
 //    @RequestMapping("/login")
 //    @CrossOrigin(origins = "*")
 //    public String login()
@@ -31,5 +31,5 @@ import java.io.IOException;
 //            e.printStackTrace();
 //        }
 //    }
-//}
 }
+

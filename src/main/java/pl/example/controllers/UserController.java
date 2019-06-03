@@ -2,7 +2,7 @@ package pl.example.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.example.models.UserEntity;
+import pl.example.models.UserrEntity;
 import pl.example.service.UserService;
 
 import java.util.List;
@@ -15,25 +15,25 @@ public class UserController {
 
     @RequestMapping("/users")
     @CrossOrigin(origins = "*")
-    public List<UserEntity> getAllUser() {
+    public List<UserrEntity> getAllUser() {
         return userService.getAllUser();
     }
 
     @RequestMapping("/users/{id}")
     @CrossOrigin(origins = "*")
-    public UserEntity getNotice(@PathVariable Integer id) {
+    public UserrEntity getUser(@PathVariable Integer id) {
         return userService.getUser(id);
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/users")
     @CrossOrigin(origins = "*")
-    public void addNotice(@RequestBody UserEntity user) {
+    public void addUser(@RequestBody UserrEntity user) {
         userService.addUser(user);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value="/users/{id}")
     @CrossOrigin(origins = "*")
-    public void updateNotice(@RequestBody UserEntity user, @PathVariable Integer id) {
+    public void updateUser(@RequestBody UserrEntity user, @PathVariable Integer id) {
         userService.updateUser(id, user);
     }
 

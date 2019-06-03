@@ -10,11 +10,11 @@ public class OpinionEntity {
     private String comment;
     private Integer userTo;
     private Integer userFrom;
-    private UserEntity userByUserTo;
-    private UserEntity userByUserFrom;
+    private UserrEntity userrByUserTo;
+    private UserrEntity userrByUserFrom;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_opinion", nullable = false)
     public int getIdOpinion() {
         return idOpinion;
@@ -45,7 +45,7 @@ public class OpinionEntity {
     }
 
     @Basic
-    @Column(name = "user_to", nullable = true, insertable = false, updatable = false)
+    @Column(name = "user_to", nullable = true,insertable=false, updatable=false)
     public Integer getUserTo() {
         return userTo;
     }
@@ -55,7 +55,7 @@ public class OpinionEntity {
     }
 
     @Basic
-    @Column(name = "user_from", nullable = true, insertable = false, updatable = false)
+    @Column(name = "user_from", nullable = true,insertable=false, updatable=false)
     public Integer getUserFrom() {
         return userFrom;
     }
@@ -92,21 +92,21 @@ public class OpinionEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_to", referencedColumnName = "id_user")
-    public UserEntity getUserByUserTo() {
-        return userByUserTo;
+    public UserrEntity getUserrByUserTo() {
+        return userrByUserTo;
     }
 
-    public void setUserByUserTo(UserEntity userByUserTo) {
-        this.userByUserTo = userByUserTo;
+    public void setUserrByUserTo(UserrEntity userrByUserTo) {
+        this.userrByUserTo = userrByUserTo;
     }
 
     @ManyToOne
     @JoinColumn(name = "user_from", referencedColumnName = "id_user")
-    public UserEntity getUserByUserFrom() {
-        return userByUserFrom;
+    public UserrEntity getUserrByUserFrom() {
+        return userrByUserFrom;
     }
 
-    public void setUserByUserFrom(UserEntity userByUserFrom) {
-        this.userByUserFrom = userByUserFrom;
+    public void setUserrByUserFrom(UserrEntity userrByUserFrom) {
+        this.userrByUserFrom = userrByUserFrom;
     }
 }

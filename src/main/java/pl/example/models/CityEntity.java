@@ -12,10 +12,10 @@ public class CityEntity {
     private String name;
     private int voivodeshipIdVoivodeship;
     private VoivodeshipEntity voivodeshipByVoivodeshipIdVoivodeship;
-    private Collection<UserEntity> usersByIdCity;
+    private Collection<UserrEntity> userrsByIdCity;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_city", nullable = false)
     public int getIdCity() {
         return idCity;
@@ -36,7 +36,7 @@ public class CityEntity {
     }
 
     @Basic
-    @Column(name = "voivodeship_id_voivodeship", nullable = false,insertable = false, updatable = false)
+    @Column(name = "voivodeship_id_voivodeship", nullable = false, insertable=false, updatable=false)
     public int getVoivodeshipIdVoivodeship() {
         return voivodeshipIdVoivodeship;
     }
@@ -79,11 +79,11 @@ public class CityEntity {
 
     @JsonIgnore
     @OneToMany(mappedBy = "cityByCityIdCity")
-    public Collection<UserEntity> getUsersByIdCity() {
-        return usersByIdCity;
+    public Collection<UserrEntity> getUserrsByIdCity() {
+        return userrsByIdCity;
     }
 
-    public void setUsersByIdCity(Collection<UserEntity> usersByIdCity) {
-        this.usersByIdCity = usersByIdCity;
+    public void setUserrsByIdCity(Collection<UserrEntity> userrsByIdCity) {
+        this.userrsByIdCity = userrsByIdCity;
     }
 }

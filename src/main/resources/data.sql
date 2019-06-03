@@ -1,0 +1,1 @@
+insert into voivodeship(id_voivodeship, name_voivodeship) VALUES (1, 'aaa')

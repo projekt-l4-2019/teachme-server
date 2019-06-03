@@ -1,6 +1,5 @@
 package pl.example.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
 import org.springframework.context.annotation.Bean;
@@ -9,19 +8,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import pl.example.models.UserEntity;
+import pl.example.models.UserrEntity;
 import pl.example.repository.UserRepository;
-import pl.example.service.UserService;
 
 
-import javax.jws.soap.SOAPBinding;
-import javax.persistence.GeneratedValue;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -31,9 +26,6 @@ import java.util.Arrays;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final long MAX_AGE_SECS = 3600;
-
-    @Autowired
-    UserService userService;
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
@@ -50,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login", "/addnotice")
+                .antMatchers("/profileedit", "/addnotice", "/contact", "/addopinion", "/login")
                 .authenticated()
                 .antMatchers("/*")
                 .permitAll()
@@ -64,16 +56,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PrincipalExtractor principalExtractor(UserRepository userRepository){
         return map -> {
-            String email2 = (String)map.get("email");
-            Date date = Date.valueOf(LocalDate.now());
-            UserEntity userr = userRepository.findByEmail(email2);
+            String email = (String)map.get("email");
+            UserrEntity userr = userRepository.findByEmail(email);
             if(userr == null){
-                userr = new UserEntity();
+                userr = new UserrEntity();
                 userr.setName((String)map.get("given_name"));
                 userr.setSurname((String)map.get("family_name"));
                 userr.setEmail((String)map.get("email"));
                 userr.setAvatar((String)map.get("picture"));
-                userr.setBirthDate(date); // Data urodzenia ustawiona na not null - poprawione w masterze
                 userRepository.save(userr);
             }
             return userr;

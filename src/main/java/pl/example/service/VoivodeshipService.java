@@ -22,7 +22,8 @@ public class VoivodeshipService {
     }
 
     public VoivodeshipEntity getVoivodeship(Integer id) {
-        return voivodeshipRepositoryv.findById(id).get();
+        VoivodeshipEntity voivo = voivodeshipRepositoryv.findById(id).get();
+        return voivo;
     }
 
     public void addVoivodeship(VoivodeshipEntity voivodeship) {

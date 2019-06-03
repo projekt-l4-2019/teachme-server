@@ -3,7 +3,6 @@ package pl.example.service;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
-        import pl.example.models.UserEntity;
         import pl.example.repository.NoticeRepository;
         import pl.example.repository.UserRepository;
 
@@ -23,17 +22,25 @@ public class NoticeService {
     public List<NoticeEntity> getAllNotice() {
         List<NoticeEntity> notices = new ArrayList<>();
         noticeRepository.findAll().forEach(notices::add);
-        List<UserEntity> user = new ArrayList<>();
-        userRepository.findAll().forEach(user::add);
-        for(int i=1;i<=user.size();i++) {
-            UserEntity ne = userRepository.findById(i).get();
+       /* List<UserEntity> user = new ArrayList<>();
+        userRepository.findAll().forEach(user::add);*/
+        for(int i=1;i<=100;i++) {
+           // NoticeEntity ne = noticeRepository.findById(i).get();
+          /*  ne.getUserByUserIdUser().setOpinionsByIdUser(null);
+            ne.getUserByUserIdUser().setOpinionsByIdUser_0(null);
+            ne.getUserByUserIdUser().setNoticesByIdUser(null);
+            ne.getUserByUserIdUser().setCityByCityIdCity(null);
+            ne.getUserByUserIdUser().setMeetingsByIdUser(null);
+            ne.getUserByUserIdUser().setPassword(null);
+            ne.getUserByUserIdUser().setLogin(null);*/
+         /*   UserEntity ne = userRepository.findById(i).get();
             ne.setCityByCityIdCity(null);
             ne.setMeetingsByIdUser(null);
             ne.setOpinionsByIdUser(null);
             ne.setOpinionsByIdUser_0(null);
             ne.setNoticesByIdUser(null);
             ne.setLogin(null);
-            ne.setPassword(null);
+            ne.setPassword(null);*/
         }
         return notices;
     }
@@ -41,16 +48,14 @@ public class NoticeService {
     public NoticeEntity getNotice(Integer id) {
 
         NoticeEntity ne = noticeRepository.findById(id).get();
-       int id_notice_user = ne.getUserIdUser();
-        UserEntity user = userRepository.findById(id_notice_user).get();
-        user.setCityByCityIdCity(null);
-        user.setMeetingsByIdUser(null);
-        user.setOpinionsByIdUser(null);
-        user.setOpinionsByIdUser_0(null);
-        user.setNoticesByIdUser(null);
-        user.setLogin(null);
-        user.setPassword(null);
-        ne.setMeetingByMeetingIdMeeting(null);
+      /*  ne.getUserByUserIdUser().setOpinionsByIdUser(null);
+        ne.getUserByUserIdUser().setOpinionsByIdUser_0(null);
+        ne.getUserByUserIdUser().setNoticesByIdUser(null);
+        ne.getUserByUserIdUser().setCityByCityIdCity(null);
+        ne.getUserByUserIdUser().setMeetingsByIdUser(null);
+        ne.getUserByUserIdUser().setPassword(null);
+        ne.getUserByUserIdUser().setLogin(null);*/
+
         return ne;
     }
 

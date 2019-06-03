@@ -3,69 +3,48 @@ package pl.example.models;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Collection;
 
 @Entity
 @Table(name = "notice", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class NoticeEntity {
-    private Integer idNotice;
-    private Character lookOrOffer;
+    private int idNotice;
+    private String lookOrOffer;
     private String note;
     private String meetingPlace;
     private Date meetingDate;
     private Double price;
-    private int level;
     private int subjectIdSubject;
-    private Character active;
+    private String active;
     private Timestamp timestamp;
-    private Integer userIdUser;
+    private Integer userrIdUser;
     private Timestamp timeFrom;
     private Timestamp timeTo;
-    //private int meetingIdMeeting;
+    private Integer level;
+    private Integer userIdUser;
+    private int meetingIdMeeting;
+    private Collection<MeetingEntity> meetingsByIdNotice;
     private SubjectEntity subjectBySubjectIdSubject;
-    private UserEntity userByUserIdUser;
-    private MeetingEntity meetingByMeetingIdMeeting;
-
-    public NoticeEntity() {
-    }
-
-    public NoticeEntity(Integer idNotice, Character lookOrOffer, String note, String meetingPlace, Date meetingDate, Double price, int level, int subjectIdSubject, Character active, Timestamp timestamp, Integer userIdUser, Timestamp timeFrom, Timestamp timeTo, int meetingIdMeeting, SubjectEntity subjectBySubjectIdSubject, UserEntity userByUserIdUser, MeetingEntity meetingByMeetingIdMeeting) {
-        this.idNotice = idNotice;
-        this.lookOrOffer = lookOrOffer;
-        this.note = note;
-        this.meetingPlace = meetingPlace;
-        this.meetingDate = meetingDate;
-        this.price = price;
-        this.level = level;
-        this.subjectIdSubject = subjectIdSubject;
-        this.active = active;
-        this.timestamp = timestamp;
-        this.userIdUser = userIdUser;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
-        //this.meetingIdMeeting = meetingIdMeeting;
-        this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
-        this.userByUserIdUser = userByUserIdUser;
-        this.meetingByMeetingIdMeeting = meetingByMeetingIdMeeting;
-    }
+    private UserrEntity userrByUserrIdUser;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_notice", nullable = false)
-    public Integer getIdNotice() {
+    public int getIdNotice() {
         return idNotice;
     }
 
-    public void setIdNotice(Integer idNotice) {
+    public void setIdNotice(int idNotice) {
         this.idNotice = idNotice;
     }
 
     @Basic
-    @Column(name = "look_or_offer", nullable = false, length = -1)
-    public Character getLookOrOffer() {
+    @Column(name = "look_or_offer", nullable = true, length = -1)
+    public String getLookOrOffer() {
         return lookOrOffer;
     }
 
-    public void setLookOrOffer(Character lookOrOffer) {
+    public void setLookOrOffer(String lookOrOffer) {
         this.lookOrOffer = lookOrOffer;
     }
 
@@ -109,11 +88,8 @@ public class NoticeEntity {
         this.price = price;
     }
 
-
-
-   @Basic
-   @GeneratedValue
-    @Column(name = "subject_id_subject", nullable = false,insertable = false, updatable = false)
+    @Basic
+    @Column(name = "subject_id_subject", nullable = false, insertable=false, updatable=false)
     public int getSubjectIdSubject() {
         return subjectIdSubject;
     }
@@ -124,11 +100,11 @@ public class NoticeEntity {
 
     @Basic
     @Column(name = "active", nullable = false, length = -1)
-    public Character getActive() {
+    public String getActive() {
         return active;
     }
 
-    public void setActive(Character active) {
+    public void setActive(String active) {
         this.active = active;
     }
 
@@ -143,27 +119,17 @@ public class NoticeEntity {
     }
 
     @Basic
-    @Column(name = "level", nullable = false, length = 127)
-    public int getLevel() {
-        return level;
+    @Column(name = "userr_id_user", nullable = true,insertable=false, updatable=false)
+    public Integer getUserrIdUser() {
+        return userrIdUser;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    @Basic
-    @Column(name = "user_id_user", nullable = true,insertable = false, updatable = false)
-    public Integer getUserIdUser() {
-        return userIdUser;
-    }
-
-    public void setUserIdUser(Integer userIdUser) {
-        this.userIdUser = userIdUser;
+    public void setUserrIdUser(Integer userrIdUser) {
+        this.userrIdUser = userrIdUser;
     }
 
     @Basic
-    @Column(name = "time_from", nullable = true, precision = 0)
+    @Column(name = "time_from", nullable = true)
     public Timestamp getTimeFrom() {
         return timeFrom;
     }
@@ -173,7 +139,7 @@ public class NoticeEntity {
     }
 
     @Basic
-    @Column(name = "time_to", nullable = true, precision = 0)
+    @Column(name = "time_to", nullable = true)
     public Timestamp getTimeTo() {
         return timeTo;
     }
@@ -182,15 +148,35 @@ public class NoticeEntity {
         this.timeTo = timeTo;
     }
 
-    /*@Basic
-    @Column(name = "meeting_id_meeting", nullable = false, insertable = false, updatable = false)
+    @Basic
+    @Column(name = "level", nullable = true)
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    @Basic
+    @Column(name = "user_id_user", nullable = true, insertable=false, updatable=false)
+    public Integer getUserIdUser() {
+        return userIdUser;
+    }
+
+    public void setUserIdUser(Integer userIdUser) {
+        this.userIdUser = userIdUser;
+    }
+
+    @Basic
+    @Column(name = "meeting_id_meeting", nullable = false,insertable=false, updatable=false)
     public int getMeetingIdMeeting() {
         return meetingIdMeeting;
     }
 
     public void setMeetingIdMeeting(int meetingIdMeeting) {
         this.meetingIdMeeting = meetingIdMeeting;
-    }*/
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -200,8 +186,8 @@ public class NoticeEntity {
         NoticeEntity that = (NoticeEntity) o;
 
         if (idNotice != that.idNotice) return false;
-        //if (subjectIdSubject != that.subjectIdSubject) return false;
-        //if (meetingIdMeeting != that.meetingIdMeeting) return false;
+        if (subjectIdSubject != that.subjectIdSubject) return false;
+        if (meetingIdMeeting != that.meetingIdMeeting) return false;
         if (lookOrOffer != null ? !lookOrOffer.equals(that.lookOrOffer) : that.lookOrOffer != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (meetingPlace != null ? !meetingPlace.equals(that.meetingPlace) : that.meetingPlace != null) return false;
@@ -209,9 +195,11 @@ public class NoticeEntity {
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
         if (active != null ? !active.equals(that.active) : that.active != null) return false;
         if (timestamp != null ? !timestamp.equals(that.timestamp) : that.timestamp != null) return false;
-        if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
+        if (userrIdUser != null ? !userrIdUser.equals(that.userrIdUser) : that.userrIdUser != null) return false;
         if (timeFrom != null ? !timeFrom.equals(that.timeFrom) : that.timeFrom != null) return false;
         if (timeTo != null ? !timeTo.equals(that.timeTo) : that.timeTo != null) return false;
+        if (level != null ? !level.equals(that.level) : that.level != null) return false;
+        if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
 
         return true;
     }
@@ -224,19 +212,28 @@ public class NoticeEntity {
         result = 31 * result + (meetingPlace != null ? meetingPlace.hashCode() : 0);
         result = 31 * result + (meetingDate != null ? meetingDate.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
-        //result = 31 * result + subjectIdSubject;
+        result = 31 * result + subjectIdSubject;
         result = 31 * result + (active != null ? active.hashCode() : 0);
         result = 31 * result + (timestamp != null ? timestamp.hashCode() : 0);
-        result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
+        result = 31 * result + (userrIdUser != null ? userrIdUser.hashCode() : 0);
         result = 31 * result + (timeFrom != null ? timeFrom.hashCode() : 0);
         result = 31 * result + (timeTo != null ? timeTo.hashCode() : 0);
-        //result = 31 * result + meetingIdMeeting;
+        result = 31 * result + (level != null ? level.hashCode() : 0);
+        result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
+        result = 31 * result + meetingIdMeeting;
         return result;
     }
 
-   // @JsonBackReference(value = "subjectBySubjectIdSubject")
+    @OneToMany(mappedBy = "noticeByNoticeIdNotice")
+    public Collection<MeetingEntity> getMeetingsByIdNotice() {
+        return meetingsByIdNotice;
+    }
+
+    public void setMeetingsByIdNotice(Collection<MeetingEntity> meetingsByIdNotice) {
+        this.meetingsByIdNotice = meetingsByIdNotice;
+    }
+
     @ManyToOne
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject", nullable = false)
     public SubjectEntity getSubjectBySubjectIdSubject() {
         return subjectBySubjectIdSubject;
@@ -247,26 +244,12 @@ public class NoticeEntity {
     }
 
     @ManyToOne
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "user_id_user", referencedColumnName = "id_user")
-    public UserEntity getUserByUserIdUser() {
-        return userByUserIdUser;
+    @JoinColumn(name = "userr_id_user", referencedColumnName = "id_user")
+    public UserrEntity getUserrByUserrIdUser() {
+        return userrByUserrIdUser;
     }
 
-    public void setUserByUserIdUser(UserEntity userByUserIdUser) {
-        this.userByUserIdUser = userByUserIdUser;
-    }
-
-    //@JsonBackReference(value = "meetingByMeetingIdMeeting")
-
-    @ManyToOne
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "meeting_id_meeting", referencedColumnName = "id_meeting", nullable = false)
-    public MeetingEntity getMeetingByMeetingIdMeeting() {
-        return meetingByMeetingIdMeeting;
-    }
-
-    public void setMeetingByMeetingIdMeeting(MeetingEntity meetingByMeetingIdMeeting) {
-        this.meetingByMeetingIdMeeting = meetingByMeetingIdMeeting;
+    public void setUserrByUserrIdUser(UserrEntity userrByUserrIdUser) {
+        this.userrByUserrIdUser = userrByUserrIdUser;
     }
 }

@@ -3,16 +3,11 @@ package pl.example.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.example.controllers.OpinionController;
-import pl.example.models.CityEntity;
-import pl.example.models.NoticeEntity;
-import pl.example.models.OpinionEntity;
-import pl.example.models.UserEntity;
-import pl.example.repository.CityRepository;
-import pl.example.repository.OpinionRepository;
-import pl.example.repository.UserRepository;
-import pl.example.repository.VoivodeshipRepository;
+import pl.example.models.*;
+import pl.example.repository.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -25,39 +20,50 @@ public class UserService {
     private CityRepository cityRepository;
     @Autowired
     private OpinionRepository opinionRepository;
+    @Autowired
+    private NoticeRepository noticeRepository;
+    @Autowired
+    private MeetingRepository meetingRepository;
 
 
-    public List<UserEntity> getAllUser() {
-        List<UserEntity> user = new ArrayList<>();
+    public List<UserrEntity> getAllUser() {
+       /* List<MeetingEntity> meeting = new ArrayList<>();
+        meetingRepository.findAll().forEach(meeting::add);
+        meeting.clear();*/
+        List<UserrEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
         for(int i=1;i<=user.size();i++) {
-            UserEntity ne = userRepository.findById(i).get();
+            UserrEntity ne = userRepository.findById(i).get();
             ne.setNoticesByIdUser(null);
+            /*OpinionEntity opi = opinionRepository.findById(i).get();
+            opi.setUserByUserFrom(null);
+            opi.setUserByUserTo(null);*/
             int id_city_temp = ne.getCityIdCity();
             CityEntity ci = cityRepository.findById(id_city_temp).get();
             ci.setVoivodeshipByVoivodeshipIdVoivodeship(null);
         }
+
+
         return user;
     }
 
-    public UserEntity getUser(Integer id) {
+    public UserrEntity getUser(Integer id) {
+        UserrEntity user = userRepository.findById(id).get();
+        user.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
         OpinionEntity opi = opinionRepository.findById(id).get();
-        opi.setUserByUserFrom(null);
-        opi.setUserByUserTo(null);
-       UserEntity user = userRepository.findById(id).get();
-        int id_city_temp = user.getCityIdCity();
+      //  opi.setUserByUserFrom(null);
+       // opi.setUserByUserTo(null);
         user.setMeetingsByIdUser(null);
-        CityEntity city = cityRepository.findById(id_city_temp).get();
-        city.setVoivodeshipByVoivodeshipIdVoivodeship(null);
+
         return user;
     }
 
-    public void addUser(UserEntity user) {
+    public void addUser(UserrEntity user) {
         userRepository.save(user);
     }
 
 
-    public void updateUser(Integer id, UserEntity user) {
+    public void updateUser(Integer id, UserrEntity user) {
         userRepository.save(user);
     }
 

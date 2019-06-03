@@ -1,7 +1,6 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -18,7 +17,7 @@ public class VoivodeshipEntity {
     private Collection<CityEntity> citiesByIdVoivodeship;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_voivodeship", nullable = false)
     public int getIdVoivodeship() {
         return idVoivodeship;
@@ -59,7 +58,6 @@ public class VoivodeshipEntity {
         return result;
     }
 
-   // @JsonIgnore
     @OneToMany(mappedBy = "voivodeshipByVoivodeshipIdVoivodeship")
     public Collection<CityEntity> getCitiesByIdVoivodeship() {
         return citiesByIdVoivodeship;

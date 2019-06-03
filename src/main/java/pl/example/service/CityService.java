@@ -3,7 +3,9 @@ package pl.example.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.example.models.CityEntity;
+import pl.example.models.VoivodeshipEntity;
 import pl.example.repository.CityRepository;
+import pl.example.repository.VoivodeshipRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,8 @@ public class CityService {
 
     @Autowired
     private CityRepository cityRepository;
+    @Autowired
+    private VoivodeshipRepository voivodeshipRepository;
 
 
     public List<CityEntity> getAllCity() {
@@ -22,7 +26,9 @@ public class CityService {
     }
 
     public CityEntity getCity(Integer id) {
-        return cityRepository.findById(id).get();
+        CityEntity city = cityRepository.findById(id).get();
+        city.getVoivodeshipByVoivodeshipIdVoivodeship().setCitiesByIdVoivodeship(null);
+        return city;
     }
 
     public void addCity(CityEntity city) {

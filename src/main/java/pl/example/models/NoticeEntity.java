@@ -1,6 +1,7 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -109,7 +110,7 @@ public class NoticeEntity {
     }
 
     @Basic
-    @Column(name = "timestamp", nullable = true)
+    @Column(name = "timestamp", nullable = true, columnDefinition = "timestamp")
     public Timestamp getTimestamp() {
         return timestamp;
     }

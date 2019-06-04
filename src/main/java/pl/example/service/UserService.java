@@ -2,12 +2,9 @@ package pl.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.example.controllers.OpinionController;
 import pl.example.models.*;
 import pl.example.repository.*;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -17,27 +14,66 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-
-
-
     public List<UserrEntity> getAllUser() {
         List<UserrEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
+
         for(UserrEntity us: user) {
-           // us.setCityByCityIdCity(null);
             us.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+
+            List<NoticeEntity> notice = new ArrayList<>();
+            us.getNoticesByIdUser().forEach(notice::add);
+            for(NoticeEntity no: notice) {
+                no.setUserrByUserrIdUser(null);
+                no.setMeetingsByIdNotice(null);
+                no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+            }
+
+            List<OpinionEntity> opinion_to = new ArrayList<>();
+            us.getOpinionsByIdUser().forEach(opinion_to::add);
+            for(OpinionEntity op_to: opinion_to) {
+                op_to.setUserrByUserFrom(null);
+                op_to.setUserrByUserTo(null);
+            }
+
+            List<OpinionEntity> opinion_from = new ArrayList<>();
+            us.getOpinionsByIdUser_0().forEach(opinion_from::add);
+            for(OpinionEntity op_from: opinion_from) {
+                op_from.setUserrByUserFrom(null);
+                op_from.setUserrByUserTo(null);
+            }
+
         }
+
         return user;
     }
 
     public UserrEntity getUser(Integer id) {
         UserrEntity user = userRepository.findById(id).get();
         user.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
-      //  OpinionEntity opi = opinionRepository.findById(id).get();
-      //  opi.setUserByUserFrom(null);
-       // opi.setUserByUserTo(null);
         user.setMeetingsByIdUser(null);
 
+        List<NoticeEntity> notice = new ArrayList<>();
+      user.getNoticesByIdUser().forEach(notice::add);
+        for(NoticeEntity no: notice) {
+            no.setUserrByUserrIdUser(null);
+            no.setMeetingsByIdNotice(null);
+            no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+        }
+
+        List<OpinionEntity> opinion_to = new ArrayList<>();
+        user.getOpinionsByIdUser().forEach(opinion_to::add);
+        for(OpinionEntity op_to: opinion_to) {
+            op_to.setUserrByUserFrom(null);
+            op_to.setUserrByUserTo(null);
+        }
+
+        List<OpinionEntity> opinion_from = new ArrayList<>();
+        user.getOpinionsByIdUser_0().forEach(opinion_from::add);
+        for(OpinionEntity op_from: opinion_from) {
+            op_from.setUserrByUserFrom(null);
+            op_from.setUserrByUserTo(null);
+        }
         return user;
     }
 

@@ -4,8 +4,6 @@ package pl.example.service;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
         import pl.example.repository.NoticeRepository;
-        import pl.example.repository.UserRepository;
-
         import java.util.ArrayList;
         import java.util.List;
 
@@ -16,8 +14,6 @@ public class NoticeService {
 
     @Autowired
     private NoticeRepository noticeRepository;
-    @Autowired
-    private UserRepository userRepository;
 
     public List<NoticeEntity> getAllNotice() {
         List<NoticeEntity> notices = new ArrayList<>();
@@ -27,7 +23,7 @@ public class NoticeService {
             no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
             no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
             no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
-            //no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+            no.getUserrByUserrIdUser().setNoticesByIdUser(null);
             no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
             no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
             no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
@@ -43,7 +39,7 @@ public class NoticeService {
         no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
         no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
         no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
-       // no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+        no.getUserrByUserrIdUser().setNoticesByIdUser(null);
         no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
         no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
         no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);

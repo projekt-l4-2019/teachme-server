@@ -200,7 +200,6 @@ public class UserrEntity {
         this.meetingsByIdUser = meetingsByIdUser;
     }
 
-    @JsonIgnore
     @OneToMany(mappedBy = "userrByUserrIdUser")
     public Collection<NoticeEntity> getNoticesByIdUser() {
         return noticesByIdUser;
@@ -210,7 +209,6 @@ public class UserrEntity {
         this.noticesByIdUser = noticesByIdUser;
     }
 
-    @JsonIgnore
     @OneToMany(mappedBy = "userrByUserTo")
     public Collection<OpinionEntity> getOpinionsByIdUser() {
         return opinionsByIdUser;
@@ -220,7 +218,6 @@ public class UserrEntity {
         this.opinionsByIdUser = opinionsByIdUser;
     }
 
-    @JsonIgnore
     @OneToMany(mappedBy = "userrByUserFrom")
     public Collection<OpinionEntity> getOpinionsByIdUser_0() {
         return opinionsByIdUser_0;

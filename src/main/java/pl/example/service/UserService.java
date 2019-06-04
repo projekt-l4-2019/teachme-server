@@ -24,8 +24,8 @@ public class UserService {
         List<UserrEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
         for(UserrEntity us: user) {
-            us.setCityByCityIdCity(null);
-          //  us.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+           // us.setCityByCityIdCity(null);
+            us.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
         }
         return user;
     }

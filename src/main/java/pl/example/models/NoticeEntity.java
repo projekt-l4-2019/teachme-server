@@ -16,14 +16,13 @@ public class NoticeEntity {
     private String meetingPlace;
     private Date meetingDate;
     private Double price;
-    private int subjectIdSubject;
+  //  private int subjectIdSubject;
     private String active;
     private Timestamp timestamp;
-    private Integer userrIdUser;
+ //   private Integer userrIdUser;
     private Timestamp timeFrom;
     private Timestamp timeTo;
     private Integer level;
-    private Integer userIdUser;
     private Collection<MeetingEntity> meetingsByIdNotice;
     private SubjectEntity subjectBySubjectIdSubject;
     private UserrEntity userrByUserrIdUser;
@@ -89,7 +88,7 @@ public class NoticeEntity {
         this.price = price;
     }
 
-    @Basic
+ /*   @Basic
     @Column(name = "subject_id_subject", nullable = false, insertable=false, updatable=false)
     public int getSubjectIdSubject() {
         return subjectIdSubject;
@@ -97,7 +96,7 @@ public class NoticeEntity {
 
     public void setSubjectIdSubject(int subjectIdSubject) {
         this.subjectIdSubject = subjectIdSubject;
-    }
+    }*/
 
     @Basic
     @Column(name = "active", nullable = false, length = -1)
@@ -119,7 +118,7 @@ public class NoticeEntity {
         this.timestamp = timestamp;
     }
 
-    @Basic
+  /*  @Basic
     @Column(name = "userr_id_user", nullable = true,insertable=false, updatable=false)
     public Integer getUserrIdUser() {
         return userrIdUser;
@@ -127,7 +126,7 @@ public class NoticeEntity {
 
     public void setUserrIdUser(Integer userrIdUser) {
         this.userrIdUser = userrIdUser;
-    }
+    }*/
 
     @Basic
     @Column(name = "time_from", nullable = true)
@@ -159,15 +158,6 @@ public class NoticeEntity {
         this.level = level;
     }
 
-    @Basic
-    @Column(name = "user_id_user", nullable = true, insertable=false, updatable=false)
-    public Integer getUserIdUser() {
-        return userIdUser;
-    }
-
-    public void setUserIdUser(Integer userIdUser) {
-        this.userIdUser = userIdUser;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -177,7 +167,7 @@ public class NoticeEntity {
         NoticeEntity that = (NoticeEntity) o;
 
         if (idNotice != that.idNotice) return false;
-        if (subjectIdSubject != that.subjectIdSubject) return false;
+    //    if (subjectIdSubject != that.subjectIdSubject) return false;
         //if (meetingIdMeeting != that.meetingIdMeeting) return false;
         if (lookOrOffer != null ? !lookOrOffer.equals(that.lookOrOffer) : that.lookOrOffer != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
@@ -186,11 +176,10 @@ public class NoticeEntity {
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
         if (active != null ? !active.equals(that.active) : that.active != null) return false;
         if (timestamp != null ? !timestamp.equals(that.timestamp) : that.timestamp != null) return false;
-        if (userrIdUser != null ? !userrIdUser.equals(that.userrIdUser) : that.userrIdUser != null) return false;
+     //   if (userrIdUser != null ? !userrIdUser.equals(that.userrIdUser) : that.userrIdUser != null) return false;
         if (timeFrom != null ? !timeFrom.equals(that.timeFrom) : that.timeFrom != null) return false;
         if (timeTo != null ? !timeTo.equals(that.timeTo) : that.timeTo != null) return false;
         if (level != null ? !level.equals(that.level) : that.level != null) return false;
-        if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
 
         return true;
     }
@@ -203,14 +192,13 @@ public class NoticeEntity {
         result = 31 * result + (meetingPlace != null ? meetingPlace.hashCode() : 0);
         result = 31 * result + (meetingDate != null ? meetingDate.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + subjectIdSubject;
+     //   result = 31 * result + subjectIdSubject;
         result = 31 * result + (active != null ? active.hashCode() : 0);
         result = 31 * result + (timestamp != null ? timestamp.hashCode() : 0);
-        result = 31 * result + (userrIdUser != null ? userrIdUser.hashCode() : 0);
+      //  result = 31 * result + (userrIdUser != null ? userrIdUser.hashCode() : 0);
         result = 31 * result + (timeFrom != null ? timeFrom.hashCode() : 0);
         result = 31 * result + (timeTo != null ? timeTo.hashCode() : 0);
         result = 31 * result + (level != null ? level.hashCode() : 0);
-        result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
       //  result = 31 * result + meetingIdMeeting;
         return result;
     }

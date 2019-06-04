@@ -22,16 +22,14 @@ public class NoticeService {
     public List<NoticeEntity> getAllNotice() {
         List<NoticeEntity> notices = new ArrayList<>();
         noticeRepository.findAll().forEach(notices::add);
-       /* List<UserEntity> user = new ArrayList<>();
-        userRepository.findAll().forEach(user::add);*/
         for(NoticeEntity no: notices)
         {
             no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
             no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
             no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
-            no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+            //no.getUserrByUserrIdUser().setNoticesByIdUser(null);
             no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
-           // no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
             no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
             no.getUserrByUserrIdUser().setLogin(null);
             no.getUserrByUserrIdUser().setPassword(null);
@@ -45,7 +43,7 @@ public class NoticeService {
         no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
         no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
         no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
-        no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+       // no.getUserrByUserrIdUser().setNoticesByIdUser(null);
         no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
         no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
         no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);

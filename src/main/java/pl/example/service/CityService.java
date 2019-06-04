@@ -22,6 +22,10 @@ public class CityService {
     public List<CityEntity> getAllCity() {
         List<CityEntity> city = new ArrayList<>();
         cityRepository.findAll().forEach(city::add);
+        for(CityEntity ci: city)
+        {
+            ci.getVoivodeshipByVoivodeshipIdVoivodeship().setCitiesByIdVoivodeship(null);
+        }
         return city;
     }
 

@@ -8,11 +8,11 @@
     <property name="connection.driver_class">org.postgresql.Driver</property>
     <mapping class="pl.example.models.MeetingEntity"/>
     <mapping class="pl.example.models.NoticeEntity"/>
-      <mapping class="pl.example.models.AdminEntity"/>
+      <mapping class="pl.example.models.AdminnEntity"/>
       <mapping class="pl.example.models.CityEntity"/>
       <mapping class="pl.example.models.OpinionEntity"/>
       <mapping class="pl.example.models.SubjectEntity"/>
-      <mapping class="pl.example.models.UserEntity"/>
+      <mapping class="pl.example.models.UserrEntity"/>
       <mapping class="pl.example.models.VoivodeshipEntity"/>
     <mapping class="pl.example.models.AdminnEntity"/>
     <mapping class="pl.example.models.UserrEntity"/>

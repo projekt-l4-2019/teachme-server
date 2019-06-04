@@ -24,39 +24,34 @@ public class NoticeService {
         noticeRepository.findAll().forEach(notices::add);
        /* List<UserEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);*/
-        for(int i=1;i<=100;i++) {
-           // NoticeEntity ne = noticeRepository.findById(i).get();
-          /*  ne.getUserByUserIdUser().setOpinionsByIdUser(null);
-            ne.getUserByUserIdUser().setOpinionsByIdUser_0(null);
-            ne.getUserByUserIdUser().setNoticesByIdUser(null);
-            ne.getUserByUserIdUser().setCityByCityIdCity(null);
-            ne.getUserByUserIdUser().setMeetingsByIdUser(null);
-            ne.getUserByUserIdUser().setPassword(null);
-            ne.getUserByUserIdUser().setLogin(null);*/
-         /*   UserEntity ne = userRepository.findById(i).get();
-            ne.setCityByCityIdCity(null);
-            ne.setMeetingsByIdUser(null);
-            ne.setOpinionsByIdUser(null);
-            ne.setOpinionsByIdUser_0(null);
-            ne.setNoticesByIdUser(null);
-            ne.setLogin(null);
-            ne.setPassword(null);*/
+        for(NoticeEntity no: notices)
+        {
+            no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
+            no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+            no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
+           // no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            no.getUserrByUserrIdUser().setLogin(null);
+            no.getUserrByUserrIdUser().setPassword(null);
         }
         return notices;
     }
 
     public NoticeEntity getNotice(Integer id) {
 
-        NoticeEntity ne = noticeRepository.findById(id).get();
-      /*  ne.getUserByUserIdUser().setOpinionsByIdUser(null);
-        ne.getUserByUserIdUser().setOpinionsByIdUser_0(null);
-        ne.getUserByUserIdUser().setNoticesByIdUser(null);
-        ne.getUserByUserIdUser().setCityByCityIdCity(null);
-        ne.getUserByUserIdUser().setMeetingsByIdUser(null);
-        ne.getUserByUserIdUser().setPassword(null);
-        ne.getUserByUserIdUser().setLogin(null);*/
-
-        return ne;
+        NoticeEntity no = noticeRepository.findById(id).get();
+        no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+        no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
+        no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
+        no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+        no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
+        no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+        no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+        no.getUserrByUserrIdUser().setLogin(null);
+        no.getUserrByUserrIdUser().setPassword(null);
+        return no;
     }
 
     public void addNotice(NoticeEntity notice) {

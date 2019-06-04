@@ -16,41 +16,24 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private CityRepository cityRepository;
-    @Autowired
-    private OpinionRepository opinionRepository;
-    @Autowired
-    private NoticeRepository noticeRepository;
-    @Autowired
-    private MeetingRepository meetingRepository;
+
+
 
 
     public List<UserrEntity> getAllUser() {
-       /* List<MeetingEntity> meeting = new ArrayList<>();
-        meetingRepository.findAll().forEach(meeting::add);
-        meeting.clear();*/
         List<UserrEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
-        for(int i=1;i<=user.size();i++) {
-            UserrEntity ne = userRepository.findById(i).get();
-            ne.setNoticesByIdUser(null);
-            /*OpinionEntity opi = opinionRepository.findById(i).get();
-            opi.setUserByUserFrom(null);
-            opi.setUserByUserTo(null);*/
-            int id_city_temp = ne.getCityIdCity();
-            CityEntity ci = cityRepository.findById(id_city_temp).get();
-            ci.setVoivodeshipByVoivodeshipIdVoivodeship(null);
+        for(UserrEntity us: user) {
+            us.setCityByCityIdCity(null);
+          //  us.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
         }
-
-
         return user;
     }
 
     public UserrEntity getUser(Integer id) {
         UserrEntity user = userRepository.findById(id).get();
         user.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
-        OpinionEntity opi = opinionRepository.findById(id).get();
+      //  OpinionEntity opi = opinionRepository.findById(id).get();
       //  opi.setUserByUserFrom(null);
        // opi.setUserByUserTo(null);
         user.setMeetingsByIdUser(null);

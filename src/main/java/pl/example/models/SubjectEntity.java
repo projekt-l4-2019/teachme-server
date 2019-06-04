@@ -1,6 +1,7 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -57,6 +58,7 @@ public class SubjectEntity {
         return result;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "subjectBySubjectIdSubject")
     public Collection<NoticeEntity> getNoticesByIdSubject() {
         return noticesByIdSubject;

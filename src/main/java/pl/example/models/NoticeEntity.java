@@ -1,5 +1,7 @@
 package pl.example.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -22,7 +24,6 @@ public class NoticeEntity {
     private Timestamp timeTo;
     private Integer level;
     private Integer userIdUser;
-    private int meetingIdMeeting;
     private Collection<MeetingEntity> meetingsByIdNotice;
     private SubjectEntity subjectBySubjectIdSubject;
     private UserrEntity userrByUserrIdUser;
@@ -168,16 +169,6 @@ public class NoticeEntity {
         this.userIdUser = userIdUser;
     }
 
-    @Basic
-    @Column(name = "meeting_id_meeting", nullable = false,insertable=false, updatable=false)
-    public int getMeetingIdMeeting() {
-        return meetingIdMeeting;
-    }
-
-    public void setMeetingIdMeeting(int meetingIdMeeting) {
-        this.meetingIdMeeting = meetingIdMeeting;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -187,7 +178,7 @@ public class NoticeEntity {
 
         if (idNotice != that.idNotice) return false;
         if (subjectIdSubject != that.subjectIdSubject) return false;
-        if (meetingIdMeeting != that.meetingIdMeeting) return false;
+        //if (meetingIdMeeting != that.meetingIdMeeting) return false;
         if (lookOrOffer != null ? !lookOrOffer.equals(that.lookOrOffer) : that.lookOrOffer != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (meetingPlace != null ? !meetingPlace.equals(that.meetingPlace) : that.meetingPlace != null) return false;
@@ -220,10 +211,11 @@ public class NoticeEntity {
         result = 31 * result + (timeTo != null ? timeTo.hashCode() : 0);
         result = 31 * result + (level != null ? level.hashCode() : 0);
         result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
-        result = 31 * result + meetingIdMeeting;
+      //  result = 31 * result + meetingIdMeeting;
         return result;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "noticeByNoticeIdNotice")
     public Collection<MeetingEntity> getMeetingsByIdNotice() {
         return meetingsByIdNotice;
@@ -233,6 +225,7 @@ public class NoticeEntity {
         this.meetingsByIdNotice = meetingsByIdNotice;
     }
 
+    //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject", nullable = false)
     public SubjectEntity getSubjectBySubjectIdSubject() {
@@ -243,6 +236,7 @@ public class NoticeEntity {
         this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
     }
 
+    //@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "userr_id_user", referencedColumnName = "id_user")
     public UserrEntity getUserrByUserrIdUser() {

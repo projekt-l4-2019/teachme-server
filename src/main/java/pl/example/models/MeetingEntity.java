@@ -144,7 +144,6 @@ public class MeetingEntity {
         this.userrByUserrIdUser = userrByUserrIdUser;
     }
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "notice_id_notice", referencedColumnName = "id_notice")
     public NoticeEntity getNoticeByNoticeIdNotice() {

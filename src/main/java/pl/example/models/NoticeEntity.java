@@ -11,13 +11,13 @@ import java.util.Collection;
 @Table(name = "notice", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class NoticeEntity {
     private int idNotice;
-    private String lookOrOffer;
+    private Character lookOrOffer;
     private String note;
     private String meetingPlace;
     private Date meetingDate;
     private Double price;
   //  private int subjectIdSubject;
-    private String active;
+    private Character active;
     private Timestamp timestamp;
  //   private Integer userrIdUser;
     private Timestamp timeFrom;
@@ -40,11 +40,11 @@ public class NoticeEntity {
 
     @Basic
     @Column(name = "look_or_offer", nullable = true, length = -1)
-    public String getLookOrOffer() {
+    public Character getLookOrOffer() {
         return lookOrOffer;
     }
 
-    public void setLookOrOffer(String lookOrOffer) {
+    public void setLookOrOffer(Character lookOrOffer) {
         this.lookOrOffer = lookOrOffer;
     }
 
@@ -100,11 +100,11 @@ public class NoticeEntity {
 
     @Basic
     @Column(name = "active", nullable = false, length = -1)
-    public String getActive() {
+    public Character getActive() {
         return active;
     }
 
-    public void setActive(String active) {
+    public void setActive(Character active) {
         this.active = active;
     }
 

@@ -30,6 +30,14 @@ public class OpinionService {
             op.getUserrByUserTo().setPassword(null);
             op.getUserrByUserFrom().setLogin(null);
             op.getUserrByUserFrom().setPassword(null);
+
+            op.getUserrByUserFrom().setNoticesByIdUser(null);
+            op.getUserrByUserTo().setNoticesByIdUser(null);
+
+            op.getUserrByUserFrom().setOpinionsByIdUser(null);
+            op.getUserrByUserFrom().setOpinionsByIdUser_0(null);
+            op.getUserrByUserTo().setOpinionsByIdUser(null);
+            op.getUserrByUserTo().setOpinionsByIdUser_0(null);
         }
         return opinion;
     }
@@ -38,6 +46,19 @@ public class OpinionService {
         OpinionEntity opinion = opinionRepository.findById(id).get();
         opinion.getUserrByUserFrom().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
         opinion.getUserrByUserTo().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+
+        opinion.getUserrByUserTo().setLogin(null);
+        opinion.getUserrByUserTo().setPassword(null);
+        opinion.getUserrByUserFrom().setLogin(null);
+        opinion.getUserrByUserFrom().setPassword(null);
+
+        opinion.getUserrByUserFrom().setNoticesByIdUser(null);
+        opinion.getUserrByUserTo().setNoticesByIdUser(null);
+
+        opinion.getUserrByUserFrom().setOpinionsByIdUser(null);
+        opinion.getUserrByUserFrom().setOpinionsByIdUser_0(null);
+        opinion.getUserrByUserTo().setOpinionsByIdUser(null);
+        opinion.getUserrByUserTo().setOpinionsByIdUser_0(null);
 
         return opinionRepository.findById(id).get();
     }

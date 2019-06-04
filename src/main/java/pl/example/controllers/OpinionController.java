@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.*;
 import pl.example.models.OpinionEntity;
 import pl.example.service.OpinionService;
 
-import javax.validation.constraints.Null;
 import java.util.List;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class OpinionController {
     @Autowired
@@ -37,7 +37,8 @@ public class OpinionController {
         opinionService.updateOpinion(id, opinion);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value="/opinions/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, path="/opinions/{id}")
+    @CrossOrigin(origins = "*")
     public void deleteOpinion(@PathVariable Integer id) {
         opinionService.deleteOpinion(id);
     }

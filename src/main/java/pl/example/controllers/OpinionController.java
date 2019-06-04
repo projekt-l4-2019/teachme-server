@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.example.models.OpinionEntity;
 import pl.example.service.OpinionService;
 
+import javax.validation.constraints.Null;
 import java.util.List;
 
 @RestController
@@ -37,7 +38,6 @@ public class OpinionController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value="/opinions/{id}")
-    @CrossOrigin(origins = "/**")
     public void deleteOpinion(@PathVariable Integer id) {
         opinionService.deleteOpinion(id);
     }

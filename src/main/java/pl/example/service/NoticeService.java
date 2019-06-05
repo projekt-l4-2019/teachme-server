@@ -3,6 +3,7 @@ package pl.example.service;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
+        import pl.example.models.SubjectEntity;
         import pl.example.repository.NoticeRepository;
 
         import java.sql.Timestamp;
@@ -64,5 +65,26 @@ public class NoticeService {
 
     public void deleteNotice(Integer id) {
         noticeRepository.deleteById(id);
+    }
+
+    public List<NoticeEntity> searchNotice(SubjectEntity subjectBySubjectIdSubject, Integer level
+            , Character lookOrOffer, String meetingPlace, Double price)
+    {
+        List<NoticeEntity> notices = new ArrayList<>();
+        noticeRepository.findBySubjectBySubjectIdSubjectAndLevelAndLookOrOfferAndMeetingPlaceAndPrice(
+                 subjectBySubjectIdSubject, level , lookOrOffer, meetingPlace, price ).forEach(notices::add);
+        for(NoticeEntity no: notices)
+        {
+            no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
+            no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+            no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            no.getUserrByUserrIdUser().setLogin(null);
+            no.getUserrByUserrIdUser().setPassword(null);
+        }
+        return notices;
     }
 }

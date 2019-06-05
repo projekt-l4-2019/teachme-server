@@ -20,9 +20,11 @@ public class UserService {
 
         for(UserrEntity us: user) {
             us.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
-
+            us.setPassword(null);
+            us.setLogin(null);
             List<NoticeEntity> notice = new ArrayList<>();
             us.getNoticesByIdUser().forEach(notice::add);
+
             for(NoticeEntity no: notice) {
                 no.setUserrByUserrIdUser(null);
                 no.setMeetingsByIdNotice(null);
@@ -52,6 +54,8 @@ public class UserService {
         UserrEntity user = userRepository.findById(id).get();
         user.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
         user.setMeetingsByIdUser(null);
+        user.setPassword(null);
+        user.setLogin(null);
 
         List<NoticeEntity> notice = new ArrayList<>();
       user.getNoticesByIdUser().forEach(notice::add);

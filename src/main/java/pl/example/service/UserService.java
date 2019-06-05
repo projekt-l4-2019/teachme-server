@@ -25,6 +25,8 @@ public class UserService {
     @Autowired
     private MeetingRepository meetingRepository;
 
+    private int currentUserId;
+
 
     public List<UserrEntity> getAllUser() {
        /* List<MeetingEntity> meeting = new ArrayList<>();
@@ -71,4 +73,8 @@ public class UserService {
     public void deleteUser(Integer id) {
         userRepository.deleteById(id);
     }
+
+    public UserrEntity getCurrentUser() {return userRepository.findById(currentUserId).get();}
+
+    public void setCurrentUserId(int id){currentUserId = id;}
 }

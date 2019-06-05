@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import pl.example.models.UserrEntity;
 import pl.example.repository.UserRepository;
+import pl.example.service.UserService;
 
 
 import java.sql.Date;
@@ -28,7 +29,10 @@ import static org.eclipse.jdt.internal.compiler.problem.ProblemSeverities.Option
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+
     private final long MAX_AGE_SECS = 3600;
+
+    UserService userService = new UserService();
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
@@ -70,6 +74,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 userr.setAvatar((String)map.get("picture"));
                 userRepository.save(userr);
             }
+            userService.setCurrentUserId(userr.getIdUser());
             return userr;
         };
     }

@@ -1,6 +1,7 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class NoticeEntity {
     private Double price;
   //  private int subjectIdSubject;
     private Character active;
+    @Column(name = "timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp timestamp;
  //   private Integer userrIdUser;
     private Timestamp timeFrom;
@@ -110,7 +112,7 @@ public class NoticeEntity {
     }
 
     @Basic
-    @Column(name = "timestamp", nullable = true, columnDefinition = "timestamp")
+    @Column(name = "timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     public Timestamp getTimestamp() {
         return timestamp;
     }

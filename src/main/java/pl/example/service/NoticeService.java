@@ -4,6 +4,9 @@ package pl.example.service;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
         import pl.example.repository.NoticeRepository;
+
+        import java.sql.Timestamp;
+        import java.time.LocalDateTime;
         import java.util.ArrayList;
         import java.util.List;
 
@@ -49,6 +52,7 @@ public class NoticeService {
     }
 
     public void addNotice(NoticeEntity notice) {
+        notice.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         noticeRepository.save(notice);
     }
 

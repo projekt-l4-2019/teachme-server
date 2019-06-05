@@ -12,11 +12,9 @@ public class MeetingEntity {
     private int idMeeting;
     private Date date;
     private Timestamp time;
-    private int subjectIdSubject;
-    private Integer userrIdUser;
+  //  private Integer userrIdUser;
     private String meetingPlace;
-    private Integer noticeIdNotice;
-    private Integer userIdUser;
+    //private Integer noticeIdNotice;
     private UserrEntity userrByUserrIdUser;
     private NoticeEntity noticeByNoticeIdNotice;
 
@@ -50,16 +48,7 @@ public class MeetingEntity {
     public void setTime(Timestamp time) {
         this.time = time;
     }
-
-    @Basic
-    @Column(name = "subject_id_subject", nullable = false)
-    public int getSubjectIdSubject() {
-        return subjectIdSubject;
-    }
-
-    public void setSubjectIdSubject(int subjectIdSubject) {
-        this.subjectIdSubject = subjectIdSubject;
-    }
+    /*
 
     @Basic
     @Column(name = "userr_id_user", nullable = true,insertable=false, updatable=false)
@@ -70,7 +59,7 @@ public class MeetingEntity {
     public void setUserrIdUser(Integer userrIdUser) {
         this.userrIdUser = userrIdUser;
     }
-
+*/
     @Basic
     @Column(name = "meeting_place", nullable = true, length = 127)
     public String getMeetingPlace() {
@@ -80,7 +69,7 @@ public class MeetingEntity {
     public void setMeetingPlace(String meetingPlace) {
         this.meetingPlace = meetingPlace;
     }
-
+/*
     @Basic
     @Column(name = "notice_id_notice", nullable = true,insertable=false, updatable=false)
     public Integer getNoticeIdNotice() {
@@ -90,17 +79,7 @@ public class MeetingEntity {
     public void setNoticeIdNotice(Integer noticeIdNotice) {
         this.noticeIdNotice = noticeIdNotice;
     }
-
-    @Basic
-    @Column(name = "user_id_user", nullable = true)
-    public Integer getUserIdUser() {
-        return userIdUser;
-    }
-
-    public void setUserIdUser(Integer userIdUser) {
-        this.userIdUser = userIdUser;
-    }
-
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -109,15 +88,12 @@ public class MeetingEntity {
         MeetingEntity that = (MeetingEntity) o;
 
         if (idMeeting != that.idMeeting) return false;
-        if (subjectIdSubject != that.subjectIdSubject) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
-        if (userrIdUser != null ? !userrIdUser.equals(that.userrIdUser) : that.userrIdUser != null) return false;
+       // if (userrIdUser != null ? !userrIdUser.equals(that.userrIdUser) : that.userrIdUser != null) return false;
         if (meetingPlace != null ? !meetingPlace.equals(that.meetingPlace) : that.meetingPlace != null) return false;
-        if (noticeIdNotice != null ? !noticeIdNotice.equals(that.noticeIdNotice) : that.noticeIdNotice != null)
-            return false;
-        if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
-
+      //  if (noticeIdNotice != null ? !noticeIdNotice.equals(that.noticeIdNotice) : that.noticeIdNotice != null)
+         //   return false;
         return true;
     }
 
@@ -126,11 +102,9 @@ public class MeetingEntity {
         int result = idMeeting;
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);
-        result = 31 * result + subjectIdSubject;
-        result = 31 * result + (userrIdUser != null ? userrIdUser.hashCode() : 0);
+      //  result = 31 * result + (userrIdUser != null ? userrIdUser.hashCode() : 0);
         result = 31 * result + (meetingPlace != null ? meetingPlace.hashCode() : 0);
-        result = 31 * result + (noticeIdNotice != null ? noticeIdNotice.hashCode() : 0);
-        result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
+       // result = 31 * result + (noticeIdNotice != null ? noticeIdNotice.hashCode() : 0);
         return result;
     }
 
@@ -144,7 +118,6 @@ public class MeetingEntity {
         this.userrByUserrIdUser = userrByUserrIdUser;
     }
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "notice_id_notice", referencedColumnName = "id_notice")
     public NoticeEntity getNoticeByNoticeIdNotice() {

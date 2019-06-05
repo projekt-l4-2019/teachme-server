@@ -1,5 +1,6 @@
 package pl.example.configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -19,27 +19,24 @@ import pl.example.repository.UserRepository;
 import pl.example.service.UserService;
 
 
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.Arrays;
-
-import static org.eclipse.jdt.internal.compiler.problem.ProblemSeverities.Optional;
 
 @EnableWebSecurity
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-
     private final long MAX_AGE_SECS = 3600;
 
+    @Autowired
     UserService userService = new UserService();
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://projekt-l4-2019.github.io","https://rhubarb-cobbler-84890.herokuapp.com"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "DELETE", "PUT", "PATCH"));
-        configuration.setAllowedHeaders(Arrays.asList("X-Requested-With", "Origin", "Content-Type", "Accept", "Authorization"));
+        configuration.setAllowedOrigins(Arrays.asList("Access-Control-Allow-Origin", "*"));
+        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Request-Headers", "*"));
+        configuration.setAllowedMethods(Arrays.asList("Access-Control-Allow-Methods" , "DELETE,GET, pOST, PTIONS,  PUT, PATCH"));
+        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Origin", "Origin, X-Requested-With,X-HTTP-Method-Override, Content-Type, Accept, Authorization"));
         configuration.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
@@ -55,8 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("https://projekt-l4-2019.github.io/index.html").permitAll()
-                .and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+                .logoutSuccessUrl("https://projekt-l4-2019.github.io/index.html").permitAll();
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.csrf().disable();
     }

@@ -20,20 +20,46 @@ public class OpinionService {
     private UserRepository userRepository;
 
     public List<OpinionEntity> getAllOpinion() {
-        List<OpinionEntity> notices = new ArrayList<>();
-        opinionRepository.findAll().forEach(notices::add);
-        return notices;
+        List<OpinionEntity> opinion = new ArrayList<>();
+        opinionRepository.findAll().forEach(opinion::add);
+        for(OpinionEntity op: opinion)
+        {
+            op.getUserrByUserFrom().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            op.getUserrByUserTo().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            op.getUserrByUserTo().setLogin(null);
+            op.getUserrByUserTo().setPassword(null);
+            op.getUserrByUserFrom().setLogin(null);
+            op.getUserrByUserFrom().setPassword(null);
+
+            op.getUserrByUserFrom().setNoticesByIdUser(null);
+            op.getUserrByUserTo().setNoticesByIdUser(null);
+
+            op.getUserrByUserFrom().setOpinionsByIdUser(null);
+            op.getUserrByUserFrom().setOpinionsByIdUser_0(null);
+            op.getUserrByUserTo().setOpinionsByIdUser(null);
+            op.getUserrByUserTo().setOpinionsByIdUser_0(null);
+        }
+        return opinion;
     }
 
     public OpinionEntity getOpinion(Integer id) {
         OpinionEntity opinion = opinionRepository.findById(id).get();
-      /*  if(opinion.getUserByUserTo()) //całego węgoza zróić docelwoego
-        UserEntity user = userRepository.findById(id).get();
-        user.setCityByCityIdCity(null);
-        user.setMeetingsByIdUser(null);
-        user.setOpinionsByIdUser(null);
-        user.setOpinionsByIdUser(null);
-        user.setNoticesByIdUser(null);*/
+        opinion.getUserrByUserFrom().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+        opinion.getUserrByUserTo().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+
+        opinion.getUserrByUserTo().setLogin(null);
+        opinion.getUserrByUserTo().setPassword(null);
+        opinion.getUserrByUserFrom().setLogin(null);
+        opinion.getUserrByUserFrom().setPassword(null);
+
+        opinion.getUserrByUserFrom().setNoticesByIdUser(null);
+        opinion.getUserrByUserTo().setNoticesByIdUser(null);
+
+        opinion.getUserrByUserFrom().setOpinionsByIdUser(null);
+        opinion.getUserrByUserFrom().setOpinionsByIdUser_0(null);
+        opinion.getUserrByUserTo().setOpinionsByIdUser(null);
+        opinion.getUserrByUserTo().setOpinionsByIdUser_0(null);
+
         return opinionRepository.findById(id).get();
     }
 

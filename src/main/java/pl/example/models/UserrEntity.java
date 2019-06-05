@@ -1,6 +1,6 @@
 package pl.example.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -20,9 +20,8 @@ public class UserrEntity {
     private String email;
     private Timestamp timesstamp;
     private String password;
-    private Integer cityIdCity;
+  //  private Integer cityIdCity;
     private String about;
-    private Integer idCity;
     private Collection<MeetingEntity> meetingsByIdUser;
     private Collection<NoticeEntity> noticesByIdUser;
     private Collection<OpinionEntity> opinionsByIdUser;
@@ -130,7 +129,7 @@ public class UserrEntity {
         this.password = password;
     }
 
-    @Basic
+   /* @Basic
     @Column(name = "city_id_city", nullable = true,insertable=false, updatable=false)
     public Integer getCityIdCity() {
         return cityIdCity;
@@ -139,7 +138,7 @@ public class UserrEntity {
     public void setCityIdCity(Integer cityIdCity) {
         this.cityIdCity = cityIdCity;
     }
-
+*/
     @Basic
     @Column(name = "about", nullable = true, length = 127)
     public String getAbout() {
@@ -150,15 +149,6 @@ public class UserrEntity {
         this.about = about;
     }
 
-    @Basic
-    @Column(name = "id_city", nullable = true)
-    public Integer getIdCity() {
-        return idCity;
-    }
-
-    public void setIdCity(Integer idCity) {
-        this.idCity = idCity;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -177,9 +167,8 @@ public class UserrEntity {
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (timesstamp != null ? !timesstamp.equals(that.timesstamp) : that.timesstamp != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
-        if (cityIdCity != null ? !cityIdCity.equals(that.cityIdCity) : that.cityIdCity != null) return false;
+       // if (cityIdCity != null ? !cityIdCity.equals(that.cityIdCity) : that.cityIdCity != null) return false;
         if (about != null ? !about.equals(that.about) : that.about != null) return false;
-        if (idCity != null ? !idCity.equals(that.idCity) : that.idCity != null) return false;
 
         return true;
     }
@@ -196,9 +185,8 @@ public class UserrEntity {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (timesstamp != null ? timesstamp.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (cityIdCity != null ? cityIdCity.hashCode() : 0);
+       // result = 31 * result + (cityIdCity != null ? cityIdCity.hashCode() : 0);
         result = 31 * result + (about != null ? about.hashCode() : 0);
-        result = 31 * result + (idCity != null ? idCity.hashCode() : 0);
         return result;
     }
 
@@ -212,7 +200,6 @@ public class UserrEntity {
         this.meetingsByIdUser = meetingsByIdUser;
     }
 
-    @JsonIgnore
     @OneToMany(mappedBy = "userrByUserrIdUser")
     public Collection<NoticeEntity> getNoticesByIdUser() {
         return noticesByIdUser;
@@ -222,7 +209,6 @@ public class UserrEntity {
         this.noticesByIdUser = noticesByIdUser;
     }
 
-    @JsonIgnore
     @OneToMany(mappedBy = "userrByUserTo")
     public Collection<OpinionEntity> getOpinionsByIdUser() {
         return opinionsByIdUser;
@@ -232,7 +218,6 @@ public class UserrEntity {
         this.opinionsByIdUser = opinionsByIdUser;
     }
 
-    @JsonIgnore
     @OneToMany(mappedBy = "userrByUserFrom")
     public Collection<OpinionEntity> getOpinionsByIdUser_0() {
         return opinionsByIdUser_0;

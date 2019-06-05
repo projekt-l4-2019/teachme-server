@@ -3,9 +3,11 @@ package pl.example.service;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Service;
         import pl.example.models.NoticeEntity;
+        import pl.example.models.SubjectEntity;
         import pl.example.repository.NoticeRepository;
-        import pl.example.repository.UserRepository;
 
+        import java.sql.Timestamp;
+        import java.time.LocalDateTime;
         import java.util.ArrayList;
         import java.util.List;
 
@@ -16,50 +18,42 @@ public class NoticeService {
 
     @Autowired
     private NoticeRepository noticeRepository;
-    @Autowired
-    private UserRepository userRepository;
 
     public List<NoticeEntity> getAllNotice() {
         List<NoticeEntity> notices = new ArrayList<>();
         noticeRepository.findAll().forEach(notices::add);
-       /* List<UserEntity> user = new ArrayList<>();
-        userRepository.findAll().forEach(user::add);*/
-        for(int i=1;i<=100;i++) {
-           // NoticeEntity ne = noticeRepository.findById(i).get();
-          /*  ne.getUserByUserIdUser().setOpinionsByIdUser(null);
-            ne.getUserByUserIdUser().setOpinionsByIdUser_0(null);
-            ne.getUserByUserIdUser().setNoticesByIdUser(null);
-            ne.getUserByUserIdUser().setCityByCityIdCity(null);
-            ne.getUserByUserIdUser().setMeetingsByIdUser(null);
-            ne.getUserByUserIdUser().setPassword(null);
-            ne.getUserByUserIdUser().setLogin(null);*/
-         /*   UserEntity ne = userRepository.findById(i).get();
-            ne.setCityByCityIdCity(null);
-            ne.setMeetingsByIdUser(null);
-            ne.setOpinionsByIdUser(null);
-            ne.setOpinionsByIdUser_0(null);
-            ne.setNoticesByIdUser(null);
-            ne.setLogin(null);
-            ne.setPassword(null);*/
+        for(NoticeEntity no: notices)
+        {
+            no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
+            no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+            no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            no.getUserrByUserrIdUser().setLogin(null);
+            no.getUserrByUserrIdUser().setPassword(null);
         }
         return notices;
     }
 
     public NoticeEntity getNotice(Integer id) {
 
-        NoticeEntity ne = noticeRepository.findById(id).get();
-      /*  ne.getUserByUserIdUser().setOpinionsByIdUser(null);
-        ne.getUserByUserIdUser().setOpinionsByIdUser_0(null);
-        ne.getUserByUserIdUser().setNoticesByIdUser(null);
-        ne.getUserByUserIdUser().setCityByCityIdCity(null);
-        ne.getUserByUserIdUser().setMeetingsByIdUser(null);
-        ne.getUserByUserIdUser().setPassword(null);
-        ne.getUserByUserIdUser().setLogin(null);*/
-
-        return ne;
+        NoticeEntity no = noticeRepository.findById(id).get();
+        no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+        no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
+        no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
+        no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+        no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
+        no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+        no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+        no.getUserrByUserrIdUser().setLogin(null);
+        no.getUserrByUserrIdUser().setPassword(null);
+        return no;
     }
 
     public void addNotice(NoticeEntity notice) {
+        notice.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         noticeRepository.save(notice);
     }
 
@@ -71,5 +65,26 @@ public class NoticeService {
 
     public void deleteNotice(Integer id) {
         noticeRepository.deleteById(id);
+    }
+
+    public List<NoticeEntity> searchNotice(SubjectEntity subjectBySubjectIdSubject, Integer level
+            , Character lookOrOffer, String meetingPlace, Double price_down, Double price_up)
+    {
+        List<NoticeEntity> notices = new ArrayList<>();
+        noticeRepository.findBySubjectBySubjectIdSubjectAndLevelAndLookOrOfferAndMeetingPlaceAndPrice(
+                 subjectBySubjectIdSubject, level , lookOrOffer, meetingPlace, price_down, price_up ).forEach(notices::add);
+        for(NoticeEntity no: notices)
+        {
+            no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser_0(null);
+            no.getUserrByUserrIdUser().setOpinionsByIdUser(null);
+            no.getUserrByUserrIdUser().setNoticesByIdUser(null);
+            no.getUserrByUserrIdUser().setMeetingsByIdUser(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setUserrsByIdCity(null);
+            no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            no.getUserrByUserrIdUser().setLogin(null);
+            no.getUserrByUserrIdUser().setPassword(null);
+        }
+        return notices;
     }
 }

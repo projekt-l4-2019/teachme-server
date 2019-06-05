@@ -1,14 +1,12 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.Collection;
 
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "idSubject")
 @Entity
 @Table(name = "subject", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class SubjectEntity {
@@ -57,6 +55,7 @@ public class SubjectEntity {
         return result;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "subjectBySubjectIdSubject")
     public Collection<NoticeEntity> getNoticesByIdSubject() {
         return noticesByIdSubject;

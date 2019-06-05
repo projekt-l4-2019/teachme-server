@@ -3,7 +3,6 @@ package pl.example.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.example.models.CityEntity;
-import pl.example.models.VoivodeshipEntity;
 import pl.example.repository.CityRepository;
 import pl.example.repository.VoivodeshipRepository;
 
@@ -15,13 +14,14 @@ public class CityService {
 
     @Autowired
     private CityRepository cityRepository;
-    @Autowired
-    private VoivodeshipRepository voivodeshipRepository;
-
 
     public List<CityEntity> getAllCity() {
         List<CityEntity> city = new ArrayList<>();
         cityRepository.findAll().forEach(city::add);
+        for(CityEntity ci: city)
+        {
+            ci.getVoivodeshipByVoivodeshipIdVoivodeship().setCitiesByIdVoivodeship(null);
+        }
         return city;
     }
 

@@ -2,12 +2,9 @@ package pl.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.example.controllers.OpinionController;
 import pl.example.models.*;
 import pl.example.repository.*;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -16,35 +13,41 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private CityRepository cityRepository;
-    @Autowired
-    private OpinionRepository opinionRepository;
-    @Autowired
-    private NoticeRepository noticeRepository;
-    @Autowired
-    private MeetingRepository meetingRepository;
 
     private int currentUserId;
 
-
     public List<UserrEntity> getAllUser() {
-       /* List<MeetingEntity> meeting = new ArrayList<>();
-        meetingRepository.findAll().forEach(meeting::add);
-        meeting.clear();*/
         List<UserrEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
-        for(int i=1;i<=user.size();i++) {
-            UserrEntity ne = userRepository.findById(i).get();
-            ne.setNoticesByIdUser(null);
-            /*OpinionEntity opi = opinionRepository.findById(i).get();
-            opi.setUserByUserFrom(null);
-            opi.setUserByUserTo(null);*/
-            int id_city_temp = ne.getCityIdCity();
-            CityEntity ci = cityRepository.findById(id_city_temp).get();
-            ci.setVoivodeshipByVoivodeshipIdVoivodeship(null);
-        }
 
+        for(UserrEntity us: user) {
+            us.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
+            us.setPassword(null);
+            us.setLogin(null);
+            List<NoticeEntity> notice = new ArrayList<>();
+            us.getNoticesByIdUser().forEach(notice::add);
+
+            for(NoticeEntity no: notice) {
+                no.setUserrByUserrIdUser(null);
+                no.setMeetingsByIdNotice(null);
+                no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+            }
+
+            List<OpinionEntity> opinion_to = new ArrayList<>();
+            us.getOpinionsByIdUser().forEach(opinion_to::add);
+            for(OpinionEntity op_to: opinion_to) {
+                op_to.setUserrByUserFrom(null);
+                op_to.setUserrByUserTo(null);
+            }
+
+            List<OpinionEntity> opinion_from = new ArrayList<>();
+            us.getOpinionsByIdUser_0().forEach(opinion_from::add);
+            for(OpinionEntity op_from: opinion_from) {
+                op_from.setUserrByUserFrom(null);
+                op_from.setUserrByUserTo(null);
+            }
+
+        }
 
         return user;
     }
@@ -52,11 +55,31 @@ public class UserService {
     public UserrEntity getUser(Integer id) {
         UserrEntity user = userRepository.findById(id).get();
         user.getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
-        OpinionEntity opi = opinionRepository.findById(id).get();
-      //  opi.setUserByUserFrom(null);
-       // opi.setUserByUserTo(null);
         user.setMeetingsByIdUser(null);
+        user.setPassword(null);
+        user.setLogin(null);
 
+        List<NoticeEntity> notice = new ArrayList<>();
+      user.getNoticesByIdUser().forEach(notice::add);
+        for(NoticeEntity no: notice) {
+            no.setUserrByUserrIdUser(null);
+            no.setMeetingsByIdNotice(null);
+            no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
+        }
+
+        List<OpinionEntity> opinion_to = new ArrayList<>();
+        user.getOpinionsByIdUser().forEach(opinion_to::add);
+        for(OpinionEntity op_to: opinion_to) {
+            op_to.setUserrByUserFrom(null);
+            op_to.setUserrByUserTo(null);
+        }
+
+        List<OpinionEntity> opinion_from = new ArrayList<>();
+        user.getOpinionsByIdUser_0().forEach(opinion_from::add);
+        for(OpinionEntity op_from: opinion_from) {
+            op_from.setUserrByUserFrom(null);
+            op_from.setUserrByUserTo(null);
+        }
         return user;
     }
 

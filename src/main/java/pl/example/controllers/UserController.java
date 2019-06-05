@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.example.models.UserrEntity;
 import pl.example.service.UserService;
 
-import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -13,7 +12,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
 
     @RequestMapping("/current")
     @CrossOrigin(origins = "*")

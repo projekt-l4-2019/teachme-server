@@ -20,7 +20,7 @@ public class UserrEntity {
     private String email;
     private Timestamp timesstamp;
     private String password;
-  //  private Integer cityIdCity;
+    private Integer cityIdCity;
     private String about;
     private Collection<MeetingEntity> meetingsByIdUser;
     private Collection<NoticeEntity> noticesByIdUser;
@@ -129,7 +129,7 @@ public class UserrEntity {
         this.password = password;
     }
 
-   /* @Basic
+    @Basic
     @Column(name = "city_id_city", nullable = true,insertable=false, updatable=false)
     public Integer getCityIdCity() {
         return cityIdCity;
@@ -138,7 +138,7 @@ public class UserrEntity {
     public void setCityIdCity(Integer cityIdCity) {
         this.cityIdCity = cityIdCity;
     }
-*/
+
     @Basic
     @Column(name = "about", nullable = true, length = 127)
     public String getAbout() {
@@ -167,7 +167,7 @@ public class UserrEntity {
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (timesstamp != null ? !timesstamp.equals(that.timesstamp) : that.timesstamp != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
-       // if (cityIdCity != null ? !cityIdCity.equals(that.cityIdCity) : that.cityIdCity != null) return false;
+        if (cityIdCity != null ? !cityIdCity.equals(that.cityIdCity) : that.cityIdCity != null) return false;
         if (about != null ? !about.equals(that.about) : that.about != null) return false;
 
         return true;
@@ -185,7 +185,7 @@ public class UserrEntity {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (timesstamp != null ? timesstamp.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-       // result = 31 * result + (cityIdCity != null ? cityIdCity.hashCode() : 0);
+        result = 31 * result + (cityIdCity != null ? cityIdCity.hashCode() : 0);
         result = 31 * result + (about != null ? about.hashCode() : 0);
         return result;
     }

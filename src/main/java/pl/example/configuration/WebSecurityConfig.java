@@ -14,6 +14,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import pl.example.models.CityEntity;
 import pl.example.models.UserrEntity;
 import pl.example.repository.UserRepository;
 import pl.example.service.UserService;
@@ -29,6 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     UserService userService = new UserService();
+
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
@@ -68,6 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 userr.setSurname((String)map.get("family_name"));
                 userr.setEmail((String)map.get("email"));
                 userr.setAvatar((String)map.get("picture"));
+                userr.setCityIdCity(1);
                 userRepository.save(userr);
             }
             userService.setCurrentUserId(userr.getIdUser());

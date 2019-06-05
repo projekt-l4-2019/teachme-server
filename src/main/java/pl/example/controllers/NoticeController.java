@@ -45,12 +45,11 @@ public class NoticeController {
          noticeService.deleteNotice(id);
     }
 
-    @RequestMapping("/notices/find/{subjectBySubjectIdSubject}/{level}/{lookOrOffer}/{meetingPlace}/{price_down}/{price_up}")
+    @RequestMapping("/notices/find/{subjectBySubjectIdSubject}/{level}/{lookOrOffer}/{meetingPlace}/{price_down}/{price_up}/{sort}")
     @CrossOrigin(origins = "*")
     public List<NoticeEntity> searchNotice(@PathVariable SubjectEntity subjectBySubjectIdSubject, @PathVariable Integer level
-            ,@PathVariable Character lookOrOffer,@PathVariable String meetingPlace,@PathVariable Double price_down,@PathVariable Double price_up) {
+            ,@PathVariable Character lookOrOffer,@PathVariable String meetingPlace,@PathVariable Double price_down,@PathVariable Double price_up, @PathVariable Boolean sort) {
 
-
-        return noticeService.searchNotice(subjectBySubjectIdSubject,level, lookOrOffer, meetingPlace, price_down, price_up);
+        return noticeService.searchNotice(subjectBySubjectIdSubject,level, lookOrOffer, meetingPlace, price_down, price_up, sort);
     }
 }

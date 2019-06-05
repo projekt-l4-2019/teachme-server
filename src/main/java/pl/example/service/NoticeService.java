@@ -9,6 +9,8 @@ package pl.example.service;
         import java.sql.Timestamp;
         import java.time.LocalDateTime;
         import java.util.ArrayList;
+        import java.util.Collections;
+        import java.util.Comparator;
         import java.util.List;
 
 
@@ -68,11 +70,11 @@ public class NoticeService {
     }
 
     public List<NoticeEntity> searchNotice(SubjectEntity subjectBySubjectIdSubject, Integer level
-            , Character lookOrOffer, String meetingPlace, Double price_down, Double price_up)
+            , Character lookOrOffer, String meetingPlace, Double price_down, Double price_up, Boolean sort)
     {
         List<NoticeEntity> notices = new ArrayList<>();
         noticeRepository.findBySubjectBySubjectIdSubjectAndLevelAndLookOrOfferAndMeetingPlaceAndPrice(
-                 subjectBySubjectIdSubject, level , lookOrOffer, meetingPlace, price_down, price_up ).forEach(notices::add);
+                 subjectBySubjectIdSubject, level , lookOrOffer, meetingPlace, price_down, price_up).forEach(notices::add);
         for(NoticeEntity no: notices)
         {
             no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);
@@ -84,6 +86,27 @@ public class NoticeService {
             no.getUserrByUserrIdUser().getCityByCityIdCity().setVoivodeshipByVoivodeshipIdVoivodeship(null);
             no.getUserrByUserrIdUser().setLogin(null);
             no.getUserrByUserrIdUser().setPassword(null);
+        }
+        if(sort==true) {
+            //rosnąco
+            Collections.sort(notices, new Comparator() {
+                @Override
+                public int compare(Object userOne, Object userTwo) {
+                    //use instanceof to verify the references are indeed of the type in question
+                    return ((NoticeEntity) userOne).getPrice()
+                            .compareTo(((NoticeEntity) userTwo).getPrice());
+                }
+            });
+        }else {
+            //malejąco
+            Collections.sort(notices, new Comparator() {
+                @Override
+                public int compare(Object userOne, Object userTwo) {
+                    //use instanceof to verify the references are indeed of the type in question
+                    return ((NoticeEntity) userTwo).getPrice()
+                            .compareTo(((NoticeEntity) userOne).getPrice());
+                }
+            });
         }
         return notices;
     }

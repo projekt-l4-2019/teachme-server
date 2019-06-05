@@ -111,24 +111,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+            <state relative-caret-position="960">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3708#4763#0" expanded="true" />
-                <element signature="e#4762#4763#0" expanded="true" />
+                <element signature="e#3260#4315#0" expanded="true" />
+                <element signature="e#4314#4315#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="578">
               <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
             </state>
           </provider>
@@ -284,8 +284,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/service/OpinionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -530,12 +530,12 @@
       <workItem from="1559551424616" duration="3281000" />
       <workItem from="1559584927636" duration="12212000" />
       <workItem from="1559644967478" duration="8634000" />
-      <workItem from="1559671513291" duration="18860000" />
+      <workItem from="1559671513291" duration="19207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208861000" />
+    <option name="totallyTimeSpent" value="209208000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,9 +548,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77223426" visible="true" weight="0.20604026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77306" visible="true" weight="0.20604026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -558,7 +557,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.16166282" side_tool="true" weight="0.27785236" />
       <window_info id="Web" order="7" sideWeight="0.108545035" side_tool="true" weight="0.27785236" />
-      <window_info id="Persistence" order="8" sideWeight="0.22776572" side_tool="true" visible="true" weight="0.20604026" />
+      <window_info id="Persistence" order="8" sideWeight="0.22693998" side_tool="true" visible="true" weight="0.20604026" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329429" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.431918" />
@@ -578,7 +577,7 @@
       <window_info anchor="bottom" id="Version Control" order="16" weight="0.329429" />
       <window_info anchor="bottom" id="Application Servers" order="17" weight="0.08931186" />
       <window_info anchor="bottom" id="SQL Generator" order="18" weight="0.21815519" />
-      <window_info active="true" anchor="bottom" id="Messages" order="19" visible="true" weight="0.32503662" />
+      <window_info anchor="bottom" id="Messages" order="19" weight="0.32503662" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1188,22 +1187,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3708#4763#0" expanded="true" />
-            <element signature="e#4762#4763#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+        <state relative-caret-position="960">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3260#4315#0" expanded="true" />
+            <element signature="e#4314#4315#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

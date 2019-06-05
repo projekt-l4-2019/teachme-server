@@ -114,12 +114,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="560">
+              <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3260#4315#0" expanded="true" />
-                <element signature="e#4314#4315#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -530,12 +528,12 @@
       <workItem from="1559551424616" duration="3281000" />
       <workItem from="1559584927636" duration="12212000" />
       <workItem from="1559644967478" duration="8634000" />
-      <workItem from="1559671513291" duration="19207000" />
+      <workItem from="1559671513291" duration="19339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209208000" />
+    <option name="totallyTimeSpent" value="209340000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,8 +546,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.77306" visible="true" weight="0.20604026" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.77306" visible="true" weight="0.20604026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -584,7 +583,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.24630873" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.24630873" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.3295302" />
@@ -1196,12 +1195,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="560">
+          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3260#4315#0" expanded="true" />
-            <element signature="e#4314#4315#0" expanded="true" />
           </folding>
         </state>
       </provider>

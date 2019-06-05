@@ -14,11 +14,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @RequestMapping("/user")
-//    @CrossOrigin(origins = "*")
-//    public Principal user(Principal user) {
-//        return user;
-//    }
+    @RequestMapping("/user")
+    @CrossOrigin(origins = "*")
+    public Principal user(Principal user) {
+        return user;
+    }
 
     @RequestMapping("/users")
     @CrossOrigin(origins = "*")

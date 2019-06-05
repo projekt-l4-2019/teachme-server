@@ -3,7 +3,6 @@ package pl.example.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.example.models.MeetingEntity;
-import pl.example.models.UserEntity;
 import pl.example.service.MeetingService;
 
 import java.util.List;

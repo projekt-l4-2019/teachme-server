@@ -4,40 +4,22 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.sql.Time;
-import java.util.Collection;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "meeting", schema = "public", catalog = "d2b6rsc8m7io0b")
 public class MeetingEntity {
     private int idMeeting;
-    private String meetingPlace;
     private Date date;
-    private Time time;
-    private Integer subjectIdSubject;
-    private Integer userIdUser;
-    private SubjectEntity subjectBySubjectIdSubject;
-    private UserEntity userByUserIdUser;
-    private Collection<NoticeEntity> noticesByIdMeeting;
-
-    public MeetingEntity() {
-    }
-
-    public MeetingEntity(Integer idMeeting, String meetingPlace, Date date, Time time, Integer subjectIdSubject, Integer userIdUser, SubjectEntity subjectBySubjectIdSubject, UserEntity userByUserIdUser, Collection<NoticeEntity> noticesByIdMeeting) {
-        this.idMeeting = idMeeting;
-        this.meetingPlace = meetingPlace;
-        this.date = date;
-        this.time = time;
-        this.subjectIdSubject = subjectIdSubject;
-        this.userIdUser = userIdUser;
-        this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
-        this.userByUserIdUser = userByUserIdUser;
-        this.noticesByIdMeeting = noticesByIdMeeting;
-    }
-
+    private Timestamp time;
+  //  private Integer userrIdUser;
+    private String meetingPlace;
+    //private Integer noticeIdNotice;
+    private UserrEntity userrByUserrIdUser;
+    private NoticeEntity noticeByNoticeIdNotice;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_meeting", nullable = false)
     public int getIdMeeting() {
         return idMeeting;
@@ -45,17 +27,6 @@ public class MeetingEntity {
 
     public void setIdMeeting(int idMeeting) {
         this.idMeeting = idMeeting;
-    }
-
-
-    @Basic
-    @Column(name = "meeting_place", nullable = false)
-    public String getMeetingPlace() {
-        return meetingPlace;
-    }
-
-    public void setMeetingPlace(String meetingPlace) {
-        this.meetingPlace = meetingPlace;
     }
 
     @Basic
@@ -70,35 +41,45 @@ public class MeetingEntity {
 
     @Basic
     @Column(name = "time", nullable = false)
-    public Time getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(Timestamp time) {
         this.time = time;
     }
+    /*
 
     @Basic
-    @Column(name = "subject_id_subject", nullable = false,insertable = false, updatable = false)
-    public Integer getSubjectIdSubject() {
-        return subjectIdSubject;
+    @Column(name = "userr_id_user", nullable = true,insertable=false, updatable=false)
+    public Integer getUserrIdUser() {
+        return userrIdUser;
     }
 
-    public void setSubjectIdSubject(Integer subjectIdSubject) {
-        this.subjectIdSubject = subjectIdSubject;
+    public void setUserrIdUser(Integer userrIdUser) {
+        this.userrIdUser = userrIdUser;
     }
-
+*/
     @Basic
-    @Column(name = "user_id_user", nullable = true,insertable = false, updatable = false)
-    public Integer getUserIdUser() {
-        return userIdUser;
+    @Column(name = "meeting_place", nullable = true, length = 127)
+    public String getMeetingPlace() {
+        return meetingPlace;
     }
 
-    public void setUserIdUser(Integer userIdUser) {
-        this.userIdUser = userIdUser;
+    public void setMeetingPlace(String meetingPlace) {
+        this.meetingPlace = meetingPlace;
+    }
+/*
+    @Basic
+    @Column(name = "notice_id_notice", nullable = true,insertable=false, updatable=false)
+    public Integer getNoticeIdNotice() {
+        return noticeIdNotice;
     }
 
-
+    public void setNoticeIdNotice(Integer noticeIdNotice) {
+        this.noticeIdNotice = noticeIdNotice;
+    }
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -107,12 +88,12 @@ public class MeetingEntity {
         MeetingEntity that = (MeetingEntity) o;
 
         if (idMeeting != that.idMeeting) return false;
-        if (meetingPlace != that.meetingPlace) return false;
-        if (subjectIdSubject != that.subjectIdSubject) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
-        if (userIdUser != null ? !userIdUser.equals(that.userIdUser) : that.userIdUser != null) return false;
-
+       // if (userrIdUser != null ? !userrIdUser.equals(that.userrIdUser) : that.userrIdUser != null) return false;
+        if (meetingPlace != null ? !meetingPlace.equals(that.meetingPlace) : that.meetingPlace != null) return false;
+      //  if (noticeIdNotice != null ? !noticeIdNotice.equals(that.noticeIdNotice) : that.noticeIdNotice != null)
+         //   return false;
         return true;
     }
 
@@ -121,41 +102,29 @@ public class MeetingEntity {
         int result = idMeeting;
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);
-        result = 31 * result + subjectIdSubject;
-        result = 31 * result + (userIdUser != null ? userIdUser.hashCode() : 0);
+      //  result = 31 * result + (userrIdUser != null ? userrIdUser.hashCode() : 0);
+        result = 31 * result + (meetingPlace != null ? meetingPlace.hashCode() : 0);
+       // result = 31 * result + (noticeIdNotice != null ? noticeIdNotice.hashCode() : 0);
         return result;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "userr_id_user", referencedColumnName = "id_user")
+    public UserrEntity getUserrByUserrIdUser() {
+        return userrByUserrIdUser;
+    }
+
+    public void setUserrByUserrIdUser(UserrEntity userrByUserrIdUser) {
+        this.userrByUserrIdUser = userrByUserrIdUser;
+    }
 
     @ManyToOne
-    @JoinColumn(name = "subject_id_subject", referencedColumnName = "id_subject", nullable = false)
-    public SubjectEntity getSubjectBySubjectIdSubject() {
-        return subjectBySubjectIdSubject;
+    @JoinColumn(name = "notice_id_notice", referencedColumnName = "id_notice")
+    public NoticeEntity getNoticeByNoticeIdNotice() {
+        return noticeByNoticeIdNotice;
     }
 
-    public void setSubjectBySubjectIdSubject(SubjectEntity subjectBySubjectIdSubject) {
-        this.subjectBySubjectIdSubject = subjectBySubjectIdSubject;
-    }
-
-
-    @ManyToOne
-    @JoinColumn(name = "user_id_user", referencedColumnName = "id_user")
-    public UserEntity getUserByUserIdUser() {
-        return userByUserIdUser;
-    }
-
-    public void setUserByUserIdUser(UserEntity userByUserIdUser) {
-        this.userByUserIdUser = userByUserIdUser;
-    }
-
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "meetingByMeetingIdMeeting")
-    public Collection<NoticeEntity> getNoticesByIdMeeting() {
-        return noticesByIdMeeting;
-    }
-
-    public void setNoticesByIdMeeting(Collection<NoticeEntity> noticesByIdMeeting) {
-        this.noticesByIdMeeting = noticesByIdMeeting;
+    public void setNoticeByNoticeIdNotice(NoticeEntity noticeByNoticeIdNotice) {
+        this.noticeByNoticeIdNotice = noticeByNoticeIdNotice;
     }
 }

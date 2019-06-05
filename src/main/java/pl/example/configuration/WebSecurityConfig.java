@@ -23,9 +23,10 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://projekt-l4-2019.github.io","https://rhubarb-cobbler-84890.herokuapp.com"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "DELETE", "PUT", "PATCH"));
-        configuration.setAllowedHeaders(Arrays.asList("X-Requested-With", "Origin", "Content-Type", "Accept", "Authorization"));
+        configuration.setAllowedOrigins(Arrays.asList("Access-Control-Allow-Origin", "*"));
+        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Request-Headers", "*"));
+        configuration.setAllowedMethods(Arrays.asList("Access-Control-Allow-Methods" , "DELETE,GET, pOST, PTIONS,  PUT, PATCH"));
+        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Origin", "Origin, X-Requested-With,X-HTTP-Method-Override, Content-Type, Accept, Authorization"));
         configuration.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);

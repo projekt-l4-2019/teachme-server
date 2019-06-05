@@ -6,15 +6,17 @@
   <session-factory>
     <property name="connection.url">jdbc:postgresql://ec2-174-129-240-67.compute-1.amazonaws.com:5432/d2b6rsc8m7io0b</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
-      <mapping class="pl.example.models.MeetingEntity"/>
+    <mapping class="pl.example.models.MeetingEntity"/>
     <mapping class="pl.example.models.NoticeEntity"/>
-      <mapping class="pl.example.models.AdminEntity"/>
+      <mapping class="pl.example.models.AdminnEntity"/>
       <mapping class="pl.example.models.CityEntity"/>
       <mapping class="pl.example.models.OpinionEntity"/>
       <mapping class="pl.example.models.SubjectEntity"/>
-      <mapping class="pl.example.models.UserEntity"/>
+      <mapping class="pl.example.models.UserrEntity"/>
       <mapping class="pl.example.models.VoivodeshipEntity"/>
-      <!-- <property name="connection.username"/> -->
+    <mapping class="pl.example.models.AdminnEntity"/>
+    <mapping class="pl.example.models.UserrEntity"/>
+    <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

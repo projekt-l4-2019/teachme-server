@@ -1,9 +1,9 @@
 package pl.example.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 import pl.example.models.NoticeEntity;
+import pl.example.models.SubjectEntity;
 import pl.example.service.NoticeService;
 
 import java.util.List;
@@ -45,4 +45,12 @@ public class NoticeController {
          noticeService.deleteNotice(id);
     }
 
+    @RequestMapping("/notices/find/{subjectBySubjectIdSubject}/{level}/{lookOrOffer}/{meetingPlace}/{price_down}/{price_up}")
+    @CrossOrigin(origins = "*")
+    public List<NoticeEntity> searchNotice(@PathVariable SubjectEntity subjectBySubjectIdSubject, @PathVariable Integer level
+            ,@PathVariable Character lookOrOffer,@PathVariable String meetingPlace,@PathVariable Double price_down,@PathVariable Double price_up) {
+
+
+        return noticeService.searchNotice(subjectBySubjectIdSubject,level, lookOrOffer, meetingPlace, price_down, price_up);
+    }
 }

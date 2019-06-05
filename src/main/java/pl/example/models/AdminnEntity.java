@@ -4,14 +4,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "adminn", schema = "public", catalog = "d2b6rsc8m7io0b")
-public class AdminEntity {
+public class AdminnEntity {
     private int idAdmin;
     private String login;
     private String pasword;
     private String email;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_admin", nullable = false)
     public int getIdAdmin() {
         return idAdmin;
@@ -56,7 +56,7 @@ public class AdminEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AdminEntity that = (AdminEntity) o;
+        AdminnEntity that = (AdminnEntity) o;
 
         if (idAdmin != that.idAdmin) return false;
         if (login != null ? !login.equals(that.login) : that.login != null) return false;

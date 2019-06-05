@@ -10,12 +10,12 @@ import java.util.Collection;
 public class CityEntity {
     private int idCity;
     private String name;
-   // private int voivodeshipIdVoivodeship;
+    private int voivodeshipIdVoivodeship;
     private VoivodeshipEntity voivodeshipByVoivodeshipIdVoivodeship;
-    private Collection<UserEntity> usersByIdCity;
+    private Collection<UserrEntity> userrsByIdCity;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "id_city", nullable = false)
     public int getIdCity() {
         return idCity;
@@ -35,8 +35,8 @@ public class CityEntity {
         this.name = name;
     }
 
-    /*@Basic
-    @Column(name = "voivodeship_id_voivodeship", nullable = false,insertable = false, updatable = false)
+    @Basic
+    @Column(name = "voivodeship_id_voivodeship", nullable = false, insertable=false, updatable=false)
     public int getVoivodeshipIdVoivodeship() {
         return voivodeshipIdVoivodeship;
     }
@@ -44,7 +44,7 @@ public class CityEntity {
     public void setVoivodeshipIdVoivodeship(int voivodeshipIdVoivodeship) {
         this.voivodeshipIdVoivodeship = voivodeshipIdVoivodeship;
     }
-*/
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,7 +53,7 @@ public class CityEntity {
         CityEntity that = (CityEntity) o;
 
         if (idCity != that.idCity) return false;
-     //   if (voivodeshipIdVoivodeship != that.voivodeshipIdVoivodeship) return false;
+        if (voivodeshipIdVoivodeship != that.voivodeshipIdVoivodeship) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
         return true;
@@ -63,7 +63,7 @@ public class CityEntity {
     public int hashCode() {
         int result = idCity;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-       // result = 31 * result + voivodeshipIdVoivodeship;
+        result = 31 * result + voivodeshipIdVoivodeship;
         return result;
     }
 
@@ -79,11 +79,11 @@ public class CityEntity {
 
     @JsonIgnore
     @OneToMany(mappedBy = "cityByCityIdCity")
-    public Collection<UserEntity> getUsersByIdCity() {
-        return usersByIdCity;
+    public Collection<UserrEntity> getUserrsByIdCity() {
+        return userrsByIdCity;
     }
 
-    public void setUsersByIdCity(Collection<UserEntity> usersByIdCity) {
-        this.usersByIdCity = usersByIdCity;
+    public void setUserrsByIdCity(Collection<UserrEntity> userrsByIdCity) {
+        this.userrsByIdCity = userrsByIdCity;
     }
 }

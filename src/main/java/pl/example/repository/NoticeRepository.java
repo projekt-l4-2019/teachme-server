@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface NoticeRepository extends CrudRepository<NoticeEntity, Integer> {
 
-   @Query(value = "SELECT * FROM notice n WHERE  n.subject_id_subject = ?1 and n.level=?2 and n.look_or_offer = ?3 and n.meeting_place = ?4 and n.price=?5",nativeQuery = true)
+   @Query(value = "SELECT * FROM notice n WHERE  n.subject_id_subject = ?1 and n.level=?2 and n.look_or_offer = ?3 and n.meeting_place = ?4 and (n.price between ?5 and ?6)",nativeQuery = true)
     List<NoticeEntity> findBySubjectBySubjectIdSubjectAndLevelAndLookOrOfferAndMeetingPlaceAndPrice
            (SubjectEntity subjectBySubjectIdSubject, Integer level
-                   , Character lookOrOffer, String meetingPlace, Double price);
+                   , Character lookOrOffer, String meetingPlace, Double price_down, Double price_up);
 
 }

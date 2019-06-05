@@ -68,11 +68,11 @@ public class NoticeService {
     }
 
     public List<NoticeEntity> searchNotice(SubjectEntity subjectBySubjectIdSubject, Integer level
-            , Character lookOrOffer, String meetingPlace, Double price)
+            , Character lookOrOffer, String meetingPlace, Double price_down, Double price_up)
     {
         List<NoticeEntity> notices = new ArrayList<>();
         noticeRepository.findBySubjectBySubjectIdSubjectAndLevelAndLookOrOfferAndMeetingPlaceAndPrice(
-                 subjectBySubjectIdSubject, level , lookOrOffer, meetingPlace, price ).forEach(notices::add);
+                 subjectBySubjectIdSubject, level , lookOrOffer, meetingPlace, price_down, price_up ).forEach(notices::add);
         for(NoticeEntity no: notices)
         {
             no.getSubjectBySubjectIdSubject().setNoticesByIdSubject(null);

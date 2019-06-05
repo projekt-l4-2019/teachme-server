@@ -111,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -129,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+              <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -279,12 +279,12 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/service/OpinionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -525,12 +525,12 @@
       <workItem from="1559551424616" duration="3281000" />
       <workItem from="1559584927636" duration="12212000" />
       <workItem from="1559644967478" duration="8634000" />
-      <workItem from="1559671513291" duration="17946000" />
+      <workItem from="1559671513291" duration="18098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207947000" />
+    <option name="totallyTimeSpent" value="208099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1171,16 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://e74d8e76-67a8-4ab0-8283-863530876319/database/d2b6rsc8m7io0b/schema/public/table/opinion">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="230926a4-916f-4d79-a5b2-330045c82da7">
@@ -1194,6 +1184,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="28" column="167" selection-start-line="28" selection-start-column="167" selection-end-line="28" selection-end-column="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="39" column="43" lean-forward="true" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

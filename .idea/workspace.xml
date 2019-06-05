@@ -111,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="28" column="167" selection-start-line="28" selection-start-column="167" selection-end-line="28" selection-end-column="167" />
+            <state relative-caret-position="147">
+              <caret line="28" column="157" lean-forward="true" selection-start-line="28" selection-start-column="157" selection-end-line="28" selection-end-column="157" />
             </state>
           </provider>
         </entry>
@@ -129,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -279,12 +279,12 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/example/models/NoticeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/service/OpinionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/DemoApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -525,12 +525,12 @@
       <workItem from="1559551424616" duration="3281000" />
       <workItem from="1559584927636" duration="12212000" />
       <workItem from="1559644967478" duration="8634000" />
-      <workItem from="1559671513291" duration="18098000" />
+      <workItem from="1559671513291" duration="18438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208099000" />
+    <option name="totallyTimeSpent" value="208439000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1180,13 +1180,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="167" selection-start-line="28" selection-start-column="167" selection-end-line="28" selection-end-column="167" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/controllers/OpinionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -1194,6 +1187,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="28" column="157" lean-forward="true" selection-start-line="28" selection-start-column="157" selection-end-line="28" selection-end-column="157" />
         </state>
       </provider>
     </entry>

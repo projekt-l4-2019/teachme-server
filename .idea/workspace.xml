@@ -114,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="28" column="172" selection-start-line="28" selection-start-column="172" selection-end-line="28" selection-end-column="172" />
+            <state relative-caret-position="180">
+              <caret line="28" column="167" selection-start-line="28" selection-start-column="167" selection-end-line="28" selection-end-column="167" />
             </state>
           </provider>
         </entry>
@@ -525,12 +525,12 @@
       <workItem from="1559551424616" duration="3281000" />
       <workItem from="1559584927636" duration="12212000" />
       <workItem from="1559644967478" duration="8634000" />
-      <workItem from="1559671513291" duration="17691000" />
+      <workItem from="1559671513291" duration="17946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207692000" />
+    <option name="totallyTimeSpent" value="207947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1192,8 +1192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/example/configuration/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="28" column="172" selection-start-line="28" selection-start-column="172" selection-end-line="28" selection-end-column="172" />
+        <state relative-caret-position="180">
+          <caret line="28" column="167" selection-start-line="28" selection-start-column="167" selection-end-line="28" selection-end-column="167" />
         </state>
       </provider>
     </entry>

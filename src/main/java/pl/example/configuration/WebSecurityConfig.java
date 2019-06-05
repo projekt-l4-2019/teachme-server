@@ -22,6 +22,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Arrays;
 
+import static org.eclipse.jdt.internal.compiler.problem.ProblemSeverities.Optional;
+
 @EnableWebSecurity
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

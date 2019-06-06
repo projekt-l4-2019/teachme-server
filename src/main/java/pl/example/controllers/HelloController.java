@@ -14,11 +14,4 @@ public class HelloController {
         return "Hi";
     }
 
-
-    @RequestMapping("/error")
-    @CrossOrigin(origins = "*")
-    public String error()
-    {
-        return "Zalogowano";
-    }
 }

@@ -70,7 +70,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 userr.setSurname((String)map.get("family_name"));
                 userr.setEmail((String)map.get("email"));
                 userr.setAvatar((String)map.get("picture"));
-                userr.setCityIdCity(1);
                 userRepository.save(userr);
             }
             userService.setCurrentUserId(userr.getIdUser());

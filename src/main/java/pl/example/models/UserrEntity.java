@@ -1,6 +1,7 @@
 package pl.example.models;
 
 import com.fasterxml.jackson.annotation.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -228,7 +229,8 @@ public class UserrEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "city_id_city", referencedColumnName = "id_city")
+//    @Value("1")
+    @JoinColumn(name = "city_id_city", referencedColumnName = "id_city", columnDefinition = "1")
     public CityEntity getCityByCityIdCity() {
         return cityByCityIdCity;
     }

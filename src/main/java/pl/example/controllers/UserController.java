@@ -13,6 +13,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/current")
+    @CrossOrigin(origins = "*")
+    public UserrEntity current() { return userService.getCurrentUser(); }
+
     @RequestMapping("/users")
     @CrossOrigin(origins = "*")
     public List<UserrEntity> getAllUser() {

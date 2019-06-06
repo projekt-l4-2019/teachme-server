@@ -14,6 +14,8 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    private int currentUserId;
+
     public List<UserrEntity> getAllUser() {
         List<UserrEntity> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
@@ -45,6 +47,7 @@ public class UserService {
                 op_from.setUserrByUserTo(null);
             }
 
+
         }
 
         return user;
@@ -56,9 +59,8 @@ public class UserService {
         user.setMeetingsByIdUser(null);
         user.setPassword(null);
         user.setLogin(null);
-
         List<NoticeEntity> notice = new ArrayList<>();
-      user.getNoticesByIdUser().forEach(notice::add);
+        user.getNoticesByIdUser().forEach(notice::add);
         for(NoticeEntity no: notice) {
             no.setUserrByUserrIdUser(null);
             no.setMeetingsByIdNotice(null);
@@ -93,5 +95,16 @@ public class UserService {
 
     public void deleteUser(Integer id) {
         userRepository.deleteById(id);
+    }
+
+    public UserrEntity getCurrentUser()
+    {
+        return userRepository.findById(currentUserId).get();
+    }
+
+    public void setCurrentUserId(int id)
+    {
+        currentUserId = id;
+
     }
 }

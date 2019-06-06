@@ -229,8 +229,8 @@ public class UserrEntity {
     }
 
     @ManyToOne
-//    @Value("1")
-    @JoinColumn(name = "city_id_city", referencedColumnName = "id_city", columnDefinition = "1")
+
+    @JoinColumn(name = "city_id_city", referencedColumnName = "id_city")
     public CityEntity getCityByCityIdCity() {
         return cityByCityIdCity;
     }

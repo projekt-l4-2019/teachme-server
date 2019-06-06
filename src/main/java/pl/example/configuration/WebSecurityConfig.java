@@ -58,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("https://projekt-l4-2019.github.io/index.html").permitAll();
-        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
+       // http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         http.csrf().disable();
     }
 

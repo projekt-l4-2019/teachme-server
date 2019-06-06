@@ -38,7 +38,7 @@ public class OpinionController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value="/opinions/{id}")
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     public void deleteOpinion(@PathVariable Integer id) {
         opinionService.deleteOpinion(id);
     }

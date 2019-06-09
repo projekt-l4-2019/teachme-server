@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.example.models.CityEntity;
 import pl.example.models.VoivodeshipEntity;
 import pl.example.repository.VoivodeshipRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 
